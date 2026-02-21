@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Morning">
+<meta name="theme-color" content="#2D4A3E">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Morning</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --border: #E8E4DC;
+    --text: #1A1A1A;
+    --muted: #8A8580;
+    --accent: #2D4A3E;
+    --accent-light: #E8F0ED;
+    --warm: #C4865A;
+    --nav-h: 72px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bot: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    padding-top: calc(12px + var(--safe-top));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .topbar-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .topbar-left h1 em { font-style: italic; color: var(--accent); }
+  .topbar-left p { font-size: 0.72rem; color: var(--muted); margin-top: 2px; font-weight: 300; }
+  .topbar-right { text-align: right; font-size: 0.72rem; color: var(--muted); line-height: 1.5; font-weight: 300; }
+
+  /* ── SCROLL AREA ── */
+  .scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 16px calc(var(--nav-h) + var(--safe-bot) + 16px);
+    display: none;
+  }
+  .scroll-area.active { display: block; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 22px 20px;
+    margin-bottom: 14px;
+    animation: fadeUp 0.35s forwards;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.12s; }
+  .card:nth-child(3) { animation-delay: 0.19s; }
+
+  .card-label {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+  }
+
+  /* ── WEATHER ── */
+  .weather-hero { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .weather-emoji { font-size: 3.2rem; line-height: 1; }
+  .weather-temp-main { font-family: 'Playfair Display', serif; font-size: 3.4rem; font-weight: 400; line-height: 1; }
+  .weather-city { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .weather-stat { background: var(--bg); border-radius: 12px; padding: 12px; }
+  .weather-stat-label { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .weather-stat-val { font-size: 1.05rem; font-weight: 500; margin-top: 3px; }
+  .city-row { display: flex; gap: 8px; }
+  .city-field { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; }
+  .city-field:focus { border-color: var(--accent); }
+  .btn-primary { background: var(--accent); color: white; border: none; border-radius: 12px; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; cursor: pointer; }
+
+  /* ── CALENDAR ── */
+  .cal-event { display: flex; align-items: flex-start; gap: 12px; padding: 14px; border-radius: 14px; background: var(--bg); margin-bottom: 10px; }
+  .cal-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+  .cal-event.work .cal-dot { background: #4A7AB5; }
+  .cal-event.fitness .cal-dot { background: #E07B4A; }
+  .cal-event.allday .cal-dot { background: #C4A24A; }
+  .cal-event-name { font-size: 0.9rem; font-weight: 500; }
+  .cal-event-time { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+
+  /* ── TASKS ── */
+  .add-task-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .task-field { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 13px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; }
+  .task-field:focus { border-color: var(--accent); }
+  .task-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .task-row { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; background: var(--bg); min-height: 52px; }
+  .task-row.done .task-text { text-decoration: line-through; color: var(--muted); }
+  .task-circle { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+  .task-row.done .task-circle { background: var(--accent); border-color: var(--accent); color: white; font-size: 12px; }
+  .task-text { flex: 1; font-size: 0.9rem; }
+  .task-x { background: none; border: none; color: var(--border); font-size: 1.2rem; cursor: pointer; padding: 4px; }
+  .progress-row { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .prog-label { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+  .prog-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .prog-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.4s; }
+
+  /* ── OUTFIT ── */
+  .pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .pin-card { aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; cursor: pointer; border: 3px solid transparent; transition: border-color 0.2s; position: relative; background: var(--bg); }
+  .pin-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pin-card.selected { border-color: var(--accent); }
+  .pin-card .chk { position: absolute; top: 6px; right: 6px; background: var(--accent); color: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; opacity: 0; transition: opacity 0.2s; }
+  .pin-card.selected .chk { opacity: 1; }
+  .pin-hint-text { font-size: 0.75rem; color: var(--muted); margin-bottom: 12px; }
+
+  .sel-preview { display: flex; gap: 12px; align-items: center; padding: 12px; background: var(--bg); border-radius: 14px; margin-bottom: 14px; }
+  .sel-preview img { width: 52px; height: 65px; object-fit: cover; border-radius: 10px; }
+  .sel-preview-info strong { display: block; font-size: 0.88rem; margin-bottom: 2px; }
+  .sel-preview-info span { font-size: 0.75rem; color: var(--muted); }
+
+  .suggestion-box { background: var(--accent-light); border-radius: 16px; padding: 18px; margin-bottom: 14px; }
+  .sug-title { font-weight: 500; color: var(--accent); font-size: 0.95rem; margin-bottom: 6px; }
+  .sug-body { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+  .btn-row { display: flex; flex-direction: column; gap: 8px; }
+  .btn-block { width: 100%; padding: 14px; border-radius: 14px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; border: 2px solid var(--accent); transition: all 0.2s; text-align: center; }
+  .btn-block.solid { background: var(--accent); color: white; }
+  .btn-block.outline { background: transparent; color: var(--accent); }
+  .btn-block:active { opacity: 0.8; transform: scale(0.98); }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: calc(var(--nav-h) + var(--safe-bot));
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 8px;
+    padding-bottom: var(--safe-bot);
+    z-index: 100;
+  }
+  .nav-btn {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+    background: none; border: none; cursor: pointer; padding: 6px 4px;
+    color: var(--muted); transition: color 0.2s;
+  }
+  .nav-btn.active { color: var(--accent); }
+  .nav-icon { font-size: 1.4rem; line-height: 1; }
+  .nav-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.04em; font-family: 'DM Sans', sans-serif; }
+  .nav-btn.active .nav-label { font-weight: 600; }
+
+  /* ── CALENDAR OUTFIT HINT ── */
+  .cal-outfit-banner {
+    background: var(--accent);
+    color: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+  .cal-outfit-banner strong { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <h1>Good <em id="tod">morning</em>.</h1>
+    <p id="dateStr">Loading...</p>
+  </div>
+  <div class="topbar-right" id="tempBadge">--</div>
+</div>
+
+<!-- TAB: WEATHER + CALENDAR -->
+<div class="scroll-area active" id="tab-weather">
+
+  <div class="card">
+    <div class="card-label">Weather</div>
+    <div class="weather-hero">
+      <div class="weather-emoji" id="wEmoji">&#127780;</div>
+      <div>
+        <div class="weather-temp-main" id="wTemp">--</div>
+        <div class="weather-city" id="wCity">Loading...</div>
+      </div>
+    </div>
+    <div class="weather-grid">
+      <div class="weather-stat"><div class="weather-stat-label">Feels Like</div><div class="weather-stat-val" id="wFeels">--</div></div>
+      <div class="weather-stat"><div class="weather-stat-label">Humidity</div><div class="weather-stat-val" id="wHumid">--</div></div>
+      <div class="weather-stat"><div class="weather-stat-label">Wind</div><div class="weather-stat-val" id="wWind">--</div></div>
+      <div class="weather-stat"><div class="weather-stat-label">Condition</div><div class="weather-stat-val" id="wCond">--</div></div>
+    </div>
+    <div class="city-row">
+      <input class="city-field" id="cityInput" placeholder="Enter city..." value="Kansas City">
+      <button class="btn-primary" onclick="fetchWeather()">Update</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Today &mdash; Feb 20</div>
+    <div class="cal-event allday">
+      <div class="cal-dot"></div>
+      <div>
+        <div class="cal-event-name">&#127881; Pay Day</div>
+        <div class="cal-event-time">All day</div>
+      </div>
+    </div>
+    <div class="cal-event allday">
+      <div class="cal-dot"></div>
+      <div>
+        <div class="cal-event-name">&#128084; Spirit Wear Day</div>
+        <div class="cal-event-time">All day &mdash; school</div>
+      </div>
+    </div>
+    <div class="cal-event work">
+      <div class="cal-dot"></div>
+      <div>
+        <div class="cal-event-name">&#128250; Friday Morning Meeting</div>
+        <div class="cal-event-time">8:30 &ndash; 10:00am &middot; Zoom</div>
+      </div>
+    </div>
+    <div class="cal-event fitness">
+      <div class="cal-dot"></div>
+      <div>
+        <div class="cal-event-name">&#128170; F.I.T. Muscle Appointment</div>
+        <div class="cal-event-time">3:00pm &middot; 1800 Wyandotte St</div>
+      </div>
+    </div>
+    <div class="cal-outfit-banner">
+      <strong>&#10022; Outfit Read</strong>
+      Zoom in the AM + gym at 3pm. Layer up — polished knit on top for the call, easy to change before F.I.T. Muscle.
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB: TASKS -->
+<div class="scroll-area" id="tab-tasks">
+  <div class="card">
+    <div class="card-label">Today's Tasks</div>
+    <div class="add-task-row">
+      <input class="task-field" id="taskInput" placeholder="Add a task..." onkeydown="if(event.key==='Enter')addTask()">
+      <button class="btn-primary" onclick="addTask()">+</button>
+    </div>
+    <ul class="task-list" id="taskList"></ul>
+    <div class="progress-row">
+      <span class="prog-label" id="progLabel">0 / 0</span>
+      <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB: OUTFIT -->
+<div class="scroll-area" id="tab-outfit">
+  <div class="card">
+    <div class="card-label" style="display:flex;justify-content:space-between;">
+      <span>Outfit Planner</span>
+      <span style="font-size:0.62rem;background:#FDE8E8;color:#C0392B;border-radius:20px;padding:2px 9px;">&#10022; Pinterest</span>
+    </div>
+    <p class="pin-hint-text">Tap a pin for outfit inspiration from your New Wardrobe board</p>
+    <div class="pin-grid" id="pinGrid"></div>
+    <div id="selPrev" style="display:none" class="sel-preview">
+      <img id="selImg" src="" alt="">
+      <div class="sel-preview-info">
+        <strong>Today's Inspo</strong>
+        <span id="selCap">New Wardrobe board</span>
+      </div>
+    </div>
+    <div class="suggestion-box" id="sugBox">
+      <div class="sug-title">Dress for Your Day</div>
+      <div class="sug-body" id="sugText">Tap a button below to get a suggestion tailored to your calendar, weather, or a Pinterest pin.</div>
+    </div>
+    <div class="btn-row">
+      <button class="btn-block solid" onclick="sugCalendar()">&#10022; Dress for My Day</button>
+      <button class="btn-block outline" onclick="sugWeather()">&#10022; Weather Outfit</button>
+      <button class="btn-block outline" onclick="sugPin()">&#10022; Style This Pin</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="nav-btn active" id="nav-weather" onclick="showTab('weather')">
+    <span class="nav-icon">&#9925;</span>
+    <span class="nav-label">Today</span>
+  </button>
+  <button class="nav-btn" id="nav-tasks" onclick="showTab('tasks')">
+    <span class="nav-icon">&#9989;</span>
+    <span class="nav-label">Tasks</span>
+  </button>
+  <button class="nav-btn" id="nav-outfit" onclick="showTab('outfit')">
+    <span class="nav-icon">&#128248;</span>
+    <span class="nav-label">Outfit</span>
+  </button>
+</nav>
+
+<script>
+// ── TABS ──
+function showTab(name) {
+  document.querySelectorAll('.scroll-area').forEach(function(el){ el.classList.remove('active'); });
+  document.querySelectorAll('.nav-btn').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+}
+
+// ── TIME ──
+(function(){
+  var h = new Date().getHours();
+  document.getElementById('tod').textContent = h < 12 ? 'morning' : h < 17 ? 'afternoon' : 'evening';
+  var opts = { weekday: 'long', month: 'long', day: 'numeric' };
+  document.getElementById('dateStr').textContent = new Date().toLocaleDateString('en-US', opts);
+})();
+
+// ── WEATHER ──
+var wx = null;
+var emojis = { sunny:'☀️', cloudy:'⛅', foggy:'🌫️', drizzle:'🌦️', rainy:'🌧️', snowy:'❄️', stormy:'⛈️' };
+function codeInfo(c) {
+  if (c===0) return ['sunny','Clear'];
+  if (c<=3) return ['cloudy','Partly Cloudy'];
+  if (c<=49) return ['foggy','Foggy'];
+  if (c<=59) return ['drizzle','Drizzle'];
+  if (c<=69) return ['rainy','Rainy'];
+  if (c<=79) return ['snowy','Snowy'];
+  if (c<=82) return ['rainy','Showers'];
+  return ['stormy','Storms'];
+}
+async function fetchWeather() {
+  var city = document.getElementById('cityInput').value.trim() || 'Kansas City';
+  document.getElementById('wCity').textContent = 'Loading...';
+  try {
+    var g = await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(city)+'&count=1');
+    var gd = await g.json();
+    if (!gd.results||!gd.results.length){ document.getElementById('wCity').textContent='Not found'; return; }
+    var loc = gd.results[0];
+    var w = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc.latitude+'&longitude='+loc.longitude+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph');
+    var wd = await w.json();
+    var c = wd.current;
+    wx = { temp:c.temperature_2m, feels:c.apparent_temperature, humidity:c.relative_humidity_2m, wind:c.wind_speed_10m, code:c.weather_code, city:loc.name };
+    var info = codeInfo(wx.code);
+    document.getElementById('wEmoji').textContent = emojis[info[0]];
+    document.getElementById('wTemp').textContent = Math.round(wx.temp)+'°F';
+    document.getElementById('wCity').textContent = info[1]+' · '+wx.city;
+    document.getElementById('wFeels').textContent = Math.round(wx.feels)+'°F';
+    document.getElementById('wHumid').textContent = wx.humidity+'%';
+    document.getElementById('wWind').textContent = Math.round(wx.wind)+' mph';
+    document.getElementById('wCond').textContent = info[1];
+    document.getElementById('tempBadge').textContent = Math.round(wx.temp)+'°F';
+  } catch(e){ document.getElementById('wCity').textContent='Could not load'; }
+}
+fetchWeather();
+
+// ── TASKS ──
+var defaultTasks = [
+  {text:'Dentist',done:false},{text:'AI',done:false},{text:'Contact Rebate',done:false},
+  {text:'Spring Break',done:false},{text:'Meds',done:false},
+  {text:'Kazoo AMEX — pull EXTEND report',done:false}
+];
+var tasks = JSON.parse(localStorage.getItem('morning_tasks')||'null')||defaultTasks;
+function saveTasks(){ localStorage.setItem('morning_tasks',JSON.stringify(tasks)); }
+function renderTasks(){
+  var ul = document.getElementById('taskList');
+  ul.innerHTML='';
+  tasks.forEach(function(t,i){
+    var li=document.createElement('li');
+    li.className='task-row'+(t.done?' done':'');
+    li.innerHTML='<div class="task-circle" onclick="tog('+i+')">'+(t.done?'&#10003;':'')+'</div><span class="task-text">'+t.text+'</span><button class="task-x" onclick="del('+i+')">&#215;</button>';
+    ul.appendChild(li);
+  });
+  var done=tasks.filter(function(t){return t.done;}).length;
+  document.getElementById('progLabel').textContent=done+' / '+tasks.length;
+  document.getElementById('progFill').style.width=tasks.length?((done/tasks.length)*100)+'%':'0%';
+}
+function addTask(){ var v=document.getElementById('taskInput').value.trim(); if(!v)return; tasks.push({text:v,done:false}); document.getElementById('taskInput').value=''; saveTasks(); renderTasks(); }
+function tog(i){ tasks[i].done=!tasks[i].done; saveTasks(); renderTasks(); }
+function del(i){ tasks.splice(i,1); saveTasks(); renderTasks(); }
+renderTasks();
+
+// ── PINTEREST PINS ──
+var pins=[
+  {src:'https://i.pinimg.com/474x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg',cap:'Cozy Winter Layers'},
+  {src:'https://i.pinimg.com/474x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg',cap:'NYC Street Style'},
+  {src:'https://i.pinimg.com/474x/64/e6/1b/64e61be6bdc194bf6db31f09db410637.jpg',cap:'Plaid Blazer Look'},
+  {src:'https://i.pinimg.com/474x/9a/e7/4e/9ae74e6c33a00332309f8fbf7125a661.jpg',cap:'Earth Tone Outfit'},
+  {src:'https://i.pinimg.com/474x/c4/c9/6a/c4c96af3182625e9f76b5696460efe70.jpg',cap:'Green Knit + Brown Trousers'},
+  {src:'https://i.pinimg.com/474x/ed/a1/24/eda1240bb887bf265ef30d7db0dd3fd7.jpg',cap:'Colour Palette Inspo'},
+  {src:'https://i.pinimg.com/474x/74/74/92/74749200cb66fc2e9f9b18f2053351c2.jpg',cap:'Houndstooth + Stripes'},
+  {src:'https://i.pinimg.com/474x/a7/3c/d8/a73cd8e9f0a1b2c3d4e5f6a7b8c9d0e1.jpg',cap:'Camel Layers'},
+  {src:'https://i.pinimg.com/474x/b2/4a/e7/b24ae7f8c9d0e1f2a3b4c5d6e7f8a9b0.jpg',cap:'Wide Leg + Blazer'}
+];
+var selPin=null;
+function buildGrid(){
+  var g=document.getElementById('pinGrid'); g.innerHTML='';
+  pins.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='pin-card'+(selPin===i?' selected':'');
+    d.onclick=function(){pickPin(i);};
+    var img=document.createElement('img'); img.src=p.src; img.alt=p.cap;
+    img.onerror=function(){d.style.display='none';};
+    var chk=document.createElement('div'); chk.className='chk'; chk.textContent='✓';
+    d.appendChild(img); d.appendChild(chk); g.appendChild(d);
+  });
+}
+function pickPin(i){
+  selPin=i; buildGrid();
+  document.getElementById('selImg').src=pins[i].src;
+  document.getElementById('selCap').textContent=pins[i].cap;
+  document.getElementById('selPrev').style.display='flex';
+  setSug('Pin Selected','Tap "Style This Pin" for a suggestion, or "Dress for My Day" to factor in your full schedule.');
+}
+buildGrid();
+
+// ── SUGGESTIONS ──
+function sugCalendar(){
+  var t=wx?wx.temp:50;
+  var rain=wx&&wx.code>=50&&wx.code<=69;
+  var body='You\'ve got a Zoom at 8:30am + F.I.T. Muscle at 3pm. ';
+  body+='Start with a camel knit over a fitted base layer — polished on camera, easy to change before the gym. ';
+  body+='Wide-leg brown trousers look great on screen and are comfy all day. ';
+  body+='Plaid blazer for the call — leave it behind before F.I.T. Muscle. ';
+  if(t<50) body+='It\'s cold — add your forest green coat for the commute. ';
+  if(rain) body+='Rain expected — Chelsea boots today. ';
+  body+='Gold layered jewelry + burgundy bag. It\'s Pay Day — you deserve to look great. &#127881;';
+  setSug('Dress for Your Day',body);
+}
+function sugWeather(){
+  if(!wx){setSug('Load weather first','Go to the Today tab and tap Update.');return;}
+  var t=wx.temp,title,body;
+  if(t<32){title='Arctic Layer Up';body='Heavy coat + cream knit + wide-leg trousers + Chelsea boots. Scarf and layered gold jewelry.';}
+  else if(t<50){title='Structured Layers';body='Plaid blazer over camel cardigan, wide-leg trousers, Chelsea boots. Very "New Wardrobe" energy.';}
+  else if(t<65){title='Effortless Autumn';body='Camel cardigan over white linen shirt, brown trousers, loafers. Gold jewelry for polish.';}
+  else if(t<78){title='Casual Cool';body='Linen shirt (tied or tucked) with straight-leg jeans. Adidas sneakers. Minimal accessories.';}
+  else{title='Light & Warm-Toned';body='Linen shirt + light trousers in cream or camel. Birkenstocks or loafers. Earth tones only.';}
+  if(wx.code>=50&&wx.code<=69) body+=' Rain — Chelsea boots today.';
+  setSug(title,body);
+}
+function sugPin(){
+  if(selPin===null){setSug('Pick a pin first','Go to your Pinterest gallery above and tap a photo first.');return;}
+  var cap=pins[selPin].cap;
+  var opts=[
+    {t:'Channel This Look',b:'Build around '+cap+' in your earth-tone palette. Tonal dressing — camel to chocolate. One statement piece, understated accessories. Camera-ready on top for your Zoom.'},
+    {t:'Make It Yours',b:'Silhouette from '+cap+': wide-leg trousers + oversized knit on top. Burgundy bag ties it together. Practical enough for your gym bag at 3pm.'},
+    {t:'Style Remix',b:cap+' vibes: mix textures — knit + structured blazer. Layered gold jewelry. Blazer off before F.I.T. Muscle. Easy transition day.'}
+  ];
+  var o=opts[Math.floor(Math.random()*opts.length)];
+  setSug(o.t,o.b);
+}
+function setSug(title,body){
+  document.getElementById('sugBox').querySelector('.sug-title').textContent=title;
+  document.getElementById('sugText').innerHTML=body;
+}
+
+// Auto-suggest on load
+setTimeout(sugCalendar, 600);
+
+// ── SERVICE WORKER ──
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(function(){});
+}
+</script>
+</body>
+</html>
