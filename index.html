@@ -474,29 +474,53 @@
 // DATA â Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Lily", type: "allday", detail: "" },
-  { time: "All Day", name: "Glass Pickup", type: "allday", detail: "" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "meeting", detail: "Zoom" },
-  { time: "10:30 AM", name: "Project GATSBY - Weekly Catch-up", type: "meeting", detail: "Zoom w/ Jason Bowden (Nolet)" },
-  { time: "11:30 AM", name: "Roof", type: "call", detail: "" },
-  { time: "12:30 PM", name: "Call with Tom Irlbeck", type: "call", detail: "Lamar - 913-207-0592" },
-  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "meeting", detail: "Microsoft Teams - Dippin/ICEE" },
-  { time: "2:30 PM", name: "Shannon", type: "call", detail: "" }
+  { time: "All Day", name: "Cindy- Maybe PTO", type: "allday", detail: "Out of Office" },
+  { time: "8:00 AM", name: "Reminder - Request Missing Invoices", type: "meeting", detail: "Team-wide" },
+  { time: "8:30 AM", name: "Meeting - Cindy/Chante/Brandon", type: "meeting", detail: "The Bird KC" },
+  { time: "9:30 AM", name: "St. Paul's Tour - Isabella", type: "call", detail: "4041 Main St, KC" },
+  { time: "11:30 AM", name: "Shelby", type: "call", detail: "" },
+  { time: "1:30 PM", name: "Sion 1st Grade Tour - Isabella", type: "call", detail: "3823 Locust St, KC" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "meeting", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI", status: "today" },
+  { name: "Kazoo AMEX- pull EXTEND report", status: "today" },
   { name: "Volunteering", status: "today" },
+  { name: "Reconciliations", status: "today" },
+  { name: "Deposit Checks", status: "today" },
   { name: "Enter All Receipts", status: "today" },
-  { name: "Alarm System", status: "today" },
-  { name: "School Tour Prep", status: "today" },
-  { name: "App", status: "today" },
-  { name: "Rent", status: "today" }
+  { name: "Tax letters?", status: "today" },
+  { name: "Luxury Tax", status: "today" },
+  { name: "Mom- items for Mtg", status: "today" },
+  { name: "Order Year Books", status: "today" },
+  { name: "Pool tiles", status: "today" },
+  { name: "Post vacay", status: "today" },
+  { name: "Nova appt", status: "today" },
+  { name: "Wash car", status: "today" },
+  { name: "Research New Phones", status: "today" },
+  { name: "401k. Beneficiaries", status: "today" },
+  { name: "Projections", status: "today" },
+  { name: "Airbnb Money", status: "today" }
 ];
 
-const TASKS_OVERDUE = [];
+const TASKS_OVERDUE = [
+  { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
+  { name: "Vespa", date: "Apr 25, 2025" },
+  { name: "Personal To Dos", date: "May 21, 2025" },
+  { name: "Connect Matt's Calendar", date: "Jun 14, 2025" },
+  { name: "Life Insurance", date: "Aug 5, 2025" },
+  { name: "Art book", date: "Jan 18" },
+  { name: "Hair videos", date: "Jan 18" },
+  { name: "Clean up Computer", date: "Jan 18" },
+  { name: "Building To Dos", date: "Jan 22" },
+  { name: "Wbe", date: "Jan 22" },
+  { name: "Video Tapes", date: "Feb 7" },
+  { name: "50th", date: "Feb 7" },
+  { name: "Abby Review", date: "Feb 19" },
+  { name: "Enter All Receipts", date: "Yesterday" }
+];
 
-const DATA_REFRESH_TIME = "2026-04-13T07:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-04-14T08:30:00-05:00";
 
 // ============================================================
 // PINTEREST OUTFIT DATA â Categorized from your board
