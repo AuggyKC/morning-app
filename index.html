@@ -497,73 +497,103 @@ const TASKS_TODAY = [
   { name: "Reconciliations", status: "today" }
 ];
 
-const TASKS_OVERDUE = [
-  { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
-  { name: "Vespa", date: "Apr 25, 2025" },
-  { name: "Personal To Dos", date: "May 21, 2025" },
-  { name: "Connect Matt's Calendar", date: "Jun 14, 2025" },
-  { name: "Life Insurance", date: "Aug 5, 2025" },
-  { name: "Art book", date: "Jan 18" },
-  { name: "Hair videos", date: "Jan 18" },
-  { name: "Clean up Computer", date: "Jan 18" },
-  { name: "Building To Dos", date: "Jan 22" },
-  { name: "Wbe", date: "Jan 22" },
-  { name: "Video Tapes", date: "Feb 7" },
-  { name: "50th", date: "Feb 7" },
-  { name: "Abby Review", date: "Feb 19" },
-  { name: "Post vacay", date: "Apr 14" },
-  { name: "Research New Phones", date: "Apr 14" },
-  { name: "Raises", date: "Apr 15" },
-  { name: "Enter All Receipts", date: "Apr 15" }
-];
 
 const DATA_REFRESH_TIME = "2026-04-16T06:00:00-05:00";
 
 // ============================================================
-// PINTEREST OUTFIT DATA â Categorized from your board
+// PINTEREST OUTFIT DATA â Scraped fresh from your board
+// Updated: 2026-04-16 from https://www.pinterest.com/auggy/new-wardrobe/
 // ============================================================
-const OUTFITS = {
-  cold_professional: [
-    { src: "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg", label: "NYC Winter Chic - Structured layers with boots" },
-    { src: "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg", label: "Sweater Vest Layering - Timeless & polished" },
-    { src: "https://i.pinimg.com/736x/ed/a1/24/eda1240bb887bf265ef30d7db0dd3fd7.jpg", label: "Camel Overcoat with Jeans - Classic & warm" },
-    { src: "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg", label: "Comfy Winter Layers - Cozy meets professional" }
-  ],
-  cold_casual: [
-    { src: "https://i.pinimg.com/736x/ca/bf/5a/cabf5a642b29f6a0a24d47b474bdec1a.jpg", label: "Green Track Pants & Denim Jacket - Weekend ease" },
-    { src: "https://i.pinimg.com/736x/b5/9e/36/b59e36adc44b33f3140b68e12b31e31b.jpg", label: "Burgundy & Cable Knit - Rich winter textures" },
-    { src: "https://i.pinimg.com/736x/8c/52/a6/8c52a65241f7c6dd29526d35d494b5f5.jpg", label: "Wide Leg Pants & Layers - Easy but styled" },
-    { src: "https://i.pinimg.com/736x/79/ab/51/79ab51e2e5d0b2b0e6314b116f2e1651.jpg", label: "Olive & Burgundy Color Story - Earthy tones" }
-  ],
-  cool_professional: [
-    { src: "https://i.pinimg.com/736x/ed/a1/24/eda1240bb887bf265ef30d7db0dd3fd7.jpg", label: "Long Camel Coat - Polished power look" },
-    { src: "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg", label: "Sweater Vest & Trousers - Smart casual" },
-    { src: "https://i.pinimg.com/736x/46/a8/44/46a844dfb397f08e50e97f4fa63e6eeb.jpg", label: "Houndstooth Blazer & Stripes - Pattern play" },
-    { src: "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg", label: "Structured City Look - Ready for anything" }
-  ],
-  cool_casual: [
-    { src: "https://i.pinimg.com/736x/6e/2e/98/6e2e98c62bd03cbf3eb21370bbbb2056.jpg", label: "Everyday Elegant - Casual but classy" },
-    { src: "https://i.pinimg.com/736x/ca/bf/5a/cabf5a642b29f6a0a24d47b474bdec1a.jpg", label: "Track Pants Vibes - Sporty chic" },
-    { src: "https://i.pinimg.com/736x/16/d3/b9/16d3b920e15e4e858b2f3b9e3f72c0c2.jpg", label: "Relaxed Denim & Blazer - Easy style" },
-    { src: "https://i.pinimg.com/736x/b5/9e/36/b59e36adc44b33f3140b68e12b31e31b.jpg", label: "Cozy Knit Layers - Warm & inviting" }
-  ],
-  warm_professional: [
-    { src: "https://i.pinimg.com/736x/6e/2e/98/6e2e98c62bd03cbf3eb21370bbbb2056.jpg", label: "Light Layers - Breezy & put-together" },
-    { src: "https://i.pinimg.com/736x/46/a8/44/46a844dfb397f08e50e97f4fa63e6eeb.jpg", label: "Plaid Blazer - Lightweight statement" },
-    { src: "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg", label: "Sweater Vest Solo - Classic spring look" }
-  ],
-  warm_casual: [
-    { src: "https://i.pinimg.com/736x/ca/bf/5a/cabf5a642b29f6a0a24d47b474bdec1a.jpg", label: "Green Pants & Light Jacket - Fun spring day" },
-    { src: "https://i.pinimg.com/736x/16/d3/b9/16d3b920e15e4e858b2f3b9e3f72c0c2.jpg", label: "Casual Jeans Look - Simple daily outfit" },
-    { src: "https://i.pinimg.com/736x/6e/2e/98/6e2e98c62bd03cbf3eb21370bbbb2056.jpg", label: "Everyday Inspo - Effortless & chic" }
-  ],
-  rainy: [
-    { src: "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg", label: "Boots & Cozy Layers - Rain-ready style" },
-    { src: "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg", label: "Dark Layers & Boots - Wet weather chic" },
-    { src: "https://i.pinimg.com/736x/b5/9e/36/b59e36adc44b33f3140b68e12b31e31b.jpg", label: "Burgundy Knit & Boots - Rainy day warmth" },
-    { src: "https://i.pinimg.com/736x/ed/a1/24/eda1240bb887bf265ef30d7db0dd3fd7.jpg", label: "Long Coat Protection - Stylish rain shield" }
-  ]
-};
+const ALL_OUTFITS = [
+  "https://i.pinimg.com/736x/47/b6/09/47b609732c26a4c83558dcc278fb13b3.jpg",
+  "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
+  "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
+  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
+  "https://i.pinimg.com/736x/82/4f/2d/824f2dee5108c50340db5f19038d94df.jpg",
+  "https://i.pinimg.com/736x/e5/e4/4a/e5e44a5cfc2abccca3dbb2c0ec3783f4.jpg",
+  "https://i.pinimg.com/736x/e2/fd/38/e2fd3884fd1174307312b135b18e91d8.jpg",
+  "https://i.pinimg.com/736x/7b/f9/96/7bf996b1c55c6e708788626c20955c20.jpg",
+  "https://i.pinimg.com/736x/37/0e/f6/370ef637089286043eac19a0387a760a.jpg",
+  "https://i.pinimg.com/736x/63/01/2e/63012e793eb15a4b35f343f79b5e7f67.jpg",
+  "https://i.pinimg.com/736x/bd/5f/88/bd5f880c555970db224b0d5b8fbe6bf9.jpg",
+  "https://i.pinimg.com/736x/47/8d/4b/478d4b3c09d68053afd22af30d3ab8c3.jpg",
+  "https://i.pinimg.com/736x/13/f9/62/13f96285201202d77e16ca0eceede70b.jpg",
+  "https://i.pinimg.com/736x/83/71/e4/8371e4131b944e1b6c5e8e1aac190d0e.jpg",
+  "https://i.pinimg.com/736x/67/53/f6/6753f6652706f29ee3e5cba9f6d6e48f.jpg",
+  "https://i.pinimg.com/736x/7d/b5/7c/7db57c3130186371b269db4c17e09e2d.jpg",
+  "https://i.pinimg.com/736x/a4/3b/a1/a43ba166dcbe6c750762ef776723de3c.jpg",
+  "https://i.pinimg.com/736x/10/06/84/100684a426d2171260898888b926f98d.jpg",
+  "https://i.pinimg.com/736x/e2/d2/4b/e2d24b4d9853e3ad4c7a26d6fc1a88c9.jpg",
+  "https://i.pinimg.com/736x/c7/8b/cc/c78bcc89c051b3fb9be354a9399fcb1c.jpg",
+  "https://i.pinimg.com/736x/62/30/92/623092772f3d324a0f201b4f12391fa7.jpg",
+  "https://i.pinimg.com/736x/ca/74/26/ca74261a1f3000567ff0c031926f4e4d.jpg",
+  "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
+  "https://i.pinimg.com/736x/a3/34/05/a3340529815db5eeb1395382a6ad59b4.jpg",
+  "https://i.pinimg.com/736x/ba/1e/0d/ba1e0dd54e291a46b85976522666d80d.jpg",
+  "https://i.pinimg.com/736x/7b/8b/01/7b8b0199c344d21cd014ffa6e8ac2f78.jpg",
+  "https://i.pinimg.com/736x/35/23/cd/3523cd75f2479edf57107857da1eabe7.jpg",
+  "https://i.pinimg.com/736x/dd/19/22/dd19226eacb291ea5f17ca153aa81820.jpg",
+  "https://i.pinimg.com/736x/8d/8d/1f/8d8d1f0f17a50d88281f8e832f066dc2.jpg",
+  "https://i.pinimg.com/736x/ce/06/3d/ce063d7164109fe8daeec53bf5412826.jpg",
+  "https://i.pinimg.com/736x/df/ad/89/dfad894020d376ddb498fed4a5a8fbd4.jpg",
+  "https://i.pinimg.com/736x/c2/8e/6f/c28e6f2e6ce4c7e10e3e38b64dcfa7b3.jpg",
+  "https://i.pinimg.com/736x/9c/44/52/9c44529abfbade9f85d39f6bc88f3a12.jpg",
+  "https://i.pinimg.com/736x/2d/d3/8e/2dd38e5dd564984b01896a703fea4c66.jpg",
+  "https://i.pinimg.com/736x/40/33/78/4033787a6c5bc7cb81318daa931a8272.jpg",
+  "https://i.pinimg.com/736x/51/c8/89/51c8896ed3fd6e724d2d1fc7a8cc1b7c.jpg",
+  "https://i.pinimg.com/736x/42/dc/ce/42dccef6afa042f1f862d5a262324945.jpg",
+  "https://i.pinimg.com/736x/a2/d9/9f/a2d99f5220feed21155a6cd18b8dedc1.jpg",
+  "https://i.pinimg.com/736x/ab/bd/86/abbd86c9d80390bc30f5f511c5fe20d5.jpg",
+  "https://i.pinimg.com/736x/2a/dd/a8/2adda8f4a307b7ce3cd9efc86f873b5d.jpg",
+  "https://i.pinimg.com/736x/10/2c/19/102c1913fd956eff618eb2c1e597169b.jpg",
+  "https://i.pinimg.com/736x/87/57/dd/8757dd37fb1f8a3992582b18f2d220e2.jpg",
+  "https://i.pinimg.com/736x/81/0a/ff/810aff12cc20240a0da7bba4f8aa729d.jpg",
+  "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+  "https://i.pinimg.com/736x/07/76/bc/0776bc3890018aa40e74fb0fcdcd319a.jpg",
+  "https://i.pinimg.com/736x/64/37/98/643798a69b5e2b55e5e9f4e6b5c8b2a1.jpg",
+  "https://i.pinimg.com/736x/ca/bf/5a/cabf5a642b29f6a0a24d47b474bdec1a.jpg",
+  "https://i.pinimg.com/736x/8c/52/a6/8c52a65241f7c6dd29526d35d494b5f5.jpg",
+  "https://i.pinimg.com/736x/6e/2e/98/6e2e98c62bd03cbf3eb21370bbbb2056.jpg",
+  "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg",
+  "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg",
+  "https://i.pinimg.com/736x/ed/a1/24/eda1240bb887bf265ef30d7db0dd3fd7.jpg",
+  "https://i.pinimg.com/736x/46/a8/44/46a844dfb397f08e50e97f4fa63e6eeb.jpg",
+  "https://i.pinimg.com/736x/b5/9e/36/b59e36adc44b33f3140b68e12b31e31b.jpg",
+  "https://i.pinimg.com/736x/79/ab/51/79ab51e2e5d0b2b0e6314b116f2e1651.jpg",
+  "https://i.pinimg.com/736x/16/d3/b9/16d3b920e15e4e858b2f3b9e3f72c0c2.jpg",
+  "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg"
+];
+
+// Daily-seeded shuffle: picks a different set of 8 outfits each day
+function dailySeedShuffle(arr) {
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  // Simple seeded PRNG (mulberry32)
+  function mulberry32(a) {
+    return function() {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+  }
+  const rng = mulberry32(seed);
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Get today's outfit selection (8 outfits, different every day)
+function getTodaysOutfits() {
+  const shuffled = dailySeedShuffle(ALL_OUTFITS);
+  return shuffled.slice(0, 8).map((url, i) => ({
+    src: url,
+    label: `Look ${i + 1} from your board`
+  }));
+}
 
 // ============================================================
 // GREETING & DATE
@@ -716,19 +746,6 @@ function renderTasks() {
   });
   html += '</ul>';
 
-  if (TASKS_OVERDUE.length > 0) {
-    html += `<div class="task-section-title">Overdue <span class="task-count-badge">${TASKS_OVERDUE.length}</span></div>`;
-    html += '<ul class="task-list">';
-    TASKS_OVERDUE.forEach(t => {
-      html += `<li class="task-item overdue">
-        <div class="task-checkbox"></div>
-        <span class="task-name">${t.name}</span>
-        <span class="task-date overdue-date">${t.date}</span>
-      </li>`;
-    });
-    html += '</ul>';
-  }
-
   document.getElementById('tasksContent').innerHTML = html;
 }
 
@@ -739,22 +756,8 @@ let selectedCategory = [];
 let spinning = false;
 
 function determineOutfitCategory() {
-  if (!currentWeather) return OUTFITS.cool_professional;
-
-  const temp = currentWeather.current.temperature_2m;
-  const code = currentWeather.current.weather_code;
-  const isRainy = (code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95;
-  const isSnowy = (code >= 71 && code <= 77) || (code >= 85 && code <= 86);
-
-  // Check calendar for meetings â professional
-  const hasMeetings = CALENDAR_DATA.some(e =>
-    e.type === 'meeting' || e.type === 'call'
-  );
-
-  if (isRainy || isSnowy) return OUTFITS.rainy;
-  if (temp < 40) return hasMeetings ? OUTFITS.cold_professional : OUTFITS.cold_casual;
-  if (temp < 60) return hasMeetings ? OUTFITS.cool_professional : OUTFITS.cool_casual;
-  return hasMeetings ? OUTFITS.warm_professional : OUTFITS.warm_casual;
+  // Daily-seeded selection from the full board â fresh every day
+  return getTodaysOutfits();
 }
 
 function getOutfitReasonText() {
@@ -814,7 +817,7 @@ function initOutfitDisplay() {
   strip.style.transform = 'translateX(0px)';
 
   document.getElementById('outfitReason').textContent = getOutfitReasonText();
-  document.getElementById('outfitLabel').innerHTML = 'Hit the button to spin your style wheel!' + '<br>' + getWeatherTag();
+  document.getElementById('outfitLabel').innerHTML = `${selectedCategory.length} fresh looks from your board today!` + '<br>' + getWeatherTag();
 }
 
 function spinRoulette() {
@@ -845,7 +848,7 @@ function spinRoulette() {
     btn.disabled = false;
     btn.innerHTML = '<span class="spinner-icon">&#127922;</span> Spin Again';
     const winner = selectedCategory[winnerIdx];
-    document.getElementById('outfitLabel').innerHTML = winner.label + '<br>' + getWeatherTag();
+    document.getElementById('outfitLabel').innerHTML = `Pinterest inspo #${winnerIdx + 1}` + '<br>' + getWeatherTag();
   }, 3800);
 }
 
