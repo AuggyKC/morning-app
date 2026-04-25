@@ -521,6 +521,21 @@ const DATA_REFRESH_TIME = "2026-04-25T06:32:00-05:00";
 // PINTEREST OUTFIT DATA â Scraped fresh from your board
 // Updated: 2026-04-16 from https://www.pinterest.com/auggy/new-wardrobe/
 // ============================================================
+
+// Pins organized by Pinterest section. Once you organize the board into
+// sections (Cold, Cool, Warm, Hot, Polished, Casual), the scraper fills
+// these arrays. A single pin can live in multiple categories
+// (e.g., a polished cool-weather look). Until sections are populated,
+// the dashboard falls back to ALL_OUTFITS below.
+const OUTFITS_BY_SECTION = {
+  cold: [],      // under 50Â°F
+  cool: [],      // 50â65Â°F
+  warm: [],      // 65â80Â°F
+  hot: [],       // 80Â°F+
+  polished: [],  // meeting/professional looks
+  casual: []     // weekend/relaxed looks
+};
+
 const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/47/b6/09/47b609732c26a4c83558dcc278fb13b3.jpg",
   "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
@@ -603,9 +618,60 @@ function dailySeedShuffle(arr) {
   return shuffled;
 }
 
-// Get today's outfit selection (8 outfits, different every day)
+// ============================================================
+// OUTFIT MATCHING HELPERS
+// ============================================================
+function getWeatherTier(temp) {
+  if (temp < 50) return 'cold';
+  if (temp < 65) return 'cool';
+  if (temp < 80) return 'warm';
+  return 'hot';
+}
+
+function hasLargeTempSwing() {
+  if (!currentWeather) return false;
+  const high = currentWeather.daily.temperature_2m_max[0];
+  const low = currentWeather.daily.temperature_2m_min[0];
+  return (high - low) > 15;
+}
+
+function getOccasion() {
+  // Polished if there's a meeting or call on the calendar; casual otherwise
+  return CALENDAR_DATA.some(e => e.type === 'meeting' || e.type === 'call')
+    ? 'polished'
+    : 'casual';
+}
+
+// Get today's outfit selection (8 outfits, weather + occasion aware)
 function getTodaysOutfits() {
-  const shuffled = dailySeedShuffle(ALL_OUTFITS);
+  // 1. Determine weather tier â pick for the day's HIGH so you're not freezing later
+  let weatherTier = 'warm'; // safe default if weather hasn't loaded
+  if (currentWeather) {
+    const high = currentWeather.daily.temperature_2m_max[0];
+    weatherTier = getWeatherTier(high);
+
+    // 2. Big temp swing? Pull from the transitional tier â easier to layer
+    if (hasLargeTempSwing()) {
+      if (weatherTier === 'cold') weatherTier = 'cool';
+      else if (weatherTier === 'hot') weatherTier = 'warm';
+    }
+  }
+
+  // 3. Determine occasion from the calendar
+  const occasion = getOccasion();
+
+  // 4. Try to match BOTH weather + occasion
+  const weatherPins = OUTFITS_BY_SECTION[weatherTier] || [];
+  const occasionPins = OUTFITS_BY_SECTION[occasion] || [];
+  let matched = weatherPins.filter(url => occasionPins.includes(url));
+
+  // 5. Relax to weather-only if too few intersect
+  if (matched.length < 4) matched = weatherPins;
+
+  // 6. Final fallback: the original flat board (used until you organize sections)
+  if (matched.length < 4) matched = ALL_OUTFITS;
+
+  const shuffled = dailySeedShuffle(matched);
   return shuffled.slice(0, 8).map((url, i) => ({
     src: url,
     label: `Look ${i + 1} from your board`
@@ -780,23 +846,31 @@ function determineOutfitCategory() {
 function getOutfitReasonText() {
   if (!currentWeather) return "Loading weather to match your outfit...";
 
-  const temp = Math.round(currentWeather.current.temperature_2m);
-  const code = currentWeather.current.weather_code;
+  const c = currentWeather.current;
+  const d = currentWeather.daily;
+  const high = Math.round(d.temperature_2m_max[0]);
+  const low = Math.round(d.temperature_2m_min[0]);
+  const code = c.weather_code;
   const isRainy = (code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95;
   const isSnowy = (code >= 71 && code <= 77) || (code >= 85 && code <= 86);
+  const swing = high - low;
 
   const hasMeetings = CALENDAR_DATA.some(e => e.type === 'meeting');
   const meetingNames = CALENDAR_DATA.filter(e => e.type === 'meeting').map(e => e.name);
 
-  let reason = `It's ${temp}Â°F outside`;
-  if (isRainy) reason += " with rain in the forecast";
-  else if (isSnowy) reason += " with snow expected";
+  let reason = `Today's range: ${low}Â° to ${high}Â°`;
+  if (isRainy) reason += " with rain";
+  else if (isSnowy) reason += " with snow";
   reason += ". ";
 
+  if (swing > 15) {
+    reason += `That's a ${swing}Â° swing â layering will be your friend. `;
+  }
+
   if (hasMeetings) {
-    reason += `You've got meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}), so let's keep it polished.`;
+    reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) â pulling from your polished looks.`;
   } else {
-    reason += "No major meetings â feel free to keep it relaxed today.";
+    reason += "No meetings â keeping it relaxed today.";
   }
 
   return reason;
@@ -804,14 +878,18 @@ function getOutfitReasonText() {
 
 function getWeatherTag() {
   if (!currentWeather) return '';
-  const temp = currentWeather.current.temperature_2m;
+  const high = currentWeather.daily.temperature_2m_max[0];
   const code = currentWeather.current.weather_code;
   const isRainy = (code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95;
 
   if (isRainy) return '<span class="weather-match-tag tag-rain">Rain-Ready Pick</span>';
-  if (temp < 40) return '<span class="weather-match-tag tag-cold">Cold Weather Pick</span>';
-  if (temp < 60) return '<span class="weather-match-tag tag-cool">Cool Weather Pick</span>';
-  return '<span class="weather-match-tag tag-warm">Warm Weather Pick</span>';
+  if (hasLargeTempSwing()) return '<span class="weather-match-tag tag-cool">Layering Day Pick</span>';
+
+  const tier = getWeatherTier(high);
+  if (tier === 'cold') return '<span class="weather-match-tag tag-cold">Cold Weather Pick</span>';
+  if (tier === 'cool') return '<span class="weather-match-tag tag-cool">Cool Weather Pick</span>';
+  if (tier === 'warm') return '<span class="weather-match-tag tag-warm">Warm Weather Pick</span>';
+  return '<span class="weather-match-tag tag-warm">Hot Weather Pick</span>';
 }
 
 function initOutfitDisplay() {
