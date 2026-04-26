@@ -524,18 +524,85 @@ const DATA_REFRESH_TIME = "2026-04-26T06:00:00-05:00";
 // Updated: 2026-04-16 from https://www.pinterest.com/auggy/new-wardrobe/
 // ============================================================
 
-// Pins organized by Pinterest section. Once you organize the board into
-// sections (Cold, Cool, Warm, Hot, Polished, Casual), the scraper fills
-// these arrays. A single pin can live in multiple categories
-// (e.g., a polished cool-weather look). Until sections are populated,
-// the dashboard falls back to ALL_OUTFITS below.
+// Pins organized by Pinterest section, scraped 2026-04-25.
+// Edit these arrays when you add new pins to your Pinterest sections.
 const OUTFITS_BY_SECTION = {
-  cold: [],      // under 50Â°F
-  cool: [],      // 50â65Â°F
-  warm: [],      // 65â80Â°F
-  hot: [],       // 80Â°F+
-  polished: [],  // meeting/professional looks
-  casual: []     // weekend/relaxed looks
+  cold: [
+    "https://i.pinimg.com/736x/64/37/98/6437981c8895628d8ed43353b76ac606.jpg",
+    "https://i.pinimg.com/736x/8a/c9/35/8ac9353ff176d33e57a7d153d130b31d.jpg",
+    "https://i.pinimg.com/736x/3a/20/47/3a20476d004e6083c5e87e44e257c07d.jpg",
+    "https://i.pinimg.com/736x/9c/44/52/9c44529abfbade9f85d39f6bc88f3a12.jpg",
+    "https://i.pinimg.com/736x/aa/a8/86/aaa88624f5cbda646bbda9fbe94328f6.jpg",
+    "https://i.pinimg.com/736x/9e/ee/f7/9eeef7c42d2853e396b4481195b2a885.jpg",
+    "https://i.pinimg.com/736x/19/5e/04/195e0482b70564fb099aebec8c8f89fc.jpg",
+    "https://i.pinimg.com/736x/83/71/e4/8371e4131b944e1b6c5e8e1aac190d0e.jpg",
+    "https://i.pinimg.com/736x/6b/eb/ce/6bebce05bf335904b45e46c28d9926f1.jpg",
+    "https://i.pinimg.com/736x/a1/e0/a1/a1e0a1ec6f41becfd7819cfa371e883c.jpg"
+  ],
+  cool: [
+    "https://i.pinimg.com/736x/1c/1f/b6/1c1fb6813b4411cb82a042c388106cd2.jpg",
+    "https://i.pinimg.com/736x/28/73/ff/2873ff8db149edbdeef82d8321e1b6f0.jpg",
+    "https://i.pinimg.com/736x/40/33/78/4033787a6c5bc7cb81318daa931a8272.jpg",
+    "https://i.pinimg.com/736x/dd/0f/00/dd0f005d7b58e8d9bbfd5031a9a4f96d.jpg",
+    "https://i.pinimg.com/736x/35/23/cd/3523cd75f2479edf57107857da1eabe7.jpg",
+    "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
+    "https://i.pinimg.com/736x/49/84/24/498424c9e0f9ea534280f10a70da8d3c.jpg",
+    "https://i.pinimg.com/736x/f5/42/2a/f5422aac4c15dcadd37f1644d90c7a6f.jpg",
+    "https://i.pinimg.com/736x/67/c2/fb/67c2fbf1a08bd0a2ccbef0516293030f.jpg",
+    "https://i.pinimg.com/736x/47/b6/09/47b609732c26a4c83558dcc278fb13b3.jpg",
+    "https://i.pinimg.com/736x/9a/e7/4e/9ae74e6c33a00332309f8fbf7125a661.jpg",
+    "https://i.pinimg.com/736x/6e/2e/98/6e2e98c62bd03cbf3eb21370bbbb2056.jpg",
+    "https://i.pinimg.com/736x/8c/52/a6/8c52a65241f7c6dd29526d35d494b5f5.jpg",
+    "https://i.pinimg.com/736x/ca/bf/5a/cabf5a642b29f6a0a24d47b474bdec1a.jpg"
+  ],
+  warm: [
+    "https://i.pinimg.com/736x/a3/e5/e5/a3e5e5d77b683c8210b41d3da4bf0345.jpg",
+    "https://i.pinimg.com/736x/92/d8/a5/92d8a535dfd8f3c3f1c37cfce779dfdd.jpg",
+    "https://i.pinimg.com/736x/2d/d3/8e/2dd38e5dd564984b01896a703fea4c66.jpg",
+    "https://i.pinimg.com/736x/81/0a/ff/810aff12cc20240a0da7bba4f8aa729d.jpg",
+    "https://i.pinimg.com/736x/30/36/9e/30369edcc073c685a1a71be1ba869b9d.jpg",
+    "https://i.pinimg.com/736x/70/17/10/70171021e2ae2f76ca1cec6f89775817.jpg",
+    "https://i.pinimg.com/736x/28/c9/b3/28c9b3b946bdeaeb13bf5008edb672e7.jpg",
+    "https://i.pinimg.com/736x/67/53/f6/6753f6652706f29ee3e5cba9f6d6e48f.jpg",
+    "https://i.pinimg.com/736x/dd/19/22/dd19226eacb291ea5f17ca153aa81820.jpg",
+    "https://i.pinimg.com/736x/e2/d2/4b/e2d24b4d9853e3ad4c7a26d6fc1a88c9.jpg",
+    "https://i.pinimg.com/736x/f1/f3/4a/f1f34af82ca16f0175e442acf5ab7a3a.jpg"
+  ],
+  hot: [
+    "https://i.pinimg.com/736x/af/3e/52/af3e52f95d30657a44ba42bcf1ece615.jpg",
+    "https://i.pinimg.com/736x/01/00/9d/01009d81a2b79963c871b9dc61e6573e.jpg",
+    "https://i.pinimg.com/736x/b2/d9/19/b2d9197496774e80590ec3315644d398.jpg",
+    "https://i.pinimg.com/736x/48/02/8d/48028dda52bdf708229eb083a6363c3c.jpg",
+    "https://i.pinimg.com/736x/c2/8e/6f/c28e6fd1884d814c0bce89f878629165.jpg",
+    "https://i.pinimg.com/736x/62/30/92/623092772f3d324a0f201b4f12391fa7.jpg",
+    "https://i.pinimg.com/736x/e2/ba/ba/e2baba9c434dea006b2f1bb08fc5bb3c.jpg",
+    "https://i.pinimg.com/736x/13/f9/62/13f96285201202d77e16ca0eceede70b.jpg"
+  ],
+  polished: [
+    "https://i.pinimg.com/736x/98/ef/ef/98efef6ecf85812567e243d819489f57.jpg",
+    "https://i.pinimg.com/736x/63/01/2e/63012e793eb15a4b35f343f79b5e7f67.jpg",
+    "https://i.pinimg.com/736x/8e/13/26/8e1326df737d85c6a2eee97f093ca5ea.jpg",
+    "https://i.pinimg.com/736x/37/0e/f6/370ef637089286043eac19a0387a760a.jpg",
+    "https://i.pinimg.com/736x/e2/fd/38/e2fd3884fd1174307312b135b18e91d8.jpg",
+    "https://i.pinimg.com/736x/c4/c9/6a/c4c96af3182625e9f76b5696460efe70.jpg",
+    "https://i.pinimg.com/736x/e2/1f/05/e21f0539d9dc8f96c219dada0d012471.jpg",
+    "https://i.pinimg.com/736x/bd/5f/88/bd5f880c555970db224b0d5b8fbe6bf9.jpg",
+    "https://i.pinimg.com/736x/47/8d/4b/478d4b3c09d68053afd22af30d3ab8c3.jpg",
+    "https://i.pinimg.com/736x/64/e6/1b/64e61be6bdc194bf6db31f09db410637.jpg",
+    "https://i.pinimg.com/736x/74/74/92/74749200cb66fc2e9f9b18f2053351c2.jpg",
+    "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg"
+  ],
+  casual: [
+    "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
+    "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
+    "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
+    "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
+    "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+    "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
+    "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
+    "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
+    "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg"
+  ]
 };
 
 const ALL_OUTFITS = [
