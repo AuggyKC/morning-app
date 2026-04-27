@@ -474,10 +474,29 @@
 // DATA â Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
+  { time: "All Day", name: "Lily", type: "allday", detail: "" },
+  { time: "8:30 AM", name: "Reminder: Get CARs to Jami before billing cycle on the 1st", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Coffee- Mike Malone", type: "meeting", detail: "Chez Elle CrÃªperie and Coffee house" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" },
+  { time: "3:30 PM", name: "Sassafras/Kazoo Weekly Dippin Dots Touchbase", type: "call", detail: "Microsoft Teams" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Sack lunches", status: "today" },
+  { name: "Maids", status: "today" },
+  { name: "AI", status: "today" },
+  { name: "Starlight", status: "today" },
+  { name: "Ballet", status: "today" },
+  { name: "Vendor Invoices", status: "today" },
+  { name: "Reconciliations", status: "today" },
+  { name: "Payroll- Whiskey/ Kazoo", status: "today" },
+  { name: "Call Ron", status: "today" },
+  { name: "SKC Radio", status: "today" },
+  { name: "lily", status: "today" },
+  { name: "Pool tiles", status: "today" },
+  { name: "Post vacay", status: "today" },
+  { name: "Enter All Receipts", status: "today" },
+  { name: "Google Invoice", status: "today" },
   { name: "Gunner and Izzy Activities", status: "today" },
   { name: "Water House Plants", status: "today" }
 ];
@@ -495,29 +514,11 @@ const TASKS_OVERDUE = [
   { name: "Wbe", date: "Jan 22" },
   { name: "Video Tapes", date: "Feb 7" },
   { name: "50th", date: "Feb 7" },
-  { name: "Abby Review", date: "Feb 19" },
-  { name: "Reconciliations", date: "Apr 16" },
-  { name: "Post vacay", date: "Apr 16" },
-  { name: "Siphox", date: "Apr 16" },
-  { name: "Research New Phones", date: "Apr 16" },
-  { name: "Website", date: "Apr 16" },
-  { name: "Spanish Lesson", date: "Apr 17" },
-  { name: "Cr trip", date: "Apr 17" },
-  { name: "Rent", date: "Apr 17" },
-  { name: "FIFA Plan", date: "Apr 19" },
-  { name: "Wash car", date: "Apr 19" },
-  { name: "Starlight", date: "Apr 24" },
-  { name: "Checkbooks", date: "Apr 24" },
-  { name: "lily", date: "Apr 24" },
-  { name: "Pool tiles", date: "Apr 24" },
-  { name: "Costa Rica", date: "Apr 24" },
-  { name: "Enter All Receipts", date: "Apr 24" },
-  { name: "Kids Activities-", date: "Apr 25" },
-  { name: "Menu", date: "Apr 25" }
+  { name: "Abby Review", date: "Feb 19" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-04-26T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-04-27T06:00:00-05:00";
 
 // ============================================================
 // PINTEREST OUTFIT DATA â Scraped fresh from your board
@@ -704,8 +705,34 @@ function hasLargeTempSwing() {
   return (high - low) > 15;
 }
 
+// Sports / kids-activity keywords â events matching these don't trigger "polished"
+// on the weekend. Edit this list to fine-tune what counts as a casual-day event.
+const SPORTS_KEYWORDS = [
+  'game', 'practice', 'tournament', 'meet', 'match', 'scrimmage',
+  'soccer', 'football', 'baseball', 'basketball', 'hockey', 'volleyball',
+  'lacrosse', 'tennis', 'golf', 'track', 'cross country', 'race', 'run',
+  'swim', 'swimming', 'gymnastics', 'dance class', 'fifa', 'sport',
+  'gunner', 'isabella', 'izzy'  // names from kids' calendar items
+];
+
+function isSportsEvent(ev) {
+  const text = ((ev.name || '') + ' ' + (ev.detail || '')).toLowerCase();
+  return SPORTS_KEYWORDS.some(kw => text.includes(kw));
+}
+
+function isWeekend() {
+  const day = new Date().getDay();
+  return day === 0 || day === 6; // Sunday or Saturday
+}
+
 function getOccasion() {
-  // Polished if there's a meeting or call on the calendar; casual otherwise
+  // Weekend rule (Cindy's preference): casual by default, unless there's a
+  // non-sports event on the calendar (then go polished).
+  if (isWeekend()) {
+    const hasNonSportsEvent = CALENDAR_DATA.some(ev => !isSportsEvent(ev));
+    return hasNonSportsEvent ? 'polished' : 'casual';
+  }
+  // Weekday rule: polished if there's a meeting or call; casual otherwise.
   return CALENDAR_DATA.some(e => e.type === 'meeting' || e.type === 'call')
     ? 'polished'
     : 'casual';
@@ -926,6 +953,9 @@ function getOutfitReasonText() {
 
   const hasMeetings = CALENDAR_DATA.some(e => e.type === 'meeting');
   const meetingNames = CALENDAR_DATA.filter(e => e.type === 'meeting').map(e => e.name);
+  const weekend = isWeekend();
+  const occasion = getOccasion();
+  const sportsOnly = weekend && CALENDAR_DATA.length > 0 && CALENDAR_DATA.every(isSportsEvent);
 
   let reason = `Today's range: ${low}Â° to ${high}Â°`;
   if (isRainy) reason += " with rain";
@@ -936,8 +966,16 @@ function getOutfitReasonText() {
     reason += `That's a ${swing}Â° swing â layering will be your friend. `;
   }
 
-  if (hasMeetings) {
-    reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) â pulling from your polished looks.`;
+  if (weekend && occasion === 'casual') {
+    reason += sportsOnly
+      ? "Weekend mode â sports/kids stuff only on the calendar, so leaning casual."
+      : "Weekend mode â keeping it casual.";
+  } else if (occasion === 'polished') {
+    if (hasMeetings) {
+      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) â pulling from your polished looks.`;
+    } else {
+      reason += "Something on the calendar today â pulling from your polished looks.";
+    }
   } else {
     reason += "No meetings â keeping it relaxed today.";
   }
