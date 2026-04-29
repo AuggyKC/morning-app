@@ -474,26 +474,30 @@
 // DATA â Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:00 AM", name: "REMINDER: All invoices should be entered and matched from previous month", type: "meeting", detail: "" },
-  { time: "9:00 AM", name: "Kazoo + Claude Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "12:30 PM", name: "LWVKC Board Meeting", type: "call", detail: "Zoom" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Zoom" }
+  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "" },
+  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
+  { time: "11:00 AM", name: "SKC | DPF | TOTW - Touchbase", type: "call", detail: "Google Meet (Declined)" }
 ];
 
 const TASKS_TODAY = [
+  { name: "AI", status: "today" },
+  { name: "FIFA Plan", status: "today" },
   { name: "Starlight", status: "today" },
-  { name: "Reconciliations", status: "today" },
-  { name: "Deposit Checks", status: "today" },
   { name: "Payroll- Whiskey/ Kazoo", status: "today" },
-  { name: "Checkbooks", status: "today" },
-  { name: "St. Paul's paperwork", status: "today" },
-  { name: "Billing Statements", status: "today" },
-  { name: "Costa Rica", status: "today" },
-  { name: "Move Money Amongst Accounts", status: "today" },
-  { name: "Put Out Dumpster", status: "today" },
-  { name: "Process Maids Invoices", status: "today" },
-  { name: "Rent", status: "today" }
+  { name: "Cary list", status: "today" },
+  { name: "PIEA", status: "today" },
+  { name: "Move Bennington", status: "today" },
+  { name: "EOKC", status: "today" },
+  { name: "Cancel Personal Claude", status: "today" },
+  { name: "Call Ron", status: "today" },
+  { name: "Siphox", status: "today" },
+  { name: "Wash car", status: "today" },
+  { name: "Spanish Lesson", status: "today" },
+  { name: "Cr trip", status: "today" },
+  { name: "Projections", status: "today" },
+  { name: "Website", status: "today" },
+  { name: "Pills", status: "today" },
+  { name: "Pay Discover", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
@@ -510,11 +514,14 @@ const TASKS_OVERDUE = [
   { name: "Video Tapes", date: "Feb 7" },
   { name: "50th", date: "Feb 7" },
   { name: "Abby Review", date: "Feb 19" },
-  { name: "Water House Plants", date: "Apr 26" }
+  { name: "Water House Plants", date: "Apr 26" },
+  { name: "NKC Health Boards", date: "Yesterday" },
+  { name: "Reconciliations", date: "Yesterday" },
+  { name: "Checkbooks", date: "Yesterday" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-04-28T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-04-29T06:00:00-05:00";
 
 // ============================================================
 // PINTEREST OUTFIT DATA â Scraped fresh from your board
