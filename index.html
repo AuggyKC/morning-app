@@ -473,11 +473,23 @@
 // ============================================================
 // DATA â Updated by scheduled task each morning
 // ============================================================
-const CALENDAR_DATA = [];
+const CALENDAR_DATA = [
+  { time: "All Day", name: "The Maids", type: "allday", detail: "House cleaning service" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" },
+  { time: "3:30 PM", name: "Sassafras/Kazoo Weekly Dippin Dots Touchbase", type: "call", detail: "Microsoft Teams" }
+];
 
 const TASKS_TODAY = [
-  { name: "Sack lunches", status: "today" },
-  { name: "Gunner and Izzy Activities", status: "today" }
+  { name: "Maids", status: "today" },
+  { name: "AI", status: "today" },
+  { name: "Starlight", status: "today" },
+  { name: "Ballet", status: "today" },
+  { name: "PIEA", status: "today" },
+  { name: "401k. Beneficiaries", status: "today" },
+  { name: "Cr trip", status: "today" },
+  { name: "Enter All Receipts", status: "today" },
+  { name: "Rent", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
@@ -517,7 +529,7 @@ const TASKS_OVERDUE = [
 ];
 
 
-const DATA_REFRESH_TIME = "2026-05-03T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-05-04T05:15:38-05:00";
 
 // ============================================================
 // PINTEREST OUTFIT DATA â Scraped fresh from your board
