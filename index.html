@@ -474,38 +474,41 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Previous Month's Vendor Invoices Due", type: "allday", detail: "Monthly reminder" }
+  { time: "7:45 AM", name: "Maids - Red Star", type: "meeting", detail: "Cleaning service" },
+  { time: "8:00 AM", name: "AMEX Receipts / Screenshots to Cindy", type: "meeting", detail: "Team reminder" },
+  { time: "9:00 AM", name: "Maids - Home", type: "meeting", detail: "Cleaning service" },
+  { time: "9:00 AM", name: "Sprinkler Repair", type: "meeting", detail: "Home appointment" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "11:00 AM", name: "Whiskey & Kazoo Internal Sync", type: "meeting", detail: "Google Meet" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" }
 ];
 
 const TASKS_TODAY = [
+  { name: "NKC Health Boards", status: "today" },
+  { name: "Maids", status: "today" },
+  { name: "Reconciliations", status: "today" },
+  { name: "Checkbooks", status: "today" },
+  { name: "Ask Ms Patty about watching kids for Soccer", status: "today" },
   { name: "Check Invoices- Inv Sheet", status: "today" },
+  { name: "Grundfos Credits", status: "today" },
+  { name: "Umb taxes", status: "today" },
   { name: "Cary Prep", status: "today" },
-  { name: "Water House Plants", status: "today" },
-  { name: "Menu", status: "today" }
+  { name: "DART", status: "today" },
+  { name: "Gunner BB", status: "today" },
+  { name: "Hemingway Monthly Invoice", status: "today" },
+  { name: "Rent", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
-  { name: "Kays", date: "Yesterday" },
-  { name: "Returns", date: "Yesterday" },
-  { name: "Donations", date: "Yesterday" },
-  { name: "Pay dogs", date: "Yesterday" },
   { name: "Post social", date: "Yesterday" },
+  { name: "Pay dogs", date: "Yesterday" },
+  { name: "Car email", date: "Yesterday" },
+  { name: "Spanish Lesson", date: "Yesterday" },
+  { name: "Gunner and Izzy Activities", date: "Yesterday" },
+  { name: "Water House Plants", date: "Yesterday" },
+  { name: "Menu", date: "Yesterday" },
   { name: "RS Water Plants", date: "May 29" },
-  { name: "Melanie $20 for Rita", date: "May 29" },
-  { name: "United refund", date: "May 29" },
-  { name: "Chip in to block party", date: "May 29" },
-  { name: "Grundfos Credits", date: "May 28" },
   { name: "Luxury Tax- CR", date: "May 25" },
-  { name: "Ms Patty plans", date: "May 25" },
-  { name: "Spanish Lesson", date: "May 24" },
-  { name: "Rent", date: "May 23" },
-  { name: "Enter All Receipts", date: "May 23" },
-  { name: "Mattie Rhodes / Camps", date: "May 23" },
-  { name: "Car email", date: "May 23" },
-  { name: "Umb taxes", date: "May 23" },
-  { name: "Reconciliations", date: "May 23" },
-  { name: "Kids Activities-", date: "May 16" },
-  { name: "Gunner and Izzy Activities", date: "May 16" },
   { name: "Abby Review", date: "Feb 19" },
   { name: "50th", date: "Feb 7" },
   { name: "Video Tapes", date: "Feb 7" },
@@ -522,7 +525,7 @@ const TASKS_OVERDUE = [
 ];
 
 
-const DATA_REFRESH_TIME = "2026-05-31T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-06-01T06:10:00-05:00";
 
 // ============================================================
 // PINTEREST OUTFIT DATA — Scraped fresh from your board
