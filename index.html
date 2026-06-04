@@ -471,40 +471,42 @@
 
 <script>
 // ============================================================
-// DATA — Updated by scheduled task each morning
+// DATA â Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "Work from home" },
-  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "Put out dumpster" },
-  { time: "11:00 AM", name: "Kazoo at SKC", type: "meeting", detail: "Sporting KC · Google Meet" },
-  { time: "5:00 PM", name: "Hamburger Mary's Fundraiser", type: "meeting", detail: "5:00–9:00 PM" }
+  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "With Ashlee Â· 8:30â9:00 AM" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom Â· 9:00â9:30 AM" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "3:45â4:00 PM" }
 ];
 
 const TASKS_TODAY = [
+  { name: "Siphox", status: "today" },
+  { name: "FIFA Plan", status: "today" },
   { name: "Starlight", status: "today" },
-  { name: "Deposit Checks", status: "today" },
-  { name: "Call UMB", status: "today" },
-  { name: "zoo pass for Ms. Patty", status: "today" },
-  { name: "Post social", status: "today" },
-  { name: "United refund", status: "today" },
-  { name: "Donations", status: "today" },
-  { name: "Returns", status: "today" },
-  { name: "Kays", status: "today" },
-  { name: "Billing Statements", status: "today" },
-  { name: "Pills", status: "today" },
-  { name: "Costa Rica", status: "today" },
-  { name: "Move Money Amongst Accounts", status: "today" }
+  { name: "Ballet", status: "today" },
+  { name: "Vendor Invoices", status: "today" },
+  { name: "Kazoo AMEX- pull EXTEND report", status: "today" },
+  { name: "Reconciliations", status: "today" },
+  { name: "Checkbooks", status: "today" },
+  { name: "Status/ NB", status: "today" },
+  { name: "Sion", status: "today" },
+  { name: "ballet OOH invoice", status: "today" },
+  { name: "Pay bills", status: "today" },
+  { name: "Melanie $20 for Rita", status: "today" },
+  { name: "Pool tiles", status: "today" },
+  { name: "Projections", status: "today" },
+  { name: "Ashlee Status", status: "today" },
+  { name: "Enter All Receipts", status: "today" },
+  { name: "Rent", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
-  { name: "Website", date: "Jun 2" },
+  { name: "Post social", date: "Jun 3" },
   { name: "Research New Phones", date: "Jun 2" },
-  { name: "Sporting Deck", date: "Jun 2" },
+  { name: "Check Invoices- Inv Sheet", date: "Jun 1" },
   { name: "Gunner and Izzy Activities", date: "May 31" },
-  { name: "Spanish Lesson", date: "May 31" },
   { name: "Luxury Tax- CR", date: "May 31" },
   { name: "Car email", date: "May 31" },
-  { name: "RS Water Plants", date: "May 29" },
   { name: "Abby Review", date: "Feb 19" },
   { name: "50th", date: "Feb 7" },
   { name: "Video Tapes", date: "Feb 7" },
@@ -521,10 +523,10 @@ const TASKS_OVERDUE = [
 ];
 
 
-const DATA_REFRESH_TIME = "2026-06-03T05:12:00-05:00";
+const DATA_REFRESH_TIME = "2026-06-04T06:37:00-05:00";
 
 // ============================================================
-// PINTEREST OUTFIT DATA — Scraped fresh from your board
+// PINTEREST OUTFIT DATA â Scraped fresh from your board
 // Updated: 2026-04-16 from https://www.pinterest.com/auggy/new-wardrobe/
 // ============================================================
 
@@ -708,7 +710,7 @@ function hasLargeTempSwing() {
   return (high - low) > 15;
 }
 
-// Sports / kids-activity keywords — events matching these don't trigger "polished"
+// Sports / kids-activity keywords â events matching these don't trigger "polished"
 // on the weekend. Edit this list to fine-tune what counts as a casual-day event.
 const SPORTS_KEYWORDS = [
   'game', 'practice', 'tournament', 'meet', 'match', 'scrimmage',
@@ -728,10 +730,17 @@ function isWeekend() {
   return day === 0 || day === 6; // Sunday or Saturday
 }
 
+// Casual days (Cindy's preference): Friday, Saturday, Sunday pull primarily
+// from the casual/weekend board.
+function isCasualDay() {
+  const day = new Date().getDay();
+  return day === 5 || day === 6 || day === 0; // Friday, Saturday, Sunday
+}
+
 function getOccasion() {
-  // Weekend rule (Cindy's preference): casual by default, unless there's a
-  // non-sports event on the calendar (then go polished).
-  if (isWeekend()) {
+  // Casual-day rule (Cindy's preference): Fri/Sat/Sun are casual by default,
+  // unless there's a non-sports event on the calendar (then go polished).
+  if (isCasualDay()) {
     const hasNonSportsEvent = CALENDAR_DATA.some(ev => !isSportsEvent(ev));
     return hasNonSportsEvent ? 'polished' : 'casual';
   }
@@ -743,13 +752,13 @@ function getOccasion() {
 
 // Get today's outfit selection (8 outfits, weather + occasion aware)
 function getTodaysOutfits() {
-  // 1. Determine weather tier — pick for the day's HIGH so you're not freezing later
+  // 1. Determine weather tier â pick for the day's HIGH so you're not freezing later
   let weatherTier = 'warm'; // safe default if weather hasn't loaded
   if (currentWeather) {
     const high = currentWeather.daily.temperature_2m_max[0];
     weatherTier = getWeatherTier(high);
 
-    // 2. Big temp swing? Pull from the transitional tier — easier to layer
+    // 2. Big temp swing? Pull from the transitional tier â easier to layer
     if (hasLargeTempSwing()) {
       if (weatherTier === 'cold') weatherTier = 'cool';
       else if (weatherTier === 'hot') weatherTier = 'warm';
@@ -798,7 +807,7 @@ function updateGreeting() {
 }
 
 // ============================================================
-// WEATHER (Open-Meteo — free, no API key)
+// WEATHER (Open-Meteo â free, no API key)
 // ============================================================
 let currentWeather = null;
 
@@ -938,7 +947,7 @@ let selectedCategory = [];
 let spinning = false;
 
 function determineOutfitCategory() {
-  // Daily-seeded selection from the full board — fresh every day
+  // Daily-seeded selection from the full board â fresh every day
   return getTodaysOutfits();
 }
 
@@ -956,31 +965,31 @@ function getOutfitReasonText() {
 
   const hasMeetings = CALENDAR_DATA.some(e => e.type === 'meeting');
   const meetingNames = CALENDAR_DATA.filter(e => e.type === 'meeting').map(e => e.name);
-  const weekend = isWeekend();
+  const casualDay = isCasualDay();
   const occasion = getOccasion();
-  const sportsOnly = weekend && CALENDAR_DATA.length > 0 && CALENDAR_DATA.every(isSportsEvent);
+  const sportsOnly = casualDay && CALENDAR_DATA.length > 0 && CALENDAR_DATA.every(isSportsEvent);
 
-  let reason = `Today's range: ${low}° to ${high}°`;
+  let reason = `Today's range: ${low}Â° to ${high}Â°`;
   if (isRainy) reason += " with rain";
   else if (isSnowy) reason += " with snow";
   reason += ". ";
 
   if (swing > 15) {
-    reason += `That's a ${swing}° swing — layering will be your friend. `;
+    reason += `That's a ${swing}Â° swing â layering will be your friend. `;
   }
 
-  if (weekend && occasion === 'casual') {
+  if (casualDay && occasion === 'casual') {
     reason += sportsOnly
-      ? "Weekend mode — sports/kids stuff only on the calendar, so leaning casual."
-      : "Weekend mode — keeping it casual.";
+      ? "Casual day â sports/kids stuff only on the calendar, so leaning casual."
+      : "Casual day â pulling from your weekend/casual board.";
   } else if (occasion === 'polished') {
     if (hasMeetings) {
-      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) — pulling from your polished looks.`;
+      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) â pulling from your polished looks.`;
     } else {
-      reason += "Something on the calendar today — pulling from your polished looks.";
+      reason += "Something on the calendar today â pulling from your polished looks.";
     }
   } else {
-    reason += "No meetings — keeping it relaxed today.";
+    reason += "No meetings â keeping it relaxed today.";
   }
 
   return reason;
