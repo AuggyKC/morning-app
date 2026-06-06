@@ -731,21 +731,46 @@ function isCasualDay() {
   return day === 5 || day === 6 || day === 0; // Friday, Saturday, Sunday
 }
 
+// Social / personal keywords â events matching these are NOT professional
+// meetings, so they don't make the day "polished" even if the calendar happens
+// to tag them as a meeting (e.g. a block party or dinner that got typed as one).
+const NON_WORK_KEYWORDS = [
+  'block party', 'party', 'birthday', 'bday', 'bbq', 'barbecue', 'cookout',
+  'potluck', 'picnic', 'dinner', 'lunch', 'brunch', 'breakfast', 'coffee',
+  'happy hour', 'drinks', 'date night', 'playdate', 'play date', 'sleepover',
+  'hangout', 'get together', 'get-together', 'wedding', 'shower', 'graduation',
+  'recital', 'concert', 'movie', 'vacation', 'holiday', 'church', 'mass',
+  'reunion', 'gathering', 'celebration', 'festival', 'fair'
+];
+
+// "Hold-" / "Hold:" / "Hold " prefixed items are tentative placeholders,
+// not confirmed professional meetings.
+function isTentativeHold(ev) {
+  return /^\s*hold[\s:\-]/i.test(ev.name || '');
+}
+
+function isSocialEvent(ev) {
+  const text = ((ev.name || '') + ' ' + (ev.detail || '')).toLowerCase();
+  return NON_WORK_KEYWORDS.some(kw => text.includes(kw));
+}
+
+// A genuine professional meeting: tagged as a meeting/call AND not a kids'/sports
+// item, a social/personal event, or a tentative hold. Only these flip a day to
+// "polished" â everything else leaves it on the weekend/casual board.
+function isProfessionalMeeting(ev) {
+  if (ev.type !== 'meeting' && ev.type !== 'call') return false;
+  if (isSportsEvent(ev)) return false;
+  if (isSocialEvent(ev)) return false;
+  if (isTentativeHold(ev)) return false;
+  return true;
+}
+
 function getOccasion() {
-  // Casual-day rule (Cindy's preference): Fri/Sat/Sun are casual by default,
-  // unless there's an ACTUAL meeting or call scheduled (then go polished).
-  // Note: only real meetings/calls count â all-day events, reminders,
-  // appointments, and kids'/sports items do NOT flip the day to polished.
-  if (isCasualDay()) {
-    const hasMeeting = CALENDAR_DATA.some(
-      ev => (ev.type === 'meeting' || ev.type === 'call') && !isSportsEvent(ev)
-    );
-    return hasMeeting ? 'polished' : 'casual';
-  }
-  // Weekday rule: polished if there's a meeting or call; casual otherwise.
-  return CALENDAR_DATA.some(e => e.type === 'meeting' || e.type === 'call')
-    ? 'polished'
-    : 'casual';
+  // Polished only when there's a genuine PROFESSIONAL meeting or call on the
+  // calendar. Casual days (Fri/Sat/Sun) otherwise default to the weekend/casual
+  // board, and weekdays without a real meeting stay casual too. Social events,
+  // kids'/sports items, and tentative "Hold-" placeholders never override.
+  return CALENDAR_DATA.some(isProfessionalMeeting) ? 'polished' : 'casual';
 }
 
 // Get today's outfit selection (8 outfits, weather + occasion aware)
