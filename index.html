@@ -797,15 +797,19 @@ function getTodaysOutfits() {
   // 3. Determine occasion from the calendar
   const occasion = getOccasion();
 
-  // 4. Try to match BOTH weather + occasion
+  // 4. Occasion board wins (casual on Fri/Sat/Sun, polished on real meeting days).
+  //    Weather-match WITHIN the occasion board when possible.
   const weatherPins = OUTFITS_BY_SECTION[weatherTier] || [];
   const occasionPins = OUTFITS_BY_SECTION[occasion] || [];
-  let matched = weatherPins.filter(url => occasionPins.includes(url));
+  let matched = occasionPins.filter(url => weatherPins.includes(url));
 
-  // 5. Relax to weather-only if too few intersect
+  // 5. If too few weather-matched looks, use the full occasion board
+  if (matched.length < 4) matched = occasionPins;
+
+  // 6. If the occasion board itself is too small, fall back to weather-only
   if (matched.length < 4) matched = weatherPins;
 
-  // 6. Final fallback: the original flat board (used until you organize sections)
+  // 7. Final fallback: the original flat board (used until sections are organized)
   if (matched.length < 4) matched = ALL_OUTFITS;
 
   const shuffled = dailySeedShuffle(matched);
