@@ -471,31 +471,38 @@
 
 <script>
 // ============================================================
-// DATA â Updated by scheduled task each morning
+// DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:00 AM", name: "Internal Status", type: "meeting", detail: "Zoom • 9:00–9:30 AM" },
-  { time: "12:00 PM", name: "Kazoo/LocaliQ – The Maids Monthly Marketing", type: "meeting", detail: "Microsoft Teams • 12:00–12:30 PM" },
-  { time: "1:30 PM", name: "SKC/Kazoo – Bi-Weekly Touchbase", type: "meeting", detail: "Zoom • 1:30–1:45 PM" },
-  { time: "2:00 PM", name: "Pre-Vacay Touchbase", type: "meeting", detail: "Internal • 2:00–2:30 PM" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "3:45–4:00 PM" }
+  { time: "All Day", name: "Block – Mom/Brothers Weekend", type: "allday", detail: "Jun 12–14" },
+  { time: "All Day", name: "Ms Patty Off", type: "allday", detail: "Out of office today" },
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "meeting", detail: "Zoom • 8:30–10:00 AM" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse • 11:00 AM–12:00 PM" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI", status: "today" },
   { name: "FIFA Plan", status: "today" },
-  { name: "Starlight", status: "today" }
+  { name: "Starlight", status: "today" },
+  { name: "Soccer Acceptance", status: "today" },
+  { name: "Twang gifts", status: "today" },
+  { name: "United refund", status: "today" },
+  { name: "Pool tiles", status: "today" },
+  { name: "Meds", status: "today" },
+  { name: "Volunteering", status: "today" },
+  { name: "Target bill", status: "today" },
+  { name: "Ant Treatment", status: "today" },
+  { name: "RS Water Plants", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
-  { name: "Kazoo AMEX", date: "Jun 10" },
+  { name: "Checkbooks", date: "Jun 11" },
+  { name: "Check Invoices- Inv Sheet", date: "Jun 11" },
   { name: "mini dates", date: "Jun 10" },
   { name: "Post social", date: "Jun 10" },
   { name: "EOKC", date: "Jun 10" },
   { name: "Water House Plants", date: "Jun 7" },
   { name: "YouTube", date: "Jun 5" },
   { name: "Research New Phones", date: "Jun 2" },
-  { name: "Gunner and Izzy Activities", date: "May 31" },
   { name: "Luxury Tax- CR", date: "May 31" },
   { name: "Car email", date: "May 31" },
   { name: "Abby Review", date: "Feb 19" },
@@ -514,10 +521,10 @@ const TASKS_OVERDUE = [
 ];
 
 
-const DATA_REFRESH_TIME = "2026-06-11T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-06-12T06:00:00-05:00";
 
 // ============================================================
-// PINTEREST OUTFIT DATA â Scraped fresh from your board
+// PINTEREST OUTFIT DATA — Scraped fresh from your board
 // Updated: 2026-04-16 from https://www.pinterest.com/auggy/new-wardrobe/
 // ============================================================
 
@@ -701,7 +708,7 @@ function hasLargeTempSwing() {
   return (high - low) > 15;
 }
 
-// Sports / kids-activity keywords â events matching these don't trigger "polished"
+// Sports / kids-activity keywords — events matching these don't trigger "polished"
 // on the weekend. Edit this list to fine-tune what counts as a casual-day event.
 const SPORTS_KEYWORDS = [
   'game', 'practice', 'tournament', 'meet', 'match', 'scrimmage',
@@ -728,7 +735,7 @@ function isCasualDay() {
   return day === 5 || day === 6 || day === 0; // Friday, Saturday, Sunday
 }
 
-// Social / personal keywords â events matching these are NOT professional
+// Social / personal keywords — events matching these are NOT professional
 // meetings, so they don't make the day "polished" even if the calendar happens
 // to tag them as a meeting (e.g. a block party or dinner that got typed as one).
 const NON_WORK_KEYWORDS = [
@@ -753,7 +760,7 @@ function isSocialEvent(ev) {
 
 // A genuine professional meeting: tagged as a meeting/call AND not a kids'/sports
 // item, a social/personal event, or a tentative hold. Only these flip a day to
-// "polished" â everything else leaves it on the weekend/casual board.
+// "polished" — everything else leaves it on the weekend/casual board.
 function isProfessionalMeeting(ev) {
   if (ev.type !== 'meeting' && ev.type !== 'call') return false;
   if (isSportsEvent(ev)) return false;
@@ -772,13 +779,13 @@ function getOccasion() {
 
 // Get today's outfit selection (8 outfits, weather + occasion aware)
 function getTodaysOutfits() {
-  // 1. Determine weather tier â pick for the day's HIGH so you're not freezing later
+  // 1. Determine weather tier — pick for the day's HIGH so you're not freezing later
   let weatherTier = 'warm'; // safe default if weather hasn't loaded
   if (currentWeather) {
     const high = currentWeather.daily.temperature_2m_max[0];
     weatherTier = getWeatherTier(high);
 
-    // 2. Big temp swing? Pull from the transitional tier â easier to layer
+    // 2. Big temp swing? Pull from the transitional tier — easier to layer
     if (hasLargeTempSwing()) {
       if (weatherTier === 'cold') weatherTier = 'cool';
       else if (weatherTier === 'hot') weatherTier = 'warm';
@@ -831,7 +838,7 @@ function updateGreeting() {
 }
 
 // ============================================================
-// WEATHER (Open-Meteo â free, no API key)
+// WEATHER (Open-Meteo — free, no API key)
 // ============================================================
 let currentWeather = null;
 
@@ -971,7 +978,7 @@ let selectedCategory = [];
 let spinning = false;
 
 function determineOutfitCategory() {
-  // Daily-seeded selection from the full board â fresh every day
+  // Daily-seeded selection from the full board — fresh every day
   return getTodaysOutfits();
 }
 
@@ -993,27 +1000,27 @@ function getOutfitReasonText() {
   const occasion = getOccasion();
   const sportsOnly = casualDay && CALENDAR_DATA.length > 0 && CALENDAR_DATA.every(isSportsEvent);
 
-  let reason = `Today's range: ${low}Â° to ${high}Â°`;
+  let reason = `Today's range: ${low}° to ${high}°`;
   if (isRainy) reason += " with rain";
   else if (isSnowy) reason += " with snow";
   reason += ". ";
 
   if (swing > 15) {
-    reason += `That's a ${swing}Â° swing â layering will be your friend. `;
+    reason += `That's a ${swing}° swing — layering will be your friend. `;
   }
 
   if (casualDay && occasion === 'casual') {
     reason += sportsOnly
-      ? "Casual day â sports/kids stuff only on the calendar, so leaning casual."
-      : "Casual day â pulling from your weekend/casual board.";
+      ? "Casual day — sports/kids stuff only on the calendar, so leaning casual."
+      : "Casual day — pulling from your weekend/casual board.";
   } else if (occasion === 'polished') {
     if (hasMeetings) {
-      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) â pulling from your polished looks.`;
+      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) — pulling from your polished looks.`;
     } else {
-      reason += "Something on the calendar today â pulling from your polished looks.";
+      reason += "Something on the calendar today — pulling from your polished looks.";
     }
   } else {
-    reason += "No meetings â keeping it relaxed today.";
+    reason += "No meetings — keeping it relaxed today.";
   }
 
   return reason;
