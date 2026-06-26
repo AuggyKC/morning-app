@@ -76,7 +76,7 @@
     padding: 0 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 24px;
     position: relative;
     z-index: 2;
@@ -112,7 +112,7 @@
   }
 
   /* WEATHER CARD */
-  .weather-card { grid-column: 1; grid-row: 1; }
+  .weather-card { grid-column: 1; grid-row: 2; }
   .weather-icon-bg { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
   .weather-main {
     display: flex;
@@ -170,7 +170,7 @@
   }
 
   /* CALENDAR CARD */
-  .calendar-card { grid-column: 2; grid-row: 1; }
+  .calendar-card { grid-column: 2; grid-row: 2; }
   .cal-icon-bg { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
   .event-list { list-style: none; }
   .event-item {
@@ -212,7 +212,7 @@
   .badge-call { background: #E3F2FD; color: #1565C0; }
 
   /* OUTFIT CARD */
-  .outfit-card { grid-column: 1; grid-row: 2; }
+  .outfit-card { grid-column: 1; grid-row: 3; }
   .outfit-icon-bg { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); }
 
   .roulette-container {
@@ -305,8 +305,40 @@
   .tag-rain { background: #E0F7FA; color: #00695C; }
 
   /* TASKS CARD */
-  .tasks-card { grid-column: 2; grid-row: 2; }
+  .tasks-card { grid-column: 2; grid-row: 3; }
   .tasks-icon-bg { background: linear-gradient(135deg, #EDE7F6, #D1C4E9); }
+
+  /* HOROSCOPE CARD */
+  .horoscope-card { grid-column: 1; grid-row: 1; }
+  .horoscope-icon-bg { background: linear-gradient(135deg, #EDE7F6, #C5CAE9); }
+  .horoscope-sign {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .horoscope-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-dark);
+  }
+  .horoscope-source {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    font-style: italic;
+  }
+
+  /* BIORHYTHM CARD */
+  .biorhythm-card { grid-column: 2; grid-row: 1; }
+  .biorhythm-icon-bg { background: linear-gradient(135deg, #E0F2F1, #B2DFDB); }
+  .bio-chart { width: 100%; height: 132px; display: block; margin-bottom: 14px; }
+  .bio-legend { display: flex; gap: 18px; flex-wrap: wrap; }
+  .bio-chip { display: flex; align-items: center; gap: 7px; font-size: 0.86rem; font-weight: 600; color: var(--deep-brown); }
+  .bio-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .bio-pct { color: var(--text-muted); font-weight: 500; }
   .task-section-title {
     font-size: 0.8rem;
     font-weight: 600;
@@ -383,7 +415,7 @@
     .dashboard {
       grid-template-columns: 1fr;
     }
-    .weather-card, .calendar-card, .outfit-card, .tasks-card {
+    .horoscope-card, .biorhythm-card, .weather-card, .calendar-card, .outfit-card, .tasks-card {
       grid-column: 1;
       grid-row: auto;
     }
@@ -405,6 +437,31 @@
 
 <!-- DASHBOARD GRID -->
 <div class="dashboard">
+
+  <!-- HOROSCOPE -->
+  <div class="card horoscope-card">
+    <div class="card-title">
+      <div class="card-icon horoscope-icon-bg">&#10024;</div>
+      Daily Horoscope
+    </div>
+    <div id="horoscopeContent">
+      <div class="loading-pulse"></div>
+      <div class="loading-pulse" style="width:80%;"></div>
+      <div class="loading-pulse" style="width:60%;"></div>
+    </div>
+  </div>
+
+  <!-- BIORHYTHMS -->
+  <div class="card biorhythm-card">
+    <div class="card-title">
+      <div class="card-icon biorhythm-icon-bg">&#128200;</div>
+      Biorhythms
+    </div>
+    <div id="biorhythmContent">
+      <div class="loading-pulse" style="height:90px;"></div>
+      <div class="loading-pulse" style="width:70%;"></div>
+    </div>
+  </div>
 
   <!-- WEATHER -->
   <div class="card weather-card">
@@ -474,21 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "12:15 PM", name: "Orange Walk", type: "meeting", detail: "" },
-  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" },
-  { time: "All Day", name: "Tunisia Vs. Netherlands", type: "allday", detail: "" }
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse" },
+  { time: "12:00 PM", name: "Nova Groomer", type: "meeting", detail: "" },
+  { time: "1:30 PM", name: "Nails", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI", status: "today" },
-  { name: "Vendor Invoices", status: "today" },
-  { name: "Deposit Checks / Profit Tracking", status: "today" },
-  { name: "Status/ NB", status: "today" },
-  { name: "invoices to rec sheets from AMEX", status: "today" },
-  { name: "Post social", status: "today" },
-  { name: "Enter All Receipts", status: "today" }
+  { name: "Siphox", status: "today" },
+  { name: "Ms Patty Check", status: "today" },
+  { name: "EOKC", status: "today" },
+  { name: "Meds", status: "today" },
+  { name: "Flags/ USA Decor", status: "today" },
+  { name: "Volunteering", status: "today" },
+  { name: "Rent", status: "today" },
+  { name: "RS Water Plants", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
@@ -508,11 +565,21 @@ const TASKS_OVERDUE = [
   { name: "FIFA Plan", date: "Jun 24" },
   { name: "G bday", date: "Jun 24" },
   { name: "Pool tiles/ Goal", date: "Jun 24" },
-  { name: "Research New Phones", date: "Jun 24" }
+  { name: "Research New Phones", date: "Jun 24" },
+  { name: "AI", date: "Jun 25" },
+  { name: "Kstate Social Media Session", date: "Jun 25" },
+  { name: "Post social", date: "Jun 25" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-06-25T05:17:00-05:00";
+const DATA_REFRESH_TIME = "2026-06-26T05:16:00-05:00";
+
+// HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
+const HOROSCOPE_DATE = "June 26, 2026";
+const HOROSCOPE_DATA = "You and your loved ones have come a long way together. We’re approaching the final days of Jupiter in Cancer. But before the planet of luck enters a new sign, let’s review the past year. What types of growth, abundance, or nourishment have you experienced in your relationships? How have you learned to be more open-hearted and trusting? Take a minute to really soak it in. Then celebrate how much stronger your bonds have become.";
+
+// BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
+const BIRTHDATE = "1976-01-14";
 
 // ============================================================
 // PINTEREST OUTFIT DATA — Scraped fresh from your board
@@ -1091,8 +1158,68 @@ function spinRoulette() {
 // ============================================================
 // INIT
 // ============================================================
+// ============================================================
+// HOROSCOPE
+// ============================================================
+function renderHoroscope() {
+  document.getElementById('horoscopeContent').innerHTML = `
+    <div class="horoscope-sign">Capricorn &#9809;</div>
+    <div class="horoscope-text">${HOROSCOPE_DATA}</div>
+    <div class="horoscope-source">CHANI &bull; ${HOROSCOPE_DATE}</div>`;
+}
+
+// ============================================================
+// BIORHYTHMS — Physical (23d), Emotional (28d), Intellectual (33d)
+// ============================================================
+function renderBiorhythms() {
+  const birth = new Date(BIRTHDATE + 'T00:00:00');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const dayMs = 86400000;
+  const d0 = Math.round((today - birth) / dayMs);
+
+  const cycles = [
+    { name: 'Physical',     period: 23, color: '#7A2E3B' },
+    { name: 'Emotional',    period: 28, color: '#6B7B3A' },
+    { name: 'Intellectual', period: 33, color: '#2980B9' }
+  ];
+
+  const W = 520, H = 132, padX = 10, midY = H / 2, amp = H / 2 - 14, range = 14;
+  const xFor = off => padX + ((off + 7) / range) * (W - 2 * padX);
+  const yFor = v => midY - v * amp;
+
+  let paths = '';
+  cycles.forEach(c => {
+    let d = '';
+    for (let off = -7; off <= 7; off += 0.5) {
+      const v = Math.sin(2 * Math.PI * (d0 + off) / c.period);
+      d += (off === -7 ? 'M' : 'L') + xFor(off).toFixed(1) + ' ' + yFor(v).toFixed(1) + ' ';
+    }
+    paths += `<path d="${d}" fill="none" stroke="${c.color}" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>`;
+  });
+
+  const todayX = xFor(0);
+  const svg = `<svg viewBox="0 0 ${W} ${H}" class="bio-chart" preserveAspectRatio="none">
+    <line x1="${padX}" y1="${midY}" x2="${W - padX}" y2="${midY}" stroke="#E8E0D6" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <line x1="${todayX}" y1="6" x2="${todayX}" y2="${H - 6}" stroke="#C9A96E" stroke-width="1.5" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>
+    ${paths}
+  </svg>`;
+
+  const legend = cycles.map(c => {
+    const v = Math.sin(2 * Math.PI * d0 / c.period);
+    const prev = Math.sin(2 * Math.PI * (d0 - 1) / c.period);
+    const pct = Math.round(v * 100);
+    const arrow = v >= prev ? '&#9650;' : '&#9660;';
+    return `<div class="bio-chip"><span class="bio-dot" style="background:${c.color}"></span>${c.name} <span class="bio-pct">${pct > 0 ? '+' : ''}${pct}% ${arrow}</span></div>`;
+  }).join('');
+
+  document.getElementById('biorhythmContent').innerHTML = svg + `<div class="bio-legend">${legend}</div>`;
+}
+
 async function init() {
   updateGreeting();
+  renderHoroscope();
+  renderBiorhythms();
   renderCalendar();
   renderTasks();
   await fetchWeather();
