@@ -649,20 +649,6 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/e2/ba/ba/e2baba9c434dea006b2f1bb08fc5bb3c.jpg",
     "https://i.pinimg.com/736x/13/f9/62/13f96285201202d77e16ca0eceede70b.jpg"
   ],
-  polished: [
-    "https://i.pinimg.com/736x/98/ef/ef/98efef6ecf85812567e243d819489f57.jpg",
-    "https://i.pinimg.com/736x/63/01/2e/63012e793eb15a4b35f343f79b5e7f67.jpg",
-    "https://i.pinimg.com/736x/8e/13/26/8e1326df737d85c6a2eee97f093ca5ea.jpg",
-    "https://i.pinimg.com/736x/37/0e/f6/370ef637089286043eac19a0387a760a.jpg",
-    "https://i.pinimg.com/736x/e2/fd/38/e2fd3884fd1174307312b135b18e91d8.jpg",
-    "https://i.pinimg.com/736x/c4/c9/6a/c4c96af3182625e9f76b5696460efe70.jpg",
-    "https://i.pinimg.com/736x/e2/1f/05/e21f0539d9dc8f96c219dada0d012471.jpg",
-    "https://i.pinimg.com/736x/bd/5f/88/bd5f880c555970db224b0d5b8fbe6bf9.jpg",
-    "https://i.pinimg.com/736x/47/8d/4b/478d4b3c09d68053afd22af30d3ab8c3.jpg",
-    "https://i.pinimg.com/736x/64/e6/1b/64e61be6bdc194bf6db31f09db410637.jpg",
-    "https://i.pinimg.com/736x/74/74/92/74749200cb66fc2e9f9b18f2053351c2.jpg",
-    "https://i.pinimg.com/736x/86/07/ca/8607ca3c0304f40365a66c1ed7392578.jpg"
-  ],
   casual: [
     "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
     "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
@@ -836,45 +822,33 @@ function isProfessionalMeeting(ev) {
   return true;
 }
 
-function getOccasion() {
-  // Polished only when there's a genuine PROFESSIONAL meeting or call on the
-  // calendar. Casual days (Fri/Sat/Sun) otherwise default to the weekend/casual
-  // board, and weekdays without a real meeting stay casual too. Social events,
-  // kids'/sports items, and tentative "Hold-" placeholders never override.
-  return CALENDAR_DATA.some(isProfessionalMeeting) ? 'polished' : 'casual';
-}
-
-// Get today's outfit selection (8 outfits, weather + occasion aware)
+// Get today's outfit selection (8 outfits).
+// Fri/Sat/Sun → casual/weekend board only. Mon–Thu → weather board chosen by
+// the day's HIGH temp (the polished board is retired; the weather boards now
+// cover that area).
 function getTodaysOutfits() {
-  // 1. Determine weather tier — pick for the day's HIGH so you're not freezing later
-  let weatherTier = 'warm'; // safe default if weather hasn't loaded
-  if (currentWeather) {
-    const high = currentWeather.daily.temperature_2m_max[0];
-    weatherTier = getWeatherTier(high);
+  let matched;
 
-    // 2. Big temp swing? Pull from the transitional tier — easier to layer
-    if (hasLargeTempSwing()) {
-      if (weatherTier === 'cold') weatherTier = 'cool';
-      else if (weatherTier === 'hot') weatherTier = 'warm';
+  if (isCasualDay()) {
+    // Weekend (Fri/Sat/Sun): pull only from the casual/weekend board.
+    matched = OUTFITS_BY_SECTION.casual || [];
+  } else {
+    // Weekday (Mon–Thu): pick the weather board from the day's HIGH temp.
+    let weatherTier = 'warm'; // safe default if weather hasn't loaded
+    if (currentWeather) {
+      const high = currentWeather.daily.temperature_2m_max[0];
+      weatherTier = getWeatherTier(high);
+
+      // Big temp swing? Pull from the transitional tier — easier to layer.
+      if (hasLargeTempSwing()) {
+        if (weatherTier === 'cold') weatherTier = 'cool';
+        else if (weatherTier === 'hot') weatherTier = 'warm';
+      }
     }
+    matched = OUTFITS_BY_SECTION[weatherTier] || [];
   }
 
-  // 3. Determine occasion from the calendar
-  const occasion = getOccasion();
-
-  // 4. Occasion board wins (casual on Fri/Sat/Sun, polished on real meeting days).
-  //    Weather-match WITHIN the occasion board when possible.
-  const weatherPins = OUTFITS_BY_SECTION[weatherTier] || [];
-  const occasionPins = OUTFITS_BY_SECTION[occasion] || [];
-  let matched = occasionPins.filter(url => weatherPins.includes(url));
-
-  // 5. If too few weather-matched looks, use the full occasion board
-  if (matched.length < 4) matched = occasionPins;
-
-  // 6. If the occasion board itself is too small, fall back to weather-only
-  if (matched.length < 4) matched = weatherPins;
-
-  // 7. Final fallback: the original flat board (used until sections are organized)
+  // Fallback: the full flat board if the chosen section is too small.
   if (matched.length < 4) matched = ALL_OUTFITS;
 
   const shuffled = dailySeedShuffle(matched);
@@ -1061,12 +1035,6 @@ function getOutfitReasonText() {
   const isSnowy = (code >= 71 && code <= 77) || (code >= 85 && code <= 86);
   const swing = high - low;
 
-  const hasMeetings = CALENDAR_DATA.some(e => e.type === 'meeting');
-  const meetingNames = CALENDAR_DATA.filter(e => e.type === 'meeting').map(e => e.name);
-  const casualDay = isCasualDay();
-  const occasion = getOccasion();
-  const sportsOnly = casualDay && CALENDAR_DATA.length > 0 && CALENDAR_DATA.every(isSportsEvent);
-
   let reason = `Today's range: ${low}° to ${high}°`;
   if (isRainy) reason += " with rain";
   else if (isSnowy) reason += " with snow";
@@ -1076,18 +1044,12 @@ function getOutfitReasonText() {
     reason += `That's a ${swing}° swing — layering will be your friend. `;
   }
 
-  if (casualDay && occasion === 'casual') {
-    reason += sportsOnly
-      ? "Casual day — sports/kids stuff only on the calendar, so leaning casual."
-      : "Casual day — pulling from your weekend/casual board.";
-  } else if (occasion === 'polished') {
-    if (hasMeetings) {
-      reason += `Meetings today (${meetingNames.slice(0,2).join(', ')}${meetingNames.length > 2 ? '...' : ''}) — pulling from your polished looks.`;
-    } else {
-      reason += "Something on the calendar today — pulling from your polished looks.";
-    }
+  if (isCasualDay()) {
+    reason += "Weekend (Fri–Sun) — pulling from your casual/weekend board.";
   } else {
-    reason += "No meetings — keeping it relaxed today.";
+    const tier = getWeatherTier(high);
+    const tierLabel = { cold: 'cold-weather', cool: 'cool-weather', warm: 'warm-weather', hot: 'hot-weather' }[tier] || 'weather';
+    reason += `Weekday — pulling from your ${tierLabel} board based on today's high of ${high}°.`;
   }
 
   return reason;
