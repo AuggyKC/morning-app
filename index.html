@@ -531,16 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:00 AM", name: "REMINDER: All invoices should be entered and matched from previous month", type: "meeting", detail: "" },
-  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "" }
+  { time: "7:45 AM", name: "Maids - Cleaning Red Star", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Maids - Home", type: "meeting", detail: "" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AirTag Batteries", status: "today" },
-  { name: "Kids Activities", status: "today" },
-  { name: "Water House Plants", status: "today" },
-  { name: "Menu", status: "today" },
-  { name: "Ant Treatment", status: "today" }
+  { name: "Starlight", status: "today" },
+  { name: "Ballet", status: "today" },
+  { name: "Maids", status: "today" },
+  { name: "Payroll - Whiskey/ Kazoo", status: "today" },
+  { name: "Mel battery", status: "today" },
+  { name: "Airbnb Money", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
@@ -569,15 +572,20 @@ const TASKS_OVERDUE = [
   { name: "Volunteering", date: "Jun 26" },
   { name: "Rent", date: "Jun 26" },
   { name: "FIFA Plan", date: "Jun 27" },
-  { name: "Colorado", date: "Jun 27" }
+  { name: "Colorado", date: "Jun 27" },
+  { name: "AirTag Batteries", date: "" },
+  { name: "Kids Activities", date: "" },
+  { name: "Water House Plants", date: "" },
+  { name: "Menu", date: "" },
+  { name: "Ant Treatment", date: "" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-06-28T06:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-06-29T05:10:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "June 28, 2026";
-const HOROSCOPE_DATA = "You’ve got energy to spare for your daily grind. Put it to good use. Now that Mars is in Gemini, you’re ready to conquer that to-do list at triple speed. A can-do attitude is key, but it doesn’t mean anything if you start ten projects and finish none. So focus on the tasks that actually make an impact, not just the pointless busywork. And take good care of your body while you’re at it. Set reminders to hydrate, stretch, and rest. Nobody wins when you’re running on fumes.";
+const HOROSCOPE_DATE = "June 29, 2026";
+const HOROSCOPE_DATA = "This is your cue to take yourself more seriously. The work you’ve been doing on your self-esteem — your confidence, your motivation, your sense of purpose — is hitting a milestone with the Full Moon. Even if this growth feels subtle, it’s real. Don’t brush it off. Name what’s working and keep what’s solid. But don’t rush to make any big decisions, especially with both Mercury stationing retrograde and Jupiter entering Leo today. For now, your job is to celebrate your progress.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
