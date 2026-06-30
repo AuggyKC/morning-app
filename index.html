@@ -830,14 +830,11 @@ function getTodaysOutfits() {
     // Weekday (Mon–Thu): pick the weather board from the day's HIGH temp.
     let weatherTier = 'warm'; // safe default if weather hasn't loaded
     if (currentWeather) {
+      // Board follows the day's HIGH (max) temp — dress for the warmest part
+      // of the day. A big morning-to-afternoon swing only adds a layering hint
+      // in the caption; it no longer pulls a hot day onto a cooler board.
       const high = currentWeather.daily.temperature_2m_max[0];
       weatherTier = getWeatherTier(high);
-
-      // Big temp swing? Pull from the transitional tier — easier to layer.
-      if (hasLargeTempSwing()) {
-        if (weatherTier === 'cold') weatherTier = 'cool';
-        else if (weatherTier === 'hot') weatherTier = 'warm';
-      }
     }
     matched = OUTFITS_BY_SECTION[weatherTier] || [];
   }
@@ -1041,6 +1038,7 @@ function getOutfitReasonText() {
   if (isCasualDay()) {
     reason += "Weekend (Fri–Sun) — pulling from your casual/weekend board.";
   } else {
+    // Board follows the day's HIGH (max) temp — matches getTodaysOutfits().
     const tier = getWeatherTier(high);
     const tierLabel = { cold: 'cold-weather', cool: 'cool-weather', warm: 'warm-weather', hot: 'hot-weather' }[tier] || 'weather';
     reason += `Weekday — pulling from your ${tierLabel} board based on today's high of ${high}°.`;
