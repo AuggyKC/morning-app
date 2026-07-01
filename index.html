@@ -531,18 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:00 AM", name: "Kazoo + Claude Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Zoom" }
+  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "Working from home" },
+  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "Office" },
+  { time: "10:00 AM", name: "Dental appt", type: "meeting", detail: "" },
+  { time: "4:00 PM", name: "Nova Vet", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight", status: "today" },
-  { name: "Ballet", status: "today" },
-  { name: "Reconciliations", status: "today" },
-  { name: "Cr trip", status: "today" },
-  { name: "Kstate Social Media Session", status: "today" },
-  { name: "Put Out Dumpster", status: "today" }
+  { name: "Checkbooks", status: "today" },
+  { name: "Zipper", status: "today" },
+  { name: "H&F", status: "today" },
+  { name: "invoices to rec sheets from AMEX", status: "today" },
+  { name: "Gunner BB", status: "today" },
+  { name: "Pills", status: "today" },
+  { name: "Hemingway Monthly Invoice", status: "today" },
+  { name: "Google Invoice", status: "today" }
 ];
 
 const TASKS_OVERDUE = [
@@ -559,27 +562,21 @@ const TASKS_OVERDUE = [
   { name: "Video Tapes", date: "Feb 7" },
   { name: "50th", date: "Feb 7" },
   { name: "Abby Review", date: "Feb 19" },
-  { name: "G bday", date: "Jun 24" },
   { name: "Research New Phones", date: "Jun 24" },
-  { name: "AI", date: "Jun 25" },
   { name: "Siphox", date: "Jun 26" },
   { name: "EOKC", date: "Jun 26" },
-  { name: "Volunteering", date: "Jun 26" },
   { name: "Rent", date: "Jun 26" },
   { name: "Colorado", date: "Jun 27" },
-  { name: "Kids Activities-", date: "Jun 28" },
-  { name: "Vendor Invoices", date: "Jun 29" },
-  { name: "Trees", date: "Jun 29" },
-  { name: "H&F", date: "Jun 29" },
-  { name: "Post social", date: "Jun 29" }
+  { name: "Reconciliations", date: "Jun 30" },
+  { name: "Kstate Social Media Session", date: "Jun 30" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-06-30T05:10:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-01T05:12:42-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "June 30, 2026";
-const HOROSCOPE_DATA = "Maybe you think you can do everything by yourself, but that doesn’t mean you should. Jupiter in Leo is here to boost the give-and-takes in your life — your shared finances, your emotional support systems, and your creative partnerships. And guess what? Relying on other people can feel good, so let them help you out. Take a risk on the collaborations or teammates that could expand your life. And be clearer about what you need. Asking for what you want doesn’t make you “too much.” It makes you more resilient.";
+const HOROSCOPE_DATE = "July 1, 2026";
+const HOROSCOPE_DATA = "Fed up with work or your to-dos? No one likes frustration, but it can tell us important information. So pay attention to what raises your temperature today. Take a second to cool off, and then ask yourself what's bothering you so much. Which fears have been activated? Which boundaries have been crossed? Any challenges cropping up now can help you stress-test what's working for you — and motivate you to change what's definitely not.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
