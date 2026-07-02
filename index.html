@@ -531,20 +531,26 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "Working from home" },
-  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "Office" },
-  { time: "10:00 AM", name: "Dental appt", type: "meeting", detail: "" },
-  { time: "4:00 PM", name: "Nova Vet", type: "meeting", detail: "" }
+  { time: "All Day", name: "Cary?", type: "allday", detail: "" },
+  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "with Ashlee" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
+  { time: "12:00 PM", name: "Dishwasher Repair", type: "meeting", detail: "" },
+  { time: "3:00 PM", name: "Cindy / Cailey Monthly Touchbase", type: "call", detail: "Google Meet" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Checkbooks", status: "today" },
-  { name: "Zipper", status: "today" },
+  { name: "Starlight", status: "today" },
+  { name: "Ballet", status: "today" },
+  { name: "Reconciliations", status: "today" },
+  { name: "Deposit Checks / Profit Tracking", status: "today" },
+  { name: "Status/ NB", status: "today" },
+  { name: "3 v 3?", status: "today" },
+  { name: "Cr trip", status: "today" },
   { name: "H&F", status: "today" },
-  { name: "invoices to rec sheets from AMEX", status: "today" },
-  { name: "Gunner BB", status: "today" },
-  { name: "Pills", status: "today" },
-  { name: "Hemingway Monthly Invoice", status: "today" },
+  { name: "Review Bank Wire Templates", status: "today" },
+  { name: "Pool tiles/ Goal", status: "today" },
+  { name: "Enter All Receipts", status: "today" },
   { name: "Google Invoice", status: "today" }
 ];
 
@@ -565,18 +571,18 @@ const TASKS_OVERDUE = [
   { name: "Research New Phones", date: "Jun 24" },
   { name: "Siphox", date: "Jun 26" },
   { name: "EOKC", date: "Jun 26" },
-  { name: "Rent", date: "Jun 26" },
   { name: "Colorado", date: "Jun 27" },
-  { name: "Reconciliations", date: "Jun 30" },
-  { name: "Kstate Social Media Session", date: "Jun 30" }
+  { name: "Kstate Social Media Session", date: "Jun 30" },
+  { name: "invoices to rec sheets from AMEX", date: "Jul 1" },
+  { name: "Rent", date: "Jul 1" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-01T05:12:42-05:00";
+const DATA_REFRESH_TIME = "2026-07-02T05:11:32-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 1, 2026";
-const HOROSCOPE_DATA = "Fed up with work or your to-dos? No one likes frustration, but it can tell us important information. So pay attention to what raises your temperature today. Take a second to cool off, and then ask yourself what's bothering you so much. Which fears have been activated? Which boundaries have been crossed? Any challenges cropping up now can help you stress-test what's working for you — and motivate you to change what's definitely not.";
+const HOROSCOPE_DATE = "July 2, 2026";
+const HOROSCOPE_DATA = "It's time to face the facts. What fantasies are you chasing at home? Take a good look at any unhelpful habits or escapist tendencies you've been trying to ignore. It may not be easy. But if you want a better relationship with your family, roommates, or living space, you have to pull your head out of the clouds. Whatever's not working: Address it.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
