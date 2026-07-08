@@ -531,20 +531,27 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "2:00 PM", name: "DEI Training", type: "meeting", detail: "Westport Library, Upstairs meeting room" },
-  { time: "3:00 PM", name: "Ms Patty off early", type: "meeting", detail: "" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Zoom" }
+  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "" },
+  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
+  { time: "10:00 AM", name: "Election Training", type: "meeting", detail: "Elks Lodge #26, 515 E 99th St" },
+  { time: "3:00 PM", name: "Spectrum Call", type: "call", detail: "" },
+  { time: "3:00 PM", name: "Cindy/Jamie Connect", type: "call", detail: "Webex" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI" },
   { name: "Starlight" },
+  { name: "Ballet" },
+  { name: "Vendor Invoices" },
+  { name: "Kazoo AMEX" },
+  { name: "Checkbooks" },
+  { name: "schedule update" },
+  { name: "Grad Card" },
+  { name: "Pre season camp" },
+  { name: "Cr trip" },
+  { name: "H&F" },
   { name: "Kstate Social Media Session" },
-  { name: "Pool tiles/ Goal" },
-  { name: "Airbnb Money" },
-  { name: "Enter All Receipts" },
-  { name: "Put Out Dumpster" }
+  { name: "Nielsen refund- check" },
+  { name: "Pills" }
 ];
 
 const TASKS_OVERDUE = [
@@ -568,20 +575,16 @@ const TASKS_OVERDUE = [
   { name: "Gunner and Izzy Activities", date: "Jul 5" },
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
-  { name: "Nva Meds", date: "Jul 6" },
-  { name: "schedule update", date: "Jul 6" },
-  { name: "Grad Card", date: "Jul 6" },
-  { name: "Library book", date: "Jul 6" },
-  { name: "Amazon package", date: "Jul 6" },
-  { name: "3 v 3?", date: "Jul 6" }
+  { name: "AI", date: "Jul 7" },
+  { name: "Library book", date: "Jul 7" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-07T05:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-08T05:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 7, 2026";
-const HOROSCOPE_DATA = "Something is shifting in your home or family life. And it might take the wind out of your sails. Let it. Losing momentum isn't always a bad thing. Sometimes it's actually clarifying. Notice what feels forced or no longer fires you up about your living situation. And stop pushing through just to prove something. What would feel grounding right now?";
+const HOROSCOPE_DATE = "July 8, 2026";
+const HOROSCOPE_DATA = "You're almost at the finish line. As Venus wraps up its stint in Leo, think back on the past few weeks. They've shown you what happens when you share your time, money, and energy in equitable ways. You've gotten more confident. And you've started looking to yourself, not your collaborators, for validation. Celebrate those breakthroughs. And keep advocating for your needs. If a partnership isn't equal, it's not really a partnership.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
