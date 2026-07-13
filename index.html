@@ -531,16 +531,22 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "" }
+  { time: "All Day", name: "Glass Pickup", type: "allday", detail: "" },
+  { time: "7:45 AM", name: "Maids - Cleaning Red Star", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Head for the Cure / Kazoo Conversation", type: "call", detail: "Zoom" },
+  { time: "9:00 AM", name: "Maids - Home", type: "meeting", detail: "" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "12:00 PM", name: "Pick up LWVKC Flyers", type: "meeting", detail: "" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" },
+  { time: "7:00 PM", name: "Workshop dinner - Tanner's", type: "meeting", detail: "Tanner's Bar & Grill, Manhattan, KS" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Bloodwork?" },
-  { name: "Post social" },
-  { name: "Camps" },
-  { name: "Basketball Goal" },
-  { name: "Colorado" },
-  { name: "Water House Plants" }
+  { name: "Starlight" },
+  { name: "Ballet" },
+  { name: "Maids" },
+  { name: "Key fob- Pay?" },
+  { name: "SKC Radio" }
 ];
 
 const TASKS_OVERDUE = [
@@ -570,18 +576,23 @@ const TASKS_OVERDUE = [
   { name: "Kazoo AMEX", date: "Jul 10" },
   { name: "Checkbooks", date: "Jul 10" },
   { name: "Kstate Social Media Session", date: "Jul 10" },
-  { name: "Meds", date: "Jul 10" },
   { name: "Gunner Photos/ Letters", date: "Jul 10" },
-  { name: "FIFA Plan", date: "Jul 11" },
-  { name: "Ms Patty gift", date: "Jul 11" }
+  { name: "Ms Patty gift", date: "Jul 11" },
+  { name: "Pau Sean", date: "Jul 12" },
+  { name: "Bloodwork?", date: "Jul 12" },
+  { name: "Post social", date: "Jul 12" },
+  { name: "Camps", date: "Jul 12" },
+  { name: "Basketball Goal", date: "Jul 12" },
+  { name: "Colorado", date: "Jul 12" },
+  { name: "Water House Plants", date: "Jul 12" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-12T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-13T05:10:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 12, 2026";
-const HOROSCOPE_DATA = "Your relationship questions are getting answers. Today's Mercury cazimi brings breakthroughs about your close connections. Stay open to new ideas and perspectives, especially if they help you better understand your loved ones' emotions — or your own. A text from your bestie or a passing comment from a partner could help you see things in a whole new light. Let these aha moments boost your bonds.";
+const HOROSCOPE_DATE = "July 13, 2026";
+const HOROSCOPE_DATA = "It's great to have long-term goals. It's less great to be rigid about them. So today, practice being more flexible with your future. Recognize where you've gotten too strict. And instead of trying to control every little thing, see what happens when you loosen your grip. What's one small way you can work toward what you want? Whatever it is, focus on what you can do in the here and now.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
