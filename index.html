@@ -531,29 +531,24 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "8:30 AM", name: "Touchbase", type: "call", detail: "Zoom" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse, 1400 W Ninth St" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI" },
   { name: "Starlight" },
-  { name: "Ballet" },
-  { name: "Kazoo AMEX" },
-  { name: "Status/ NB" },
-  { name: "Heart appt" },
-  { name: "LWVKC flyers" },
-  { name: "Abu Practice" },
+  { name: "Vendor Invoices" },
+  { name: "Fruit salad" },
   { name: "Head for the Cure" },
+  { name: "Zipper" },
+  { name: "Cr trip" },
   { name: "SKC Radio" },
-  { name: "Basketball Goal" },
-  { name: "Ashlee Status" },
-  { name: "Pay Discover" },
-  { name: "Gunner Photos/ Letters" },
-  { name: "Enter All Receipts" },
-  { name: "Spire Payment" },
-  { name: "Target bill" }
+  { name: "Pay nordstom" },
+  { name: "Meds" },
+  { name: "Volunteering" },
+  { name: "Rent" },
+  { name: "Check Ring" },
+  { name: "RS Water Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -576,23 +571,29 @@ const TASKS_OVERDUE = [
   { name: "Gunner and Izzy Activities", date: "Jul 5" },
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
-  { name: "Grad Card", date: "Jul 8" },
-  { name: "Cr trip", date: "Jul 8" },
   { name: "Projections", date: "Jul 9" },
   { name: "Bloodwork?", date: "Jul 12" },
   { name: "Camps", date: "Jul 12" },
   { name: "Colorado", date: "Jul 12" },
-  { name: "Vendor Invoices", date: "Jul 15" },
   { name: "Deposit Checks / Profit Tracking", date: "Jul 15" },
-  { name: "Checkbooks", date: "Jul 15" }
+  { name: "Checkbooks", date: "Jul 15" },
+  { name: "AI", date: "Jul 16" },
+  { name: "Ballet", date: "Jul 16" },
+  { name: "Kazoo AMEX", date: "Jul 16" },
+  { name: "Heart appt", date: "Jul 16" },
+  { name: "Abu Practice", date: "Jul 16" },
+  { name: "Basketball Goal", date: "Jul 16" },
+  { name: "Pay Discover", date: "Jul 16" },
+  { name: "Gunner Photos/ Letters", date: "Jul 16" },
+  { name: "Enter All Receipts", date: "Jul 16" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-16T05:12:16-05:00";
+const DATA_REFRESH_TIME = "2026-07-17T05:16:29-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 16, 2026";
-const HOROSCOPE_DATA = "Take it easy. Lately, you've been a bit defensive with your loved ones. Own up to it. Pay your people some extra time and attention. And risk dropping your guard a little or sharing how you feel without being asked. The people who care about you want to be there for you, but they can't read your mind. Let them in.";
+const HOROSCOPE_DATE = "July 17, 2026";
+const HOROSCOPE_DATA = "Your routines should work for you, not against you. The ways you approach your job, chores, or other responsibilities are shifting fast. You're noticing which hacks and habits actually support your wellbeing. Keep trusting your instincts, even if they're still evolving. You don't have to perfect every system. Just stick with what works and go from there.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
