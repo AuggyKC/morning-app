@@ -531,22 +531,22 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "1:30 PM", name: "KState Foundation", type: "meeting", detail: "" }
+  { time: "All Day", name: "Nutcracker ODS", type: "allday", detail: "" },
+  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "" },
+  { time: "8:00 AM", name: "Nutcracker one-day sale", type: "meeting", detail: "" },
+  { time: "11:30 AM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" },
+  { time: "12:30 PM", name: "Audacy | Kazoo Lunch!", type: "meeting", detail: "Blue Bird Bistro" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Checkbooks" },
-  { name: "Hair" },
-  { name: "Donations" },
-  { name: "bday list" },
-  { name: "Freezer/ Dishwasher" },
-  { name: "Heart appt" },
-  { name: "Abu Practice" },
-  { name: "Head for the Cure" },
+  { name: "Starlight" },
+  { name: "Deposit Checks / Profit Tracking" },
+  { name: "Kids-" },
+  { name: "Pick Up Signs" },
+  { name: "Packing" },
   { name: "Zipper" },
-  { name: "G bday" },
-  { name: "Process Maids Invoices" }
+  { name: "Nielsen refund- check" },
+  { name: "Pills" }
 ];
 
 const TASKS_OVERDUE = [
@@ -570,25 +570,21 @@ const TASKS_OVERDUE = [
   { name: "Menu", date: "Jul 5" },
   { name: "Bloodwork?", date: "Jul 12" },
   { name: "Camps", date: "Jul 12" },
-  { name: "Colorado", date: "Jul 12" },
   { name: "AI", date: "Jul 16" },
   { name: "Gunner Photos/ Letters", date: "Jul 16" },
   { name: "Cr trip", date: "Jul 17" },
   { name: "Check Ring", date: "Jul 17" },
-  { name: "Packing", date: "Jul 18" },
   { name: "Gunner Watch", date: "Jul 18" },
-  { name: "Grad Card", date: "Jul 19" },
   { name: "Post social", date: "Jul 19" },
-  { name: "Water House Plants", date: "Jul 19" },
-  { name: "Pay Discover", date: "Jul 20" }
+  { name: "Checkbooks", date: "Jul 21" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-21T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-22T05:13:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 21, 2026";
-const HOROSCOPE_DATA = "How do you share your resources with other people? What would it look like to change that today? You don't have to completely overhaul your collaborations. Just try to be more flexible and open-minded. Break from your usual routines or expectations, even just for a little while. And get your teammates on board too. It's way more fun to experiment together.";
+const HOROSCOPE_DATE = "July 22, 2026";
+const HOROSCOPE_DATA = "Don't second-guess yourself. If your partnerships seem inequitable or splitting bills has become a power struggle, admit it — then figure out what would make your exchanges fairer. The Sun in Leo is here to help you reconnect with the people who collaborate, co-create, and share resources with you. But to do that, you'll have to confront some shadows you've been avoiding. If you've been dodging an important conversation or holding back how you really feel, the next few weeks encourage you to face the facts. You're braver than you think.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
