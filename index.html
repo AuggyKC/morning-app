@@ -531,22 +531,27 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Nutcracker ODS", type: "allday", detail: "" },
-  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "" },
-  { time: "8:00 AM", name: "Nutcracker one-day sale", type: "meeting", detail: "" },
-  { time: "11:30 AM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" },
-  { time: "12:30 PM", name: "Audacy | Kazoo Lunch!", type: "meeting", detail: "Blue Bird Bistro" }
+  { time: "7:30 AM", name: "Shelby", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
+  { time: "9:30 AM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" },
+  { time: "10:00 AM", name: "Appointment @ Lumine Salon Crossroads", type: "meeting", detail: "1901 Main St, Crossroads" },
+  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
+  { time: "2:00 PM", name: "James Wilhoft", type: "call", detail: "913-400-1531" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
   { name: "Starlight" },
-  { name: "Deposit Checks / Profit Tracking" },
-  { name: "Kids-" },
-  { name: "Pick Up Signs" },
-  { name: "Packing" },
-  { name: "Zipper" },
-  { name: "Nielsen refund- check" },
-  { name: "Pills" }
+  { name: "Vendor Invoices" },
+  { name: "Status/ NB" },
+  { name: "Head for the Cure" },
+  { name: "Grad Card" },
+  { name: "H&F" },
+  { name: "G bday" },
+  { name: "DART" },
+  { name: "SKC Tickets" },
+  { name: "Enter All Receipts" },
+  { name: "Rent" }
 ];
 
 const TASKS_OVERDUE = [
@@ -576,15 +581,18 @@ const TASKS_OVERDUE = [
   { name: "Check Ring", date: "Jul 17" },
   { name: "Gunner Watch", date: "Jul 18" },
   { name: "Post social", date: "Jul 19" },
-  { name: "Checkbooks", date: "Jul 21" }
+  { name: "Checkbooks", date: "Jul 21" },
+  { name: "Deposit Checks / Profit Tracking", date: "Jul 22" },
+  { name: "Remove flags", date: "Jul 22" },
+  { name: "Packing", date: "Jul 22" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-22T05:13:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-23T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 22, 2026";
-const HOROSCOPE_DATA = "Don't second-guess yourself. If your partnerships seem inequitable or splitting bills has become a power struggle, admit it — then figure out what would make your exchanges fairer. The Sun in Leo is here to help you reconnect with the people who collaborate, co-create, and share resources with you. But to do that, you'll have to confront some shadows you've been avoiding. If you've been dodging an important conversation or holding back how you really feel, the next few weeks encourage you to face the facts. You're braver than you think.";
+const HOROSCOPE_DATE = "July 23, 2026";
+const HOROSCOPE_DATA = "At long last, Mercury retrograde is over. Congrats on wrapping up a weeks-long review of your relationships. You've learned a lot about what keeps you from being vulnerable with the people you hold close. You've also practiced expressing your feelings, even when it was tough. Give yourself credit. And don't stress if things still feel a little funky — the retrograde dust hasn't fully settled yet. Wait it out with your besties, partners, and other loved ones.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
