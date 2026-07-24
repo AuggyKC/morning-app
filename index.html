@@ -531,27 +531,16 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "9:30 AM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" },
-  { time: "10:00 AM", name: "Appointment @ Lumine Salon Crossroads", type: "meeting", detail: "1901 Main St, Crossroads" },
-  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "2:00 PM", name: "James Wilhoft", type: "call", detail: "913-400-1531" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
+  { time: "All Day", name: "AirBnb", type: "allday", detail: "Jul 24–27" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Vendor Invoices" },
-  { name: "Status/ NB" },
-  { name: "Head for the Cure" },
-  { name: "Grad Card" },
-  { name: "H&F" },
+  { name: "Basketball Tournament" },
   { name: "G bday" },
-  { name: "DART" },
-  { name: "SKC Tickets" },
-  { name: "Enter All Receipts" },
-  { name: "Rent" }
+  { name: "Basketball Goal" },
+  { name: "Meds" },
+  { name: "RS Water Plants" },
+  { name: "Pay Mortgage" }
 ];
 
 const TASKS_OVERDUE = [
@@ -582,17 +571,20 @@ const TASKS_OVERDUE = [
   { name: "Gunner Watch", date: "Jul 18" },
   { name: "Post social", date: "Jul 19" },
   { name: "Checkbooks", date: "Jul 21" },
-  { name: "Deposit Checks / Profit Tracking", date: "Jul 22" },
-  { name: "Remove flags", date: "Jul 22" },
-  { name: "Packing", date: "Jul 22" }
+  { name: "Packing", date: "Jul 22" },
+  { name: "Starlight", date: "Jul 23" },
+  { name: "Vendor Invoices", date: "Jul 23" },
+  { name: "Deposit Checks / Profit Tracking", date: "Jul 23" },
+  { name: "Enter All Receipts", date: "Jul 23" },
+  { name: "Rent", date: "Jul 23" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-23T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-24T05:10:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 23, 2026";
-const HOROSCOPE_DATA = "At long last, Mercury retrograde is over. Congrats on wrapping up a weeks-long review of your relationships. You've learned a lot about what keeps you from being vulnerable with the people you hold close. You've also practiced expressing your feelings, even when it was tough. Give yourself credit. And don't stress if things still feel a little funky — the retrograde dust hasn't fully settled yet. Wait it out with your besties, partners, and other loved ones.";
+const HOROSCOPE_DATE = "July 24, 2026";
+const HOROSCOPE_DATA = "Quit playing it cool. It's a good day to tell your bestie or partner how much they mean to you. Or send a quick text to let them know you're thinking of them. The more outspoken you are, the more fun and connection you invite in. What are you waiting for?";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
