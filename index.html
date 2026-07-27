@@ -531,12 +531,18 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "AirBnb", type: "allday", detail: "Jul 24–27" }
+  { time: "All Day", name: "Cindy Out", type: "allday", detail: "" },
+  { time: "All Day", name: "AirBnb", type: "allday", detail: "Jul 24–27" },
+  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "" },
+  { time: "8:30 AM", name: "Get CARs to Jami before billing cycle", type: "meeting", detail: "Reminder" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Wegs Bday" },
-  { name: "Water House Plants" }
+  { name: "James- Contacts" },
+  { name: "Donations" },
+  { name: "Freezer/ Dishwasher" }
 ];
 
 const TASKS_OVERDUE = [
@@ -574,15 +580,17 @@ const TASKS_OVERDUE = [
   { name: "Rent", date: "Jul 23" },
   { name: "Basketball Tournament", date: "Jul 24" },
   { name: "G bday", date: "Jul 24" },
-  { name: "RS Water Plants", date: "Jul 24" }
+  { name: "RS Water Plants", date: "Jul 24" },
+  { name: "Wegs Bday", date: "Jul 26" },
+  { name: "Water House Plants", date: "Jul 26" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-26T08:58:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-27T06:10:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 26, 2026";
-const HOROSCOPE_DATA = "Now entering: your abundance era. Today, the North Node (a point in space that represents increase) enters Aquarius, and the South Node (a point that represents decrease) enters Leo. This marks the start of a brand-new cycle. The next 20 months will shine a spotlight on your talents and finances. They'll also push you to challenge any imbalances in your collaborations. Get ready to own your worth — and charge accordingly.";
+const HOROSCOPE_DATE = "July 27, 2026";
+const HOROSCOPE_DATA = "Life isn't always easy. And when tough stuff happens, it's important to face it, not sweep it under the rug. So give yourself extra compassion today. And acknowledge the heartaches, losses, or disappointments that have been weighing on you. But remember to honor your growth and strength too. A journaling session or a dance party for one can be surprisingly healing.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
