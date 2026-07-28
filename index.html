@@ -531,18 +531,23 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Cindy Out", type: "allday", detail: "" },
-  { time: "All Day", name: "AirBnb", type: "allday", detail: "Jul 24–27" },
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "" },
-  { time: "8:30 AM", name: "Get CARs to Jami before billing cycle", type: "meeting", detail: "Reminder" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" }
+  { time: "7:00 AM", name: "REMINDER: All invoices should be entered and matched from previous month", type: "meeting", detail: "" },
+  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
+  { time: "12:30 PM", name: "LWVKC Board Meeting", type: "call", detail: "Zoom" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "James- Contacts" },
-  { name: "Donations" },
-  { name: "Freezer/ Dishwasher" }
+  { name: "Starlight" },
+  { name: "Ballet" },
+  { name: "Maids" },
+  { name: "hitch on car" },
+  { name: "Wes" },
+  { name: "Packing" },
+  { name: "Freezer/ Dishwasher" },
+  { name: "Abu Practice" },
+  { name: "G bday" },
+  { name: "SKC Radio" }
 ];
 
 const TASKS_OVERDUE = [
@@ -573,24 +578,21 @@ const TASKS_OVERDUE = [
   { name: "Gunner Watch", date: "Jul 18" },
   { name: "Post social", date: "Jul 19" },
   { name: "Checkbooks", date: "Jul 21" },
-  { name: "Starlight", date: "Jul 23" },
   { name: "Vendor Invoices", date: "Jul 23" },
   { name: "Deposit Checks / Profit Tracking", date: "Jul 23" },
   { name: "Enter All Receipts", date: "Jul 23" },
   { name: "Rent", date: "Jul 23" },
-  { name: "Basketball Tournament", date: "Jul 24" },
-  { name: "G bday", date: "Jul 24" },
   { name: "RS Water Plants", date: "Jul 24" },
   { name: "Wegs Bday", date: "Jul 26" },
   { name: "Water House Plants", date: "Jul 26" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-27T06:10:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-28T06:00:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 27, 2026";
-const HOROSCOPE_DATA = "Life isn't always easy. And when tough stuff happens, it's important to face it, not sweep it under the rug. So give yourself extra compassion today. And acknowledge the heartaches, losses, or disappointments that have been weighing on you. But remember to honor your growth and strength too. A journaling session or a dance party for one can be surprisingly healing.";
+const HOROSCOPE_DATE = "July 28, 2026";
+const HOROSCOPE_DATA = "Giving is rewarding, even when it feels scary to let go. The upcoming Jupiter cazimi is teaching you about the gifts that come your way when you lead with generosity. So go ahead and share what you've got, whether you're offering your time, attention, or material resources. When you move through the world trusting that there's already enough, you create more abundance to spread around.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
