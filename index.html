@@ -531,31 +531,22 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
-  { time: "9:00 AM", name: "Maids- Home", type: "meeting", detail: "" },
-  { time: "1:00 PM", name: "Dentist- Mingos", type: "meeting", detail: "" },
-  { time: "2:30 PM", name: "Equativ x Kazoo | Bi-Weekly Sync", type: "call", detail: "Google Meet" },
-  { time: "3:45 PM", name: "Pick Up Gunner's Cake", type: "meeting", detail: "809 W 39th St, Kansas City, MO" }
+  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
+  { time: "10:30 AM", name: "Shelby", type: "meeting", detail: "" },
+  { time: "12:00 PM", name: "MiQ + Kazoo Lunch", type: "call", detail: "Virtual lunch" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Maids" },
-  { name: "Norbrook credits" },
-  { name: "Ear piercing" },
-  { name: "Close Folly est for KKFI / Refund" },
-  { name: "James- Contacts" },
-  { name: "Basketball Tournament" },
-  { name: "Donations" },
-  { name: "Heart appt" },
-  { name: "Abu Practice" },
-  { name: "H&F" },
-  { name: "Nielsen refund- check" },
-  { name: "G bday" },
-  { name: "Post social" },
-  { name: "Projections" },
-  { name: "Pills" },
-  { name: "Measure kids" }
+  { name: "Deposit Checks / Profit Tracking" },
+  { name: "Status/ NB" },
+  { name: "QB costs/ Alternative" },
+  { name: "Owl- unhook screen" },
+  { name: "SKC Radio" },
+  { name: "Ashlee Status" },
+  { name: "Costa Rica" },
+  { name: "Gunner Photos/ Letters" }
 ];
 
 const TASKS_OVERDUE = [
@@ -579,20 +570,22 @@ const TASKS_OVERDUE = [
   { name: "Menu", date: "Jul 5" },
   { name: "RS Water Plants", date: "Jul 24" },
   { name: "Wegs Bday", date: "Jul 26" },
-  { name: "Water House Plants", date: "Jul 26" },
   { name: "Checkbooks", date: "Jul 28" },
-  { name: "AirBnb Refund", date: "Jul 28" },
-  { name: "hitch on car", date: "Jul 28" },
   { name: "Freezer/ Dishwasher", date: "Jul 28" },
-  { name: "Enter All Receipts", date: "Jul 28" }
+  { name: "Enter All Receipts", date: "Jul 28" },
+  { name: "Starlight", date: "Jul 29" },
+  { name: "Coe", date: "Jul 29" },
+  { name: "Heart appt", date: "Jul 29" },
+  { name: "Post social", date: "Jul 29" },
+  { name: "Projections", date: "Jul 29" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-29T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-30T06:00:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 29, 2026";
-const HOROSCOPE_DATA = "Your scarcity mindset can show up in sneaky ways. You may not realize the hidden fears that make you question what you have to offer and what you deserve to receive. What early lessons made you underestimate yourself or doubt your resourcefulness, and how can you rewrite these scripts? Today's Full Moon is an invitation to face whatever blocks you from recognizing and owning your worth.";
+const HOROSCOPE_DATE = "July 30, 2026";
+const HOROSCOPE_DATA = "Today might bring debates or heated conversations. And that's not necessarily a bad thing. Instead of getting hung up on who's right or wrong, get curious. Ask pointed questions. Try to understand the other person's point of view. You don't have to cosign their whole belief system, but engaging with it could help you think more creatively. Open your mind.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
