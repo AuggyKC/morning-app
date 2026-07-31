@@ -531,22 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "10:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "12:00 PM", name: "MiQ + Kazoo Lunch", type: "call", detail: "Virtual lunch" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom" },
+  { time: "All Day", name: "Previous Month's Vendor Invoices Due", type: "allday", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Deposit Checks / Profit Tracking" },
-  { name: "Status/ NB" },
-  { name: "QB costs/ Alternative" },
+  { name: "Tuesdayplan" },
   { name: "Owl- unhook screen" },
-  { name: "SKC Radio" },
-  { name: "Ashlee Status" },
-  { name: "Costa Rica" },
-  { name: "Gunner Photos/ Letters" }
+  { name: "Ear piercing" },
+  { name: "Gunner Uniforms" },
+  { name: "Donations" },
+  { name: "Cr trip" },
+  { name: "G bday" },
+  { name: "Airbnb Money" },
+  { name: "Meds" },
+  { name: "Hemingway Monthly Invoice" }
 ];
 
 const TASKS_OVERDUE = [
@@ -570,22 +569,24 @@ const TASKS_OVERDUE = [
   { name: "Menu", date: "Jul 5" },
   { name: "RS Water Plants", date: "Jul 24" },
   { name: "Wegs Bday", date: "Jul 26" },
-  { name: "Checkbooks", date: "Jul 28" },
   { name: "Freezer/ Dishwasher", date: "Jul 28" },
-  { name: "Enter All Receipts", date: "Jul 28" },
-  { name: "Starlight", date: "Jul 29" },
-  { name: "Coe", date: "Jul 29" },
   { name: "Heart appt", date: "Jul 29" },
   { name: "Post social", date: "Jul 29" },
-  { name: "Projections", date: "Jul 29" }
+  { name: "Starlight", date: "Jul 30" },
+  { name: "Deposit Checks / Profit Tracking", date: "Jul 30" },
+  { name: "Checkbooks", date: "Jul 30" },
+  { name: "QB costs/ Alternative", date: "Jul 30" },
+  { name: "Projections", date: "Jul 30" },
+  { name: "Gunner Photos/ Letters", date: "Jul 30" },
+  { name: "Enter All Receipts", date: "Jul 30" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-07-30T06:00:00-05:00";
+const DATA_REFRESH_TIME = "2026-07-31T05:13:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "July 30, 2026";
-const HOROSCOPE_DATA = "Today might bring debates or heated conversations. And that's not necessarily a bad thing. Instead of getting hung up on who's right or wrong, get curious. Ask pointed questions. Try to understand the other person's point of view. You don't have to cosign their whole belief system, but engaging with it could help you think more creatively. Open your mind.";
+const HOROSCOPE_DATE = "July 31, 2026";
+const HOROSCOPE_DATA = "It takes courage to want something — really want it. And you're slowly, steadily learning to be brave. So reflect on your deepest desires today. Maybe you have a crush on someone or an idea for an art project that makes you nervous. Own it. And notice where you still don't feel totally rooted or secure in chasing your dreams. Then do something about it. It can be small. Sending one quick text or making a messy first draft can get the ball rolling.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
