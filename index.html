@@ -531,11 +531,23 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
+  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "" },
+  { time: "8:00 AM", name: "Dr Rapport", type: "meeting", detail: "" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Gunner wash" },
-  { name: "Water House Plants" }
+  { name: "Vendor Invoices" },
+  { name: "Kazoo AMEX" },
+  { name: "Payroll- Whiskey/ Kazoo" },
+  { name: "gymnastics" },
+  { name: "pumpkin" },
+  { name: "Gunner blow dry" },
+  { name: "Bloodwork?" },
+  { name: "Post social" },
+  { name: "Rent" },
+  { name: "Google Invoice" }
 ];
 
 const TASKS_OVERDUE = [
@@ -560,10 +572,8 @@ const TASKS_OVERDUE = [
   { name: "Wegs Bday", date: "Jul 26" },
   { name: "Freezer/ Dishwasher", date: "Jul 28" },
   { name: "Heart appt", date: "Jul 29" },
-  { name: "Post social", date: "Jul 29" },
   { name: "Deposit Checks / Profit Tracking", date: "Jul 30" },
   { name: "Checkbooks", date: "Jul 30" },
-  { name: "QB costs/ Alternative", date: "Jul 30" },
   { name: "Projections", date: "Jul 30" },
   { name: "Gunner Photos/ Letters", date: "Jul 30" },
   { name: "Enter All Receipts", date: "Jul 30" },
@@ -576,15 +586,16 @@ const TASKS_OVERDUE = [
   { name: "Cr trip", date: "Jul 31" },
   { name: "G bday", date: "Jul 31" },
   { name: "Airbnb Money", date: "Jul 31" },
-  { name: "Hemingway Monthly Invoice", date: "Jul 31" }
+  { name: "Hemingway Monthly Invoice", date: "Jul 31" },
+  { name: "Izzy Salina", date: "Aug 2" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-02T06:49:13-05:00";
+const DATA_REFRESH_TIME = "2026-08-03T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 2, 2026";
-const HOROSCOPE_DATA = "This past month has been a game-changer. As Venus wraps up its time in Virgo, take stock of the ways you've approached your beliefs or long-term plans. How have you made things more fun or easeful in this arena? Where have you gotten too self-critical? This glow-up hasn't been totally linear &mdash; and that's fine. It's helped you to build supportive habits and be less rigid with your worldview and future. They're not set in stone.";
+const HOROSCOPE_DATE = "August 3, 2026";
+const HOROSCOPE_DATA = "Overthinking is a major buzzkill. Try to do less of it today. You might feel pressure to heal all your wounds around your love life, passion projects, or creative work overnight. But real growth takes time. So slow down and focus on what's already bringing you joy. Do whatever helps you let loose and express yourself. And practice focusing on the here and there, no matter how hard it feels at first. You can get there. Promise.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
