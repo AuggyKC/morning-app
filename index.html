@@ -531,23 +531,14 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "" },
-  { time: "8:00 AM", name: "Dr Rapport", type: "meeting", detail: "" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" }
+  { time: "All Day", name: "Election Day", type: "allday", detail: "" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Vendor Invoices" },
-  { name: "Kazoo AMEX" },
-  { name: "Payroll- Whiskey/ Kazoo" },
-  { name: "gymnastics" },
-  { name: "pumpkin" },
-  { name: "Gunner blow dry" },
   { name: "Bloodwork?" },
-  { name: "Post social" },
-  { name: "Rent" },
-  { name: "Google Invoice" }
+  { name: "G bday" },
+  { name: "Post social" }
 ];
 
 const TASKS_OVERDUE = [
@@ -579,23 +570,21 @@ const TASKS_OVERDUE = [
   { name: "Enter All Receipts", date: "Jul 30" },
   { name: "Product recall", date: "Jul 31" },
   { name: "Wearable devices/ adapter", date: "Jul 31" },
-  { name: "Tuesdayplan", date: "Jul 31" },
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Gunner Uniforms", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
-  { name: "G bday", date: "Jul 31" },
   { name: "Airbnb Money", date: "Jul 31" },
   { name: "Hemingway Monthly Invoice", date: "Jul 31" },
-  { name: "Izzy Salina", date: "Aug 2" }
+  { name: "Vendor Invoices", date: "Aug 3" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-03T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-04T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 3, 2026";
-const HOROSCOPE_DATA = "Overthinking is a major buzzkill. Try to do less of it today. You might feel pressure to heal all your wounds around your love life, passion projects, or creative work overnight. But real growth takes time. So slow down and focus on what's already bringing you joy. Do whatever helps you let loose and express yourself. And practice focusing on the here and there, no matter how hard it feels at first. You can get there. Promise.";
+const HOROSCOPE_DATE = "August 4, 2026";
+const HOROSCOPE_DATA = "Get serious about having fun. What would bring more joy or connection into your life? Maybe it's finally time to ask out your crush. Or to start that art project you've been thinking about. Make one smart move today. It doesn't have to be anything major, so don't stress if you only have a few minutes to spare. A small moment of silliness can shift your whole mood.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
