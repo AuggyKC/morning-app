@@ -531,17 +531,22 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
-  { time: "9:30 AM", name: "Folly x Kazoo FY27 Planning", type: "call", detail: "821 W 17th St, KC MO" },
-  { time: "1:00 PM", name: "Tina", type: "meeting", detail: "" }
+  { time: "8:30 AM", name: "Dental Checkup - Dr. Emily Drake", type: "meeting", detail: "Gunner & Isabella" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
+  { time: "1:30 PM", name: "SKC/Kazoo Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
+  { time: "3:00 PM", name: "Cindy / Cailey Monthly Touchbase", type: "call", detail: "Google Meet" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" },
+  { time: "7:00 PM", name: "Izzy Hair Part 1", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Maids" },
-  { name: "Reconciliations" },
-  { name: "Nielsen refund- check" },
-  { name: "DART" },
-  { name: "Pills" }
+  { name: "AI" },
+  { name: "Starlight" },
+  { name: "Kazoo AMEX" },
+  { name: "Status/ NB" },
+  { name: "QB costs/ Alternative" },
+  { name: "Projections" },
+  { name: "Rent" }
 ];
 
 const TASKS_OVERDUE = [
@@ -568,10 +573,8 @@ const TASKS_OVERDUE = [
   { name: "Heart appt", date: "Jul 29" },
   { name: "Deposit Checks / Profit Tracking", date: "Jul 30" },
   { name: "Checkbooks", date: "Jul 30" },
-  { name: "Projections", date: "Jul 30" },
   { name: "Gunner Photos/ Letters", date: "Jul 30" },
   { name: "Enter All Receipts", date: "Jul 30" },
-  { name: "Product recall", date: "Jul 31" },
   { name: "Wearable devices/ adapter", date: "Jul 31" },
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Gunner Uniforms", date: "Jul 31" },
@@ -582,17 +585,19 @@ const TASKS_OVERDUE = [
   { name: "Vendor Invoices", date: "Aug 3" },
   { name: "Jen schedule", date: "Aug 4" },
   { name: "Mom paperwork", date: "Aug 4" },
-  { name: "Bloodwork?", date: "" },
-  { name: "G bday", date: "" },
-  { name: "Post social", date: "" }
+  { name: "Bloodwork?", date: "Aug 4" },
+  { name: "G bday", date: "Aug 4" },
+  { name: "Post social", date: "Aug 4" },
+  { name: "Reconciliations", date: "Aug 5" },
+  { name: "Shingles", date: "Aug 5" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-05T09:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-06T05:53:26-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 5, 2026";
-const HOROSCOPE_DATA = "Take a second to think about your collaborations and shared resources. Where could you use more clarity or accountability? It's time to take responsibility. That doesn't have to be a drag. It can actually be exciting to strengthen your partnerships. Balance those scales, babe.";
+const HOROSCOPE_DATE = "August 6, 2026";
+const HOROSCOPE_DATA = "You don't have to push so hard to move closer to your goals. As Venus enters Libra, your career and reputation get a delightful boost. It's easier to build connections, gain support, and make progress without burning out. You might even stumble into your 15 minutes of viral fame. Embrace the opportunities that make your professional or public life feel more meaningful and even fun. But don't ignore what's obviously unfair just to keep the good PR coming. Openly calling out injustice will impress all the right people. Win, win.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
