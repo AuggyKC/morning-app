@@ -531,22 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "8:30 AM", name: "Dental Checkup - Dr. Emily Drake", type: "meeting", detail: "Gunner & Isabella" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "SKC/Kazoo Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "3:00 PM", name: "Cindy / Cailey Monthly Touchbase", type: "call", detail: "Google Meet" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" },
-  { time: "7:00 PM", name: "Izzy Hair Part 1", type: "meeting", detail: "" }
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom · Urban Summit KC" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse" },
+  { time: "12:00 PM", name: "Nova Groomer", type: "meeting", detail: "" },
+  { time: "1:00 PM", name: "Brennan?", type: "meeting", detail: "" },
+  { time: "6:00 PM", name: "Izzy Hair Part 2", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
   { name: "AI" },
-  { name: "Starlight" },
-  { name: "Kazoo AMEX" },
-  { name: "Status/ NB" },
-  { name: "QB costs/ Alternative" },
-  { name: "Projections" },
-  { name: "Rent" }
+  { name: "Kids Braids?" },
+  { name: "Meds" },
+  { name: "Volunteering" },
+  { name: "Check Ring" },
+  { name: "RS Water Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -577,27 +575,30 @@ const TASKS_OVERDUE = [
   { name: "Enter All Receipts", date: "Jul 30" },
   { name: "Wearable devices/ adapter", date: "Jul 31" },
   { name: "Owl- unhook screen", date: "Jul 31" },
-  { name: "Gunner Uniforms", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
   { name: "Airbnb Money", date: "Jul 31" },
-  { name: "Hemingway Monthly Invoice", date: "Jul 31" },
   { name: "Vendor Invoices", date: "Aug 3" },
-  { name: "Jen schedule", date: "Aug 4" },
   { name: "Mom paperwork", date: "Aug 4" },
   { name: "Bloodwork?", date: "Aug 4" },
   { name: "G bday", date: "Aug 4" },
   { name: "Post social", date: "Aug 4" },
   { name: "Reconciliations", date: "Aug 5" },
-  { name: "Shingles", date: "Aug 5" }
+  { name: "Shingles", date: "Aug 5" },
+  { name: "Kazoo AMEX", date: "Aug 6" },
+  { name: "Shirt", date: "Aug 6" },
+  { name: "QB costs/ Alternative", date: "Aug 6" },
+  { name: "Projections", date: "Aug 6" },
+  { name: "Hemingway Monthly Invoice", date: "Aug 6" },
+  { name: "Rent", date: "Aug 6" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-06T05:53:26-05:00";
+const DATA_REFRESH_TIME = "2026-08-07T06:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 6, 2026";
-const HOROSCOPE_DATA = "You don't have to push so hard to move closer to your goals. As Venus enters Libra, your career and reputation get a delightful boost. It's easier to build connections, gain support, and make progress without burning out. You might even stumble into your 15 minutes of viral fame. Embrace the opportunities that make your professional or public life feel more meaningful and even fun. But don't ignore what's obviously unfair just to keep the good PR coming. Openly calling out injustice will impress all the right people. Win, win.";
+const HOROSCOPE_DATE = "August 7, 2026";
+const HOROSCOPE_DATA = "Be upfront with the people you love. These past few weeks, things may have gotten lost in translation with them. Now it's getting easier to communicate again. You're also figuring out what makes you feel guarded or defensive about your relationships — and how you can be more direct. That might seem scary, but keep practicing. If you want to build intimacy, you've got to break down those walls.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
