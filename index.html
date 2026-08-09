@@ -531,20 +531,11 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom · Urban Summit KC" },
-  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse" },
-  { time: "12:00 PM", name: "Nova Groomer", type: "meeting", detail: "" },
-  { time: "1:00 PM", name: "Brennan?", type: "meeting", detail: "" },
-  { time: "6:00 PM", name: "Izzy Hair Part 2", type: "meeting", detail: "" }
+  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "AI" },
-  { name: "Kids Braids?" },
-  { name: "Meds" },
-  { name: "Volunteering" },
-  { name: "Check Ring" },
-  { name: "RS Water Plants" }
+  { name: "Water House Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -581,7 +572,6 @@ const TASKS_OVERDUE = [
   { name: "Vendor Invoices", date: "Aug 3" },
   { name: "Mom paperwork", date: "Aug 4" },
   { name: "Bloodwork?", date: "Aug 4" },
-  { name: "G bday", date: "Aug 4" },
   { name: "Post social", date: "Aug 4" },
   { name: "Reconciliations", date: "Aug 5" },
   { name: "Shingles", date: "Aug 5" },
@@ -590,15 +580,19 @@ const TASKS_OVERDUE = [
   { name: "QB costs/ Alternative", date: "Aug 6" },
   { name: "Projections", date: "Aug 6" },
   { name: "Hemingway Monthly Invoice", date: "Aug 6" },
-  { name: "Rent", date: "Aug 6" }
+  { name: "Rent", date: "Aug 6" },
+  { name: "AI", date: "Aug 7" },
+  { name: "Kids Braids?", date: "Aug 7" },
+  { name: "Volunteering", date: "Aug 7" },
+  { name: "G bday", date: "Aug 8" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-07T06:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-09T05:13:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 7, 2026";
-const HOROSCOPE_DATA = "Be upfront with the people you love. These past few weeks, things may have gotten lost in translation with them. Now it's getting easier to communicate again. You're also figuring out what makes you feel guarded or defensive about your relationships — and how you can be more direct. That might seem scary, but keep practicing. If you want to build intimacy, you've got to break down those walls.";
+const HOROSCOPE_DATE = "August 9, 2026";
+const HOROSCOPE_DATA = "Dig into the fine print of your collabs. Now that Mercury's in Leo, it's time to get deep in the weeds of your shared resources, split bills, and creative partnerships. Name what's felt unfair, and notice where the math isn't mathing. If you're scared to ask for what you deserve, unpack the stories you tell yourself about your worth and your boundaries, and confront the shadowy fears you're carrying. As you sharpen your self-awareness, you'll boost your courage to advocate for yourself.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
