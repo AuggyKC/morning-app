@@ -531,11 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "" }
+  { time: "All Day", name: "Glass Pickup", type: "allday", detail: "" },
+  { time: "7:45 AM", name: "Maids - Cleaning Red Star", type: "meeting", detail: "" },
+  { time: "9:00 AM", name: "Maids - Home", type: "meeting", detail: "" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
+  { time: "12:30 PM", name: "CVS Vaccine Visit", type: "meeting", detail: "8509 State Line Rd" },
+  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" },
+  { time: "2:30 PM", name: "Kazoo & Maids Sync", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Water House Plants" }
+  { name: "Starlight" },
+  { name: "Maids" },
+  { name: "Kazoo AMEX" },
+  { name: "Hemingway Monthly Invoice" }
 ];
 
 const TASKS_OVERDUE = [
@@ -570,29 +579,24 @@ const TASKS_OVERDUE = [
   { name: "Cr trip", date: "Jul 31" },
   { name: "Airbnb Money", date: "Jul 31" },
   { name: "Vendor Invoices", date: "Aug 3" },
-  { name: "Mom paperwork", date: "Aug 4" },
   { name: "Bloodwork?", date: "Aug 4" },
   { name: "Post social", date: "Aug 4" },
   { name: "Reconciliations", date: "Aug 5" },
-  { name: "Shingles", date: "Aug 5" },
-  { name: "Kazoo AMEX", date: "Aug 6" },
-  { name: "Shirt", date: "Aug 6" },
   { name: "QB costs/ Alternative", date: "Aug 6" },
   { name: "Projections", date: "Aug 6" },
-  { name: "Hemingway Monthly Invoice", date: "Aug 6" },
   { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
-  { name: "Kids Braids?", date: "Aug 7" },
   { name: "Volunteering", date: "Aug 7" },
-  { name: "G bday", date: "Aug 8" }
+  { name: "G bday", date: "Aug 8" },
+  { name: "Water House Plants", date: "Aug 9" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-09T05:13:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-10T05:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 9, 2026";
-const HOROSCOPE_DATA = "Dig into the fine print of your collabs. Now that Mercury's in Leo, it's time to get deep in the weeds of your shared resources, split bills, and creative partnerships. Name what's felt unfair, and notice where the math isn't mathing. If you're scared to ask for what you deserve, unpack the stories you tell yourself about your worth and your boundaries, and confront the shadowy fears you're carrying. As you sharpen your self-awareness, you'll boost your courage to advocate for yourself.";
+const HOROSCOPE_DATE = "August 10, 2026";
+const HOROSCOPE_DATA = "All that glitters is not gold. Keep that in mind today, especially when it comes to your career or leadership roles. You might be tempted by shiny projects and opportunities. But stop to really think them through. Are they too good to be true? Now isn't the time to make big decisions or binding commitments. Take it slow, and see how you're feeling tomorrow. You might be glad you waited.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
