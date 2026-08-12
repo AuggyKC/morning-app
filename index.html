@@ -531,16 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" }
+  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
+  { time: "All Day", name: "WFH- Cindy", type: "allday", detail: "" },
+  { time: "2:30 PM", name: "Equativ x Kazoo | Bi-Weekly Sync", type: "call", detail: "Google Meet" }
 ];
 
 const TASKS_TODAY = [
+  { name: "Exline" },
+  { name: "Izzy Soccer" },
   { name: "Call John Woods- insurnace BS" },
   { name: "Izzy Braids" },
+  { name: "Freezer/ Dishwasher" },
   { name: "G bday" },
-  { name: "Costa Rica" },
-  { name: "Put Out Dumpster" }
+  { name: "Pills" },
+  { name: "Costa Rica" }
 ];
 
 const TASKS_OVERDUE = [
@@ -558,14 +562,11 @@ const TASKS_OVERDUE = [
   { name: "Abby Review", date: "Feb 19" },
   { name: "Research New Phones", date: "Jun 24" },
   { name: "Siphox", date: "Jun 26" },
-  { name: "EOKC", date: "Jun 26" },
   { name: "Gunner and Izzy Activities", date: "Jul 5" },
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
   { name: "Wegs Bday", date: "Jul 26" },
-  { name: "Freezer/ Dishwasher", date: "Jul 28" },
   { name: "Heart appt", date: "Jul 29" },
-  { name: "Deposit Checks / Profit Tracking", date: "Jul 30" },
   { name: "Checkbooks", date: "Jul 30" },
   { name: "Gunner Photos/ Letters", date: "Jul 30" },
   { name: "Enter All Receipts", date: "Jul 30" },
@@ -573,26 +574,25 @@ const TASKS_OVERDUE = [
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
-  { name: "Airbnb Money", date: "Jul 31" },
   { name: "Vendor Invoices", date: "Aug 3" },
   { name: "Bloodwork?", date: "Aug 4" },
   { name: "Post social", date: "Aug 4" },
   { name: "Reconciliations", date: "Aug 5" },
   { name: "QB costs/ Alternative", date: "Aug 6" },
-  { name: "Projections", date: "Aug 6" },
   { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
   { name: "Volunteering", date: "Aug 7" },
   { name: "Water House Plants", date: "Aug 9" },
-  { name: "Kazoo AMEX", date: "Aug 10" }
+  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 11" },
+  { name: "EOKC", date: "Aug 11" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-11T05:13:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-12T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 11, 2026";
-const HOROSCOPE_DATA = "If you need something in your close relationships, you have to say so. As Mars enters Cancer, notice when you secretly expect your loved ones to read your mind. If you take the initiative to check in with your besties or partners, you can make a lot of progress together over the coming weeks. But don't wait for them to kick things off. Starting the conversation about your shared goals will help everyone feel supported and understood — and remind you how much agency you have, even when you're feeling vulnerable.";
+const HOROSCOPE_DATE = "August 12, 2026";
+const HOROSCOPE_DATA = "Your needs are important — but so are your collaborators'. Let the solar eclipse in Leo be your reminder. Stop and ask yourself if your give-and-takes are really all that equal. Are you overextending yourself? Demanding too much from your teammates? Be real about it. Make a plan to balance the scales. And don't rush into any agreements. You can always re-evaluate them once things feel a little steadier.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
