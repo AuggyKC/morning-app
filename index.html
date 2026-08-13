@@ -531,20 +531,23 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
-  { time: "All Day", name: "WFH- Cindy", type: "allday", detail: "" },
-  { time: "2:30 PM", name: "Equativ x Kazoo | Bi-Weekly Sync", type: "call", detail: "Google Meet" }
+  { time: "8:00 AM", name: "Insurance Inspection- John Woods", type: "call", detail: "Google Meet" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
+  { time: "12:00 PM", name: "Kazoo/LocaliQ - The Maids - Monthly Marketing Discussion", type: "call", detail: "Microsoft Teams" },
+  { time: "1:30 PM", name: "Agency Discussion", type: "meeting", detail: "Off-site, TBD" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" },
+  { time: "7:00 PM", name: "Pick up Izzy", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Exline" },
-  { name: "Izzy Soccer" },
-  { name: "Call John Woods- insurnace BS" },
+  { name: "Starlight" },
+  { name: "Kazoo AMEX/ Recon Sheets" },
+  { name: "Status/ NB" },
   { name: "Izzy Braids" },
-  { name: "Freezer/ Dishwasher" },
   { name: "G bday" },
-  { name: "Pills" },
-  { name: "Costa Rica" }
+  { name: "SKC Radio" },
+  { name: "Heirloom" },
+  { name: "Ashlee Status" }
 ];
 
 const TASKS_OVERDUE = [
@@ -581,18 +584,15 @@ const TASKS_OVERDUE = [
   { name: "QB costs/ Alternative", date: "Aug 6" },
   { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
-  { name: "Volunteering", date: "Aug 7" },
-  { name: "Water House Plants", date: "Aug 9" },
-  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 11" },
-  { name: "EOKC", date: "Aug 11" }
+  { name: "Volunteering", date: "Aug 7" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-12T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-13T05:46:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 12, 2026";
-const HOROSCOPE_DATA = "Your needs are important — but so are your collaborators'. Let the solar eclipse in Leo be your reminder. Stop and ask yourself if your give-and-takes are really all that equal. Are you overextending yourself? Demanding too much from your teammates? Be real about it. Make a plan to balance the scales. And don't rush into any agreements. You can always re-evaluate them once things feel a little steadier.";
+const HOROSCOPE_DATE = "August 13, 2026";
+const HOROSCOPE_DATA = "Who are the people who support you? Today, show some love to the healers, collaborators, and wise friends who have been in your corner over the years. Even a small, sweet acknowledgment of your connection can have a big impact. And if you're searching for coaches, cheerleaders, and strong shoulders to cry on, seek them out. Put words to what you want so others can help you get it.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
