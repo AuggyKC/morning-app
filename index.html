@@ -531,12 +531,15 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "1:30 PM", name: "DEI", type: "meeting", detail: "Kansas City Public Library: Plaza Branch" }
+  { time: "All Day", name: "Olympic Development Program", type: "allday", detail: "" },
+  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "" },
+  { time: "7:00 PM", name: "Sporting City - International Trips - 2027", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Bench- Boys" },
-  { name: "Change moth traps" }
+  { name: "Freezer/ Dishwasher" },
+  { name: "G bday" },
+  { name: "Water House Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -575,15 +578,17 @@ const TASKS_OVERDUE = [
   { name: "Enter All Receipts", date: "Aug 13" },
   { name: "Kstate game", date: "Aug 14" },
   { name: "Meds", date: "Aug 14" },
-  { name: "RS Water Plants", date: "Aug 14" }
+  { name: "RS Water Plants", date: "Aug 14" },
+  { name: "Bench- Boys", date: "Aug 15" },
+  { name: "Change moth traps", date: "Aug 15" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-15T05:35:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-16T05:35:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 15, 2026";
-const HOROSCOPE_DATA = "Today is about collaboration and conversation. Your words carry extra weight right now, especially when you’re discussing your shared projects or resources. By all means, yap away. Just don’t forget to follow through. Translate all that talk into practical action — the smaller and more sustainable, the better. That’s where real change comes from.";
+const HOROSCOPE_DATE = "August 16, 2026";
+const HOROSCOPE_DATA = "Slow it all the way down. Right now, there’s a gap between your relationship goals and your actual bandwidth. You might feel disillusioned or like you’re losing momentum. But there’s no need to be hard on yourself. This is a reset, not a failure. So let yourself regroup. And set those boundaries, even if it kills the vibe. Your wellbeing is more important.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
