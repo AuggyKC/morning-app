@@ -531,18 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Mosquito Treatment", type: "allday", detail: "" },
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "Workout" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" },
-  { time: "6:00 PM", name: "COE tryouts", type: "meeting", detail: "" }
+  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "" },
+  { time: "All Day", name: "Hold- Streetcar", type: "allday", detail: "" },
+  { time: "11:30 AM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" }
 ];
 
 const TASKS_TODAY = [
+  { name: "Starlight" },
   { name: "Maids" },
-  { name: "Deposit Checks / Profit Tracking" },
-  { name: "Payroll- Whiskey/ Kazoo" },
   { name: "Goat Hill Refund?" },
-  { name: "RS AMEX" },
+  { name: "Spectrum- Starlight Issue" },
+  { name: "G bday" },
+  { name: "Projections" },
+  { name: "Pills" },
+  { name: "Costa Rica" },
   { name: "Gunner Photos/ Letters" }
 ];
 
@@ -563,14 +565,12 @@ const TASKS_OVERDUE = [
   { name: "Gunner and Izzy Activities", date: "Jul 5" },
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
-  { name: "Wegs Bday", date: "Jul 26" },
   { name: "Heart appt", date: "Jul 29" },
   { name: "Checkbooks", date: "Jul 30" },
   { name: "Wearable devices/ adapter", date: "Jul 31" },
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
-  { name: "Vendor Invoices", date: "Aug 3" },
   { name: "Reconciliations", date: "Aug 5" },
   { name: "QB costs/ Alternative", date: "Aug 6" },
   { name: "Rent", date: "Aug 6" },
@@ -578,20 +578,24 @@ const TASKS_OVERDUE = [
   { name: "Volunteering", date: "Aug 7" },
   { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 13" },
   { name: "Bloodwork?", date: "Aug 13" },
-  { name: "Enter All Receipts", date: "Aug 13" },
   { name: "Kstate game", date: "Aug 14" },
   { name: "RS Water Plants", date: "Aug 14" },
   { name: "Change moth traps", date: "Aug 15" },
   { name: "return shirt", date: "Aug 16" },
-  { name: "Bench- Boys", date: "Aug 16" }
+  { name: "Bench- Boys", date: "Aug 16" },
+  { name: "Vendor Invoices", date: "Aug 18" },
+  { name: "Deposit Checks / Profit Tracking", date: "Aug 18" },
+  { name: "Building insurance", date: "Aug 18" },
+  { name: "Post social", date: "Aug 18" },
+  { name: "Enter All Receipts", date: "Aug 18" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-18T05:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-19T05:20:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 18, 2026";
-const HOROSCOPE_DATA = "Let everybody know your idea of a good time. Do what you can to seek out and soak up any moments of fun and connection in your public life. Don’t overthink this. Whether you make a lunch date with a colleague or throw a party to celebrate a big project you’re working on, stay open to any opportunities or invitations that excite you. Challenge the notion that being a leader and having ambitious goals should be stressful. Simply enjoying yourself can be just as productive.";
+const HOROSCOPE_DATE = "August 19, 2026";
+const HOROSCOPE_DATA = "If something feels unfair, name it. What have you been learning recently about the habits, choices, or stories you’re ready to let go of in your collaborations? What needs to shift in the ways you share resources and responsibilities? Check in with yourself, but try not to rush the process. For now, take care of your physical system, and give yourself space to reflect on what’s been coming up. If you want to build something lasting with other people, you’ve got to work through these growing pains together.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
