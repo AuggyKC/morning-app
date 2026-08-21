@@ -531,21 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "" }
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse" },
+  { time: "1:30 PM", name: "Nails", type: "meeting", detail: "" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Maids" },
-  { name: "Goat Hill Refund?" },
-  { name: "Spectrum- Starlight Issue" },
+  { name: "Freezer/ Dishwasher" },
   { name: "G bday" },
-  { name: "Projections" },
-  { name: "Pills" },
+  { name: "Meds" },
   { name: "Costa Rica" },
-  { name: "Gunner Photos/ Letters" }
+  { name: "Check Ring" },
+  { name: "RS Water Plants" },
+  { name: "Pay Mortgage" }
 ];
 
 const TASKS_OVERDUE = [
@@ -566,7 +564,6 @@ const TASKS_OVERDUE = [
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
   { name: "Heart appt", date: "Jul 29" },
-  { name: "Checkbooks", date: "Jul 30" },
   { name: "Wearable devices/ adapter", date: "Jul 31" },
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
@@ -579,23 +576,24 @@ const TASKS_OVERDUE = [
   { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 13" },
   { name: "Bloodwork?", date: "Aug 13" },
   { name: "Kstate game", date: "Aug 14" },
-  { name: "RS Water Plants", date: "Aug 14" },
   { name: "Change moth traps", date: "Aug 15" },
   { name: "return shirt", date: "Aug 16" },
   { name: "Bench- Boys", date: "Aug 16" },
-  { name: "Vendor Invoices", date: "Aug 18" },
-  { name: "Deposit Checks / Profit Tracking", date: "Aug 18" },
-  { name: "Building insurance", date: "Aug 18" },
-  { name: "Post social", date: "Aug 18" },
-  { name: "Enter All Receipts", date: "Aug 18" }
+  { name: "Post social", date: "Aug 16" },
+  { name: "Enter All Receipts", date: "Aug 18" },
+  { name: "Maids", date: "Aug 19" },
+  { name: "Vendor Invoices", date: "Aug 20" },
+  { name: "Checkbooks", date: "Aug 20" },
+  { name: "Text Hilary", date: "Aug 20" },
+  { name: "Target bill", date: "Aug 20" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-20T05:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-21T06:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 20, 2026";
-const HOROSCOPE_DATA = "Tap the brakes. Right now, things are speeding up in your daily life. Maybe you’re wrapping up a writing project or exploring new parts of your city. That’s great — as long as you don’t overdo it. It might seem like anything is possible, but it’s important not to spread yourself thin. So try to balance your “go” time with your chill time. It’s okay to slow down.";
+const HOROSCOPE_DATE = "August 21, 2026";
+const HOROSCOPE_DATA = "Your work in the world might frustrate you today. Maybe a big project is delayed, or a professional relationship feels strained. These setbacks are annoying, yes, but they can also be blessings in disguise. What changes do they inspire you to make? Where can you set firmer boundaries with your supervisor — or maybe even reevaluate your whole mission? Go back to the drawing board. You’re ready.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
