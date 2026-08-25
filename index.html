@@ -531,19 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "" },
-  { time: "9:00 AM", name: "Maids- Home", type: "meeting", detail: "" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom" },
-  { time: "1:30 PM", name: "J&J Retail Partnership Call", type: "call", detail: "Microsoft Teams" }
+  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
+  { time: "12:30 PM", name: "LWVKC Board Meeting", type: "call", detail: "Zoom" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" }
 ];
 
 const TASKS_TODAY = [
   { name: "Starlight" },
-  { name: "Ballet" },
-  { name: "Spectrum- Starlight Issue" },
-  { name: "Equative Incentive Invoice" },
-  { name: "Freezer/ Dishwasher" }
+  { name: "Vendor Invoices" },
+  { name: "Maids" },
+  { name: "Emails-" },
+  { name: "return shirt" },
+  { name: "Wegs Bday" },
+  { name: "SKC Radio" },
+  { name: "Process Maids Invoices" }
 ];
 
 const TASKS_OVERDUE = [
@@ -572,32 +573,20 @@ const TASKS_OVERDUE = [
   { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
   { name: "Volunteering", date: "Aug 7" },
-  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 13" },
-  { name: "Bloodwork?", date: "Aug 13" },
-  { name: "Kstate game", date: "Aug 14" },
-  { name: "Change moth traps", date: "Aug 15" },
-  { name: "return shirt", date: "Aug 16" },
-  { name: "Bench- Boys", date: "Aug 16" },
-  { name: "Post social", date: "Aug 16" },
-  { name: "Enter All Receipts", date: "Aug 18" },
-  { name: "Maids", date: "Aug 19" },
-  { name: "Vendor Invoices", date: "Aug 20" },
-  { name: "Checkbooks", date: "Aug 20" },
-  { name: "Building insurance", date: "Aug 21" },
-  { name: "Text Hilary", date: "Aug 21" },
   { name: "Costa Rica", date: "Aug 21" },
-  { name: "Target bill", date: "Aug 21" },
   { name: "Check Ring", date: "Aug 21" },
-  { name: "Wegs Bday", date: "Aug 22" },
-  { name: "Water House Plants", date: "Aug 23" }
+  { name: "Kstate game", date: "Aug 23" },
+  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 24" },
+  { name: "Checkbooks", date: "Aug 24" },
+  { name: "Enter All Receipts", date: "Aug 24" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-24T05:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-25T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 24, 2026";
-const HOROSCOPE_DATA = "Truth serum time. Right now, it feels unusually easy to name your pain points. So talk through them with a friend, your therapist, or your journal. You don’t have to heal every wound at once. Just discuss whatever’s bubbling to the surface. Better out than in.";
+const HOROSCOPE_DATE = "August 25, 2026";
+const HOROSCOPE_DATA = "You’re asking all the right questions. Now that Mercury is in Virgo, you’ve got a strong urge to learn, as long as it’s on your own terms. So get lost in some obscure lore that fascinates you. Browse an intriguing bookshelf at the library. Dig beneath the surface of your worldviews and spiritual beliefs, and investigate where they come from. This is also an ideal time to research potential mentors, workshops, or degree programs. Whatever you do, stay open to any opportunity to broaden your perspective.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
