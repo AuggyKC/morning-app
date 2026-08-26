@@ -531,20 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "" },
-  { time: "12:30 PM", name: "LWVKC Board Meeting", type: "call", detail: "Zoom" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" }
+  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "" },
+  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "" },
+  { time: "All Day", name: "Fridge Delivery", type: "allday", detail: "" },
+  { time: "2:00 PM", name: "DEI Transformation Pillars Learning Community", type: "call", detail: "Zoom • League of Women Voters" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Vendor Invoices" },
-  { name: "Maids" },
-  { name: "Emails-" },
-  { name: "return shirt" },
+  { name: "Deposit Checks / Profit Tracking" },
+  { name: "Text Drake" },
   { name: "Wegs Bday" },
-  { name: "SKC Radio" },
-  { name: "Process Maids Invoices" }
+  { name: "SKC Tickets" },
+  { name: "Change moth traps" },
+  { name: "Pills" }
 ];
 
 const TASKS_OVERDUE = [
@@ -578,15 +577,17 @@ const TASKS_OVERDUE = [
   { name: "Kstate game", date: "Aug 23" },
   { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 24" },
   { name: "Checkbooks", date: "Aug 24" },
-  { name: "Enter All Receipts", date: "Aug 24" }
+  { name: "Enter All Receipts", date: "Aug 24" },
+  { name: "Maids", date: "Aug 25" },
+  { name: "Dog swim", date: "Aug 25" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-25T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-26T05:20:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 25, 2026";
-const HOROSCOPE_DATA = "You’re asking all the right questions. Now that Mercury is in Virgo, you’ve got a strong urge to learn, as long as it’s on your own terms. So get lost in some obscure lore that fascinates you. Browse an intriguing bookshelf at the library. Dig beneath the surface of your worldviews and spiritual beliefs, and investigate where they come from. This is also an ideal time to research potential mentors, workshops, or degree programs. Whatever you do, stay open to any opportunity to broaden your perspective.";
+const HOROSCOPE_DATE = "August 26, 2026";
+const HOROSCOPE_DATA = "Clarity: incoming. Tomorrow’s Mercury cazimi will bring your future into sharper focus. So get ready to rethink your beliefs or big plans. Do they still fit you? Do they fit the person you want to become? Don’t be afraid to make changes or reset entirely. A blank slate = endless possibilities.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
