@@ -531,22 +531,18 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Dishwasher Delivery", type: "allday", detail: "" },
-  { time: "8:30 AM", name: "Reminder: Get CARs to Jami before billing cycle on the 1st", type: "meeting", detail: "Kazoo team" },
-  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "with Ashlee" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom • Kazoo team" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "Kazoo team" }
+  { time: "7:00 AM", name: "REMINDER: All invoices should be entered and matched from previous month", type: "meeting", detail: "Kazoo team" },
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom • Urban Summit KC" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse • 1400 W Ninth St" },
+  { time: "5:30 PM", name: "Greta's 7th Birthday Movie Night", type: "meeting", detail: "Fairway City Hall" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Ballet" },
-  { name: "Vendor Invoices" },
-  { name: "Message Roberto!" },
-  { name: "SKC Radio" },
-  { name: "Heirloom" },
-  { name: "Projections" },
-  { name: "Ashlee Status" },
-  { name: "Flags/ USA Decor" }
+  { name: "Kazoo AMEX/ Recon Sheets" },
+  { name: "Roberto Monies" },
+  { name: "Building insurance" },
+  { name: "Meds" },
+  { name: "RS Water Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -570,7 +566,6 @@ const TASKS_OVERDUE = [
   { name: "Owl- unhook screen", date: "Jul 31" },
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
-  { name: "Reconciliations", date: "Aug 5" },
   { name: "QB costs/ Alternative", date: "Aug 6" },
   { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
@@ -578,18 +573,18 @@ const TASKS_OVERDUE = [
   { name: "Costa Rica", date: "Aug 21" },
   { name: "Check Ring", date: "Aug 21" },
   { name: "Kstate game", date: "Aug 23" },
-  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 24" },
-  { name: "Maids", date: "Aug 25" },
   { name: "Checkbooks", date: "Aug 26" },
-  { name: "Enter All Receipts", date: "Aug 26" }
+  { name: "Projections", date: "Aug 26" },
+  { name: "Maids", date: "Aug 27" },
+  { name: "Reconciliations", date: "Aug 27" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-27T05:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-28T05:20:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 27, 2026";
-const HOROSCOPE_DATA = "Hello, mental overload. The lunar eclipse is bringing a touch of chaos to your comms and daily life. Maybe your schedule or inbox feels cluttered. It’s okay to be stressed. Just choose your words carefully. And before squeezing something else into your calendar, try to sleep on it. You’ll make better choices when you’re not under so much pressure.";
+const HOROSCOPE_DATE = "August 28, 2026";
+const HOROSCOPE_DATA = "Surprise. Today brings lots of plot twists, and you may have to go back to the drawing board on that trip, degree program, or research project. Yes, change can be inconvenient. But it can also highlight any flaws in your original plans. So try to stay flexible and open-minded. This pivot is probably for the best.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
