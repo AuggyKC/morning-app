@@ -531,19 +531,11 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:00 AM", name: "REMINDER: All invoices should be entered and matched from previous month", type: "meeting", detail: "Kazoo team" },
-  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom • Urban Summit KC" },
-  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse • 1400 W Ninth St" },
-  { time: "5:30 PM", name: "Greta's 7th Birthday Movie Night", type: "meeting", detail: "Fairway City Hall" }
+  { time: "5:00 PM", name: "Bev's Birthday!", type: "meeting", detail: "5:00 – 8:00 PM" },
+  { time: "6:00 PM", name: "Gunner — U11 Pre-MLS NEXT East Game", type: "meeting", detail: "Scheels OP Soccer Complex 8N • Arrive 5:15 • Light Blue, bring both" }
 ];
 
-const TASKS_TODAY = [
-  { name: "Kazoo AMEX/ Recon Sheets" },
-  { name: "Roberto Monies" },
-  { name: "Building insurance" },
-  { name: "Meds" },
-  { name: "RS Water Plants" }
-];
+const TASKS_TODAY = [];
 
 const TASKS_OVERDUE = [
   { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
@@ -576,15 +568,19 @@ const TASKS_OVERDUE = [
   { name: "Checkbooks", date: "Aug 26" },
   { name: "Projections", date: "Aug 26" },
   { name: "Maids", date: "Aug 27" },
-  { name: "Reconciliations", date: "Aug 27" }
+  { name: "Reconciliations", date: "Aug 27" },
+  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 28" },
+  { name: "Lowe's locker pick up", date: "Aug 28" },
+  { name: "Roberto Monies", date: "Aug 28" },
+  { name: "Meds", date: "Aug 28" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-28T05:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-29T05:39:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 28, 2026";
-const HOROSCOPE_DATA = "Surprise. Today brings lots of plot twists, and you may have to go back to the drawing board on that trip, degree program, or research project. Yes, change can be inconvenient. But it can also highlight any flaws in your original plans. So try to stay flexible and open-minded. This pivot is probably for the best.";
+const HOROSCOPE_DATE = "August 29, 2026";
+const HOROSCOPE_DATA = "You can't control every outcome. That may be a tough pill to swallow, but it's an important one. So practice being more adaptable today. If travel issues crop up, or if conversations turn into surprise debates, let them. You're learning to stay flexible, and that's a skill you'll use for life. Keep up the good work.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
