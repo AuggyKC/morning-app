@@ -531,11 +531,15 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "5:00 PM", name: "Bev's Birthday!", type: "meeting", detail: "5:00 – 8:00 PM" },
-  { time: "6:00 PM", name: "Gunner — U11 Pre-MLS NEXT East Game", type: "meeting", detail: "Scheels OP Soccer Complex 8N • Arrive 5:15 • Light Blue, bring both" }
+  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "6:30 \u2013 7:30 PM" }
 ];
 
-const TASKS_TODAY = [];
+const TASKS_TODAY = [
+  { name: "Abu Gift" },
+  { name: "Two soil buckets" },
+  { name: "Post social" },
+  { name: "Water House Plants" }
+];
 
 const TASKS_OVERDUE = [
   { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
@@ -570,17 +574,15 @@ const TASKS_OVERDUE = [
   { name: "Maids", date: "Aug 27" },
   { name: "Reconciliations", date: "Aug 27" },
   { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 28" },
-  { name: "Lowe's locker pick up", date: "Aug 28" },
-  { name: "Roberto Monies", date: "Aug 28" },
-  { name: "Meds", date: "Aug 28" }
+  { name: "Roberto Monies", date: "Aug 28" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-29T05:39:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-30T06:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 29, 2026";
-const HOROSCOPE_DATA = "You can't control every outcome. That may be a tough pill to swallow, but it's an important one. So practice being more adaptable today. If travel issues crop up, or if conversations turn into surprise debates, let them. You're learning to stay flexible, and that's a skill you'll use for life. Keep up the good work.";
+const HOROSCOPE_DATE = "August 30, 2026";
+const HOROSCOPE_DATA = "Find your why. You\u2019ve put so much work into chasing your ambitions, but why do you want what you want? Do you really want it, or are you working toward someone else\u2019s idea of success? Take some time today to reflect. Figure out which goals are yours and yours alone. And if you want to change the path you\u2019re on, start planning that pivot. Don\u2019t stress \u2014 you\u2019ve still got time.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
