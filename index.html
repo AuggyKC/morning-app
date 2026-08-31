@@ -531,14 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "6:30 \u2013 7:30 PM" }
+  { time: "All Day", name: "Previous Month's Vendor Invoices Due", type: "allday", detail: "Monthly reminder" },
+  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "7:45 \u2013 9:45 AM" },
+  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom \u2022 10:00 \u2013 11:00 AM" },
+  { time: "1:00 PM", name: "Dishwasher Delivery", type: "meeting", detail: "1:00 \u2013 4:00 PM" },
+  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom \u2022 with Stephanie, Alyah" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Abu Gift" },
-  { name: "Two soil buckets" },
-  { name: "Post social" },
-  { name: "Water House Plants" }
+  { name: "Starlight" },
+  { name: "Ballet" },
+  { name: "Payroll- Whiskey/ Kazoo" },
+  { name: "DART" },
+  { name: "SKC Radio" }
 ];
 
 const TASKS_OVERDUE = [
@@ -574,15 +579,16 @@ const TASKS_OVERDUE = [
   { name: "Maids", date: "Aug 27" },
   { name: "Reconciliations", date: "Aug 27" },
   { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 28" },
-  { name: "Roberto Monies", date: "Aug 28" }
+  { name: "Roberto Monies", date: "Aug 28" },
+  { name: "Post social", date: "Aug 30" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-30T06:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-08-31T06:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 30, 2026";
-const HOROSCOPE_DATA = "Find your why. You\u2019ve put so much work into chasing your ambitions, but why do you want what you want? Do you really want it, or are you working toward someone else\u2019s idea of success? Take some time today to reflect. Figure out which goals are yours and yours alone. And if you want to change the path you\u2019re on, start planning that pivot. Don\u2019t stress \u2014 you\u2019ve still got time.";
+const HOROSCOPE_DATE = "August 31, 2026";
+const HOROSCOPE_DATA = "Get ready to break some patterns. Today could highlight your issues with trust, intimacy, or vulnerability. Stop to ask yourself where they stem from. Who taught you to guard your heart? Which negative experiences have led you to put up walls? Really dive deep. It doesn\u2019t have to be pretty \u2014 it just has to be honest. Getting to the root of what\u2019s bothering you will help you move through it.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
