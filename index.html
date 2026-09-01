@@ -531,18 +531,17 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Previous Month's Vendor Invoices Due", type: "allday", detail: "Monthly reminder" },
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "7:45 \u2013 9:45 AM" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom \u2022 10:00 \u2013 11:00 AM" },
-  { time: "1:00 PM", name: "Dishwasher Delivery", type: "meeting", detail: "1:00 \u2013 4:00 PM" },
-  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom \u2022 with Stephanie, Alyah" }
+  { time: "All Day", name: "Dry Cleaning Pick Up", type: "allday", detail: "Reminder" },
+  { time: "8:00 AM", name: "REMINDER: AMEX receipts / screenshots to Cindy", type: "call", detail: "Google Meet \u2022 8:00 \u2013 9:00 AM" },
+  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "11:30 AM \u2013 12:30 PM" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams \u2022 3:30 \u2013 4:00 PM" }
 ];
 
 const TASKS_TODAY = [
   { name: "Starlight" },
-  { name: "Ballet" },
-  { name: "Payroll- Whiskey/ Kazoo" },
-  { name: "DART" },
+  { name: "Maids" },
+  { name: "Post Starlight" },
+  { name: "CR Insurance" },
   { name: "SKC Radio" }
 ];
 
@@ -576,19 +575,15 @@ const TASKS_OVERDUE = [
   { name: "Kstate game", date: "Aug 23" },
   { name: "Checkbooks", date: "Aug 26" },
   { name: "Projections", date: "Aug 26" },
-  { name: "Maids", date: "Aug 27" },
-  { name: "Reconciliations", date: "Aug 27" },
-  { name: "Kazoo AMEX/ Recon Sheets", date: "Aug 28" },
-  { name: "Roberto Monies", date: "Aug 28" },
-  { name: "Post social", date: "Aug 30" }
+  { name: "Reconciliations", date: "Aug 27" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-08-31T06:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-01T05:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "August 31, 2026";
-const HOROSCOPE_DATA = "Get ready to break some patterns. Today could highlight your issues with trust, intimacy, or vulnerability. Stop to ask yourself where they stem from. Who taught you to guard your heart? Which negative experiences have led you to put up walls? Really dive deep. It doesn\u2019t have to be pretty \u2014 it just has to be honest. Getting to the root of what\u2019s bothering you will help you move through it.";
+const HOROSCOPE_DATE = "September 1, 2026";
+const HOROSCOPE_DATA = "If something\u2019s not working in your one-on-ones, don\u2019t force it \u2014 face it. But first, you have to get clear about your own needs. Sometimes what you think is a \u201cwe\u201d problem is really an \u201cI woke up on the wrong side of the bed\u201d problem. Sometimes it\u2019s both, though, so if you want your person to make an adjustment, ask. Chances are they\u2019ll be happy to help out.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
