@@ -531,18 +531,15 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Dry Cleaning Pick Up", type: "allday", detail: "Reminder" },
-  { time: "8:00 AM", name: "REMINDER: AMEX receipts / screenshots to Cindy", type: "call", detail: "Google Meet \u2022 8:00 \u2013 9:00 AM" },
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "11:30 AM \u2013 12:30 PM" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams \u2022 3:30 \u2013 4:00 PM" }
+  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "Working from home" },
+  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "Reminder" },
+  { time: "8:00 AM", name: "Bloodwork", type: "meeting", detail: "8:00 AM \u2013 12:00 PM" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Maids" },
-  { name: "Post Starlight" },
-  { name: "CR Insurance" },
-  { name: "SKC Radio" }
+  { name: "Sporting Trip" },
+  { name: "Building insurance" },
+  { name: "Pills" }
 ];
 
 const TASKS_OVERDUE = [
@@ -573,17 +570,24 @@ const TASKS_OVERDUE = [
   { name: "Costa Rica", date: "Aug 21" },
   { name: "Check Ring", date: "Aug 21" },
   { name: "Kstate game", date: "Aug 23" },
-  { name: "Checkbooks", date: "Aug 26" },
   { name: "Projections", date: "Aug 26" },
-  { name: "Reconciliations", date: "Aug 27" }
+  { name: "Reconciliations", date: "Aug 27" },
+  { name: "maicon.ai", date: "Aug 31" },
+  { name: "Anniversary", date: "Aug 31" },
+  { name: "Oil Treatment", date: "Aug 31" },
+  { name: "Massage", date: "Aug 31" },
+  { name: "Tours For Gunner", date: "Aug 31" },
+  { name: "Maids", date: "Sep 1" },
+  { name: "Checkbooks", date: "Sep 1" },
+  { name: "Post Starlight", date: "Sep 1" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-01T05:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-02T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 1, 2026";
-const HOROSCOPE_DATA = "If something\u2019s not working in your one-on-ones, don\u2019t force it \u2014 face it. But first, you have to get clear about your own needs. Sometimes what you think is a \u201cwe\u201d problem is really an \u201cI woke up on the wrong side of the bed\u201d problem. Sometimes it\u2019s both, though, so if you want your person to make an adjustment, ask. Chances are they\u2019ll be happy to help out.";
+const HOROSCOPE_DATE = "September 2, 2026";
+const HOROSCOPE_DATA = "Today brings a major mental boost. You might find yourself asking existential questions or nerding out about your favorite topics. Enjoy the ride. And use this surge of momentum to tackle any tasks you\u2019ve been putting off. That dense reading or intensive research won\u2019t do itself, but it might feel a little easier right now.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
