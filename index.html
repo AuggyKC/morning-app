@@ -531,15 +531,26 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Cindy WFH", type: "allday", detail: "Working from home" },
-  { time: "All Day", name: "Trash Day- Office", type: "allday", detail: "Reminder" },
-  { time: "8:00 AM", name: "Bloodwork", type: "meeting", detail: "8:00 AM \u2013 12:00 PM" }
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom \u2022 9:00 \u2013 9:30 AM" },
+  { time: "9:30 AM", name: "Maids of KC Touch Base", type: "call", detail: "Zoom \u2022 9:30 \u2013 10:00 AM" },
+  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom \u2022 1:30 \u2013 1:45 PM" },
+  { time: "1:45 PM", name: "Cindy / Cailey Monthly Touchbase", type: "call", detail: "Google Meet \u2022 1:45 \u2013 2:00 PM" },
+  { time: "2:30 PM", name: "Skin cancer check", type: "meeting", detail: "2:30 \u2013 3:30 PM" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "3:45 \u2013 4:00 PM" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Sporting Trip" },
-  { name: "Building insurance" },
-  { name: "Pills" }
+  { name: "Starlight" },
+  { name: "Ballet" },
+  { name: "Vendor Invoices" },
+  { name: "Maids" },
+  { name: "Deposit Checks / Profit Tracking" },
+  { name: "Status/ NB" },
+  { name: "Do not pay Blue Cross for 2 months-" },
+  { name: "SKC Radio" },
+  { name: "SKC Tickets" },
+  { name: "Flags/ USA Decor" },
+  { name: "Enter All Receipts" }
 ];
 
 const TASKS_OVERDUE = [
@@ -564,7 +575,6 @@ const TASKS_OVERDUE = [
   { name: "Donations", date: "Jul 31" },
   { name: "Cr trip", date: "Jul 31" },
   { name: "QB costs/ Alternative", date: "Aug 6" },
-  { name: "Rent", date: "Aug 6" },
   { name: "AI", date: "Aug 7" },
   { name: "Volunteering", date: "Aug 7" },
   { name: "Costa Rica", date: "Aug 21" },
@@ -577,17 +587,18 @@ const TASKS_OVERDUE = [
   { name: "Oil Treatment", date: "Aug 31" },
   { name: "Massage", date: "Aug 31" },
   { name: "Tours For Gunner", date: "Aug 31" },
-  { name: "Maids", date: "Sep 1" },
   { name: "Checkbooks", date: "Sep 1" },
-  { name: "Post Starlight", date: "Sep 1" }
+  { name: "Post Starlight", date: "Sep 1" },
+  { name: "Sporting Trip", date: "Sep 2" },
+  { name: "Rent", date: "Sep 2" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-02T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-03T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 2, 2026";
-const HOROSCOPE_DATA = "Today brings a major mental boost. You might find yourself asking existential questions or nerding out about your favorite topics. Enjoy the ride. And use this surge of momentum to tackle any tasks you\u2019ve been putting off. That dense reading or intensive research won\u2019t do itself, but it might feel a little easier right now.";
+const HOROSCOPE_DATE = "September 3, 2026";
+const HOROSCOPE_DATA = "Intimacy can be scary. But you\u2019re in the process of opening up to it. Maybe you\u2019re going to therapy or diving deep with a creative collaborator. Whatever the case, you\u2019re learning how to be vulnerable. Keep practicing, even if it makes you uncomfortable. You\u2019ll get more confident with every heart-to-heart.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
