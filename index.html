@@ -531,26 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom \u2022 9:00 \u2013 9:30 AM" },
-  { time: "9:30 AM", name: "Maids of KC Touch Base", type: "call", detail: "Zoom \u2022 9:30 \u2013 10:00 AM" },
-  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom \u2022 1:30 \u2013 1:45 PM" },
-  { time: "1:45 PM", name: "Cindy / Cailey Monthly Touchbase", type: "call", detail: "Google Meet \u2022 1:45 \u2013 2:00 PM" },
-  { time: "2:30 PM", name: "Skin cancer check", type: "meeting", detail: "2:30 \u2013 3:30 PM" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "3:45 \u2013 4:00 PM" }
+  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "7:45 \u2013 9:45 AM" },
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom \u2022 8:30 \u2013 10:00 AM" },
+  { time: "9:00 AM", name: "Maids- Home", type: "meeting", detail: "9:00 \u2013 11:00 AM" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse \u2022 11:00 AM \u2013 12:00 PM" },
+  { time: "2:00 PM", name: "90-Minute Massage + Thai Herbal Balls", type: "meeting", detail: "1400 W. 9th St. \u2022 Nick Sharpe, LMT \u2022 2:00 \u2013 3:30 PM" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Ballet" },
   { name: "Vendor Invoices" },
-  { name: "Maids" },
-  { name: "Deposit Checks / Profit Tracking" },
-  { name: "Status/ NB" },
-  { name: "Do not pay Blue Cross for 2 months-" },
-  { name: "SKC Radio" },
-  { name: "SKC Tickets" },
-  { name: "Flags/ USA Decor" },
-  { name: "Enter All Receipts" }
+  { name: "Kazoo AMEX/ Recon Sheets" },
+  { name: "Pay .20 Life360" },
+  { name: "Building insurance" },
+  { name: "Post social" },
+  { name: "Meds" },
+  { name: "RS Water Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -582,6 +577,7 @@ const TASKS_OVERDUE = [
   { name: "Kstate game", date: "Aug 23" },
   { name: "Projections", date: "Aug 26" },
   { name: "Reconciliations", date: "Aug 27" },
+  { name: "Build Auditing Product", date: "Aug 31" },
   { name: "maicon.ai", date: "Aug 31" },
   { name: "Anniversary", date: "Aug 31" },
   { name: "Oil Treatment", date: "Aug 31" },
@@ -590,15 +586,22 @@ const TASKS_OVERDUE = [
   { name: "Checkbooks", date: "Sep 1" },
   { name: "Post Starlight", date: "Sep 1" },
   { name: "Sporting Trip", date: "Sep 2" },
-  { name: "Rent", date: "Sep 2" }
+  { name: "Rent", date: "Sep 2" },
+  { name: "Starlight", date: "Sep 3" },
+  { name: "Ballet", date: "Sep 3" },
+  { name: "Maids", date: "Sep 3" },
+  { name: "Gunner hair", date: "Sep 3" },
+  { name: "Nova Appt", date: "Sep 3" },
+  { name: "Client communication", date: "Sep 3" },
+  { name: "Enter All Receipts", date: "Sep 3" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-03T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-04T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 3, 2026";
-const HOROSCOPE_DATA = "Intimacy can be scary. But you\u2019re in the process of opening up to it. Maybe you\u2019re going to therapy or diving deep with a creative collaborator. Whatever the case, you\u2019re learning how to be vulnerable. Keep practicing, even if it makes you uncomfortable. You\u2019ll get more confident with every heart-to-heart.";
+const HOROSCOPE_DATE = "September 4, 2026";
+const HOROSCOPE_DATA = "Mix up your routines today. If you\u2019re bored or struggling to focus, something simple could get the gears turning again. So change up the ways you approach your work or wellbeing. Take a different route for your morning walk, or test out a new workflow. Switching things up could make the mundane parts of your day more fun.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
