@@ -531,22 +531,10 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "7:45 \u2013 9:45 AM" },
-  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom \u2022 8:30 \u2013 10:00 AM" },
-  { time: "9:00 AM", name: "Maids- Home", type: "meeting", detail: "9:00 \u2013 11:00 AM" },
-  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse \u2022 11:00 AM \u2013 12:00 PM" },
-  { time: "2:00 PM", name: "90-Minute Massage + Thai Herbal Balls", type: "meeting", detail: "1400 W. 9th St. \u2022 Nick Sharpe, LMT \u2022 2:00 \u2013 3:30 PM" }
+  { time: "All Day", name: "No scheduled events", type: "allday", detail: "Saturday \u2014 open calendar" }
 ];
 
-const TASKS_TODAY = [
-  { name: "Vendor Invoices" },
-  { name: "Kazoo AMEX/ Recon Sheets" },
-  { name: "Pay .20 Life360" },
-  { name: "Building insurance" },
-  { name: "Post social" },
-  { name: "Meds" },
-  { name: "RS Water Plants" }
-];
+const TASKS_TODAY = [];
 
 const TASKS_OVERDUE = [
   { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
@@ -581,7 +569,6 @@ const TASKS_OVERDUE = [
   { name: "maicon.ai", date: "Aug 31" },
   { name: "Anniversary", date: "Aug 31" },
   { name: "Oil Treatment", date: "Aug 31" },
-  { name: "Massage", date: "Aug 31" },
   { name: "Tours For Gunner", date: "Aug 31" },
   { name: "Checkbooks", date: "Sep 1" },
   { name: "Post Starlight", date: "Sep 1" },
@@ -590,18 +577,23 @@ const TASKS_OVERDUE = [
   { name: "Starlight", date: "Sep 3" },
   { name: "Ballet", date: "Sep 3" },
   { name: "Maids", date: "Sep 3" },
-  { name: "Gunner hair", date: "Sep 3" },
-  { name: "Nova Appt", date: "Sep 3" },
   { name: "Client communication", date: "Sep 3" },
-  { name: "Enter All Receipts", date: "Sep 3" }
+  { name: "Enter All Receipts", date: "Sep 3" },
+  { name: "Kazoo AMEX/ Recon Sheets", date: "Sep 4" },
+  { name: "PWF for Norbrook", date: "Sep 4" },
+  { name: "Rebate Invoice", date: "Sep 4" },
+  { name: "Pay .20 Life360", date: "Sep 4" },
+  { name: "Nova Appt", date: "Sep 4" },
+  { name: "Building insurance", date: "Sep 4" },
+  { name: "Meds", date: "Sep 4" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-04T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-05T07:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 4, 2026";
-const HOROSCOPE_DATA = "Mix up your routines today. If you\u2019re bored or struggling to focus, something simple could get the gears turning again. So change up the ways you approach your work or wellbeing. Take a different route for your morning walk, or test out a new workflow. Switching things up could make the mundane parts of your day more fun.";
+const HOROSCOPE_DATE = "September 5, 2026";
+const HOROSCOPE_DATA = "Ready to shake things up? Routines are great for keeping life consistent, but they also keep it predictable. So today, choose flexibility over familiarity. Play around with your schedule. And be spontaneous, even if that just means tackling your to-dos in reverse order. Tiny adjustments can feel totally liberating.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
