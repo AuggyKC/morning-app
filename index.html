@@ -531,10 +531,17 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "No scheduled events", type: "allday", detail: "Saturday \u2014 open calendar" }
+  { time: "11:00 AM", name: "Chloe's Slime Time Szn 7", type: "meeting", detail: "Rainbow Slime Co." },
+  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "Recurring" }
 ];
 
-const TASKS_TODAY = [];
+const TASKS_TODAY = [
+  { name: "Butcher" },
+  { name: "Weekend to dos" },
+  { name: "Research Tulips" },
+  { name: "Post social" },
+  { name: "Water House Plants" }
+];
 
 const TASKS_OVERDUE = [
   { name: "Cancel Apple Arcade", date: "Apr 19, 2025" },
@@ -583,17 +590,16 @@ const TASKS_OVERDUE = [
   { name: "PWF for Norbrook", date: "Sep 4" },
   { name: "Rebate Invoice", date: "Sep 4" },
   { name: "Pay .20 Life360", date: "Sep 4" },
-  { name: "Nova Appt", date: "Sep 4" },
   { name: "Building insurance", date: "Sep 4" },
   { name: "Meds", date: "Sep 4" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-05T07:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-06T07:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 5, 2026";
-const HOROSCOPE_DATA = "Ready to shake things up? Routines are great for keeping life consistent, but they also keep it predictable. So today, choose flexibility over familiarity. Play around with your schedule. And be spontaneous, even if that just means tackling your to-dos in reverse order. Tiny adjustments can feel totally liberating.";
+const HOROSCOPE_DATE = "September 6, 2026";
+const HOROSCOPE_DATA = "Faith alone isn't cutting it anymore. These past few weeks, you've been thinking more critically about your worldview. You might have studied something or traveled somewhere that exposed the cracks in your philosophy. Now it's time to figure out what you actually believe. Changing perspectives isn't always easy, but it's how you grow. Get going.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
