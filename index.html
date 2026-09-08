@@ -531,11 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom" }
+  { time: "9:30 AM", name: "Kazoo & Maids On-site Sync", type: "meeting", detail: "7619 Metcalf Ave" },
+  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "Personal training" },
+  { time: "12:30 PM", name: "Cindy Out", type: "meeting", detail: "Out of office until 4:45 PM" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" },
+  { time: "6:30 PM", name: "Dog Swim - Mission Aquatics", type: "meeting", detail: "Mission Aquatics" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Gunner hair" }
+  { name: "Starlight" },
+  { name: "dog sitter for soccer" },
+  { name: "Meet With Stephanie" },
+  { name: "Philly Lilly Fall Clean?" },
+  { name: "Gunner hair" },
+  { name: "Sporting Trip" }
 ];
 
 const TASKS_OVERDUE = [
@@ -554,52 +563,30 @@ const TASKS_OVERDUE = [
   { name: "Gunner and Izzy Activities", date: "Jul 5" },
   { name: "Kids Activities-", date: "Jul 5" },
   { name: "Menu", date: "Jul 5" },
-  { name: "Heart appt", date: "Jul 29" },
-  { name: "Wearable devices/ adapter", date: "Jul 31" },
-  { name: "Owl- unhook screen", date: "Jul 31" },
-  { name: "Donations", date: "Jul 31" },
-  { name: "Cr trip", date: "Jul 31" },
-  { name: "QB costs/ Alternative", date: "Aug 6" },
-  { name: "AI", date: "Aug 7" },
-  { name: "Volunteering", date: "Aug 7" },
-  { name: "Costa Rica", date: "Aug 21" },
-  { name: "Check Ring", date: "Aug 21" },
-  { name: "Kstate game", date: "Aug 23" },
-  { name: "Projections", date: "Aug 26" },
-  { name: "Reconciliations", date: "Aug 27" },
+  { name: "Wearable devices/ adapter", date: "Aug 30" },
+  { name: "QB costs/ Alternative", date: "Aug 30" },
+  { name: "Owl- unhook screen", date: "Aug 30" },
+  { name: "Heart appt", date: "Aug 30" },
   { name: "Build Auditing Product", date: "Aug 31" },
   { name: "maicon.ai", date: "Aug 31" },
   { name: "Anniversary", date: "Aug 31" },
   { name: "Oil Treatment", date: "Aug 31" },
   { name: "Tours For Gunner", date: "Aug 31" },
-  { name: "Checkbooks", date: "Sep 1" },
-  { name: "Post Starlight", date: "Sep 1" },
-  { name: "Sporting Trip", date: "Sep 2" },
-  { name: "Rent", date: "Sep 2" },
-  { name: "Starlight", date: "Sep 3" },
-  { name: "Ballet", date: "Sep 3" },
-  { name: "Maids", date: "Sep 3" },
-  { name: "Client communication", date: "Sep 3" },
-  { name: "Enter All Receipts", date: "Sep 3" },
-  { name: "Kazoo AMEX/ Recon Sheets", date: "Sep 4" },
-  { name: "PWF for Norbrook", date: "Sep 4" },
-  { name: "Rebate Invoice", date: "Sep 4" },
-  { name: "Pay .20 Life360", date: "Sep 4" },
-  { name: "Building insurance", date: "Sep 4" },
-  { name: "Meds", date: "Sep 4" },
-  { name: "Carrie", date: "Sep 6" },
-  { name: "Weekend to dos", date: "Sep 6" },
-  { name: "Research Tulips", date: "Sep 6" },
-  { name: "Post social", date: "Sep 6" },
-  { name: "Water House Plants", date: "Sep 6" }
+  { name: "AI", date: "Sep 4" },
+  { name: "Volunteering", date: "Sep 4" },
+  { name: "Client communication", date: "Sep 6" },
+  { name: "Kstate game", date: "Sep 6" },
+  { name: "Cr trip", date: "Sep 6" },
+  { name: "Checkbooks", date: "Sep 7" },
+  { name: "Rent", date: "Sep 7" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-07T07:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-08T07:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 7, 2026";
-const HOROSCOPE_DATA = "What do you care about more: fulfillment or recognition? It might be time to redefine success for yourself. Think about your career, big projects, or reputation. Ask yourself what you want more than anything, and why. And don't be scared to pivot if it means doing what feels aligned for you. It's time to go with your gut.";
+const HOROSCOPE_DATE = "September 8, 2026";
+const HOROSCOPE_DATA = "Get ready to level up your reputation. Mercury will be entering Libra soon, which means you'll be getting a gust of fresh ideas for your career and public life. Over the following weeks, your words will make a deeper impact on the people around you, so this is a great time to network and connect. Sometimes, what you've accomplished matters less than how you show up, and your charm is on the rise. Right now, the best way to rally support isn't playing a new role; it's just being yourself.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
