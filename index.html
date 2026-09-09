@@ -531,20 +531,20 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "9:30 AM", name: "Kazoo & Maids On-site Sync", type: "meeting", detail: "7619 Metcalf Ave" },
-  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "Personal training" },
-  { time: "12:30 PM", name: "Cindy Out", type: "meeting", detail: "Out of office until 4:45 PM" },
-  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams" },
-  { time: "6:30 PM", name: "Dog Swim - Mission Aquatics", type: "meeting", detail: "Mission Aquatics" }
+  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "Recurring reminder" },
+  { time: "10:45 AM", name: "Touchbase- Workloads", type: "call", detail: "Google Meet with Ashlee" },
+  { time: "11:00 AM", name: "Touchbase-Workloads", type: "call", detail: "Google Meet with Stephanie, Ashlee" },
+  { time: "2:30 PM", name: "Equativ x Kazoo | Bi-Weekly Sync", type: "call", detail: "Google Meet - you declined" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "dog sitter for soccer" },
-  { name: "Meet With Stephanie" },
-  { name: "Philly Lilly Fall Clean?" },
-  { name: "Gunner hair" },
-  { name: "Sporting Trip" }
+  { name: "Vendor Invoices" },
+  { name: "Kazoo AMEX/ Recon Sheets" },
+  { name: "Pick Up Book" },
+  { name: "Donations/ Return" },
+  { name: "Post Starlight" },
+  { name: "Pills" },
+  { name: "Enter All Receipts" }
 ];
 
 const TASKS_OVERDUE = [
@@ -575,18 +575,21 @@ const TASKS_OVERDUE = [
   { name: "AI", date: "Sep 4" },
   { name: "Volunteering", date: "Sep 4" },
   { name: "Client communication", date: "Sep 6" },
-  { name: "Kstate game", date: "Sep 6" },
   { name: "Cr trip", date: "Sep 6" },
   { name: "Checkbooks", date: "Sep 7" },
-  { name: "Rent", date: "Sep 7" }
+  { name: "Payroll Census", date: "Sep 7" },
+  { name: "Head for the Cure Recap", date: "Sep 7" },
+  { name: "Rent", date: "Sep 7" },
+  { name: "Starlight", date: "Sep 8" },
+  { name: "Sporting Trip", date: "Sep 8" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-08T07:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-09T06:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 8, 2026";
-const HOROSCOPE_DATA = "Get ready to level up your reputation. Mercury will be entering Libra soon, which means you'll be getting a gust of fresh ideas for your career and public life. Over the following weeks, your words will make a deeper impact on the people around you, so this is a great time to network and connect. Sometimes, what you've accomplished matters less than how you show up, and your charm is on the rise. Right now, the best way to rally support isn't playing a new role; it's just being yourself.";
+const HOROSCOPE_DATE = "September 9, 2026";
+const HOROSCOPE_DATA = "Dare to be vulnerable with your friends. Venus is entering Scorpio soon, and it'll nudge you to go deeper with your people. Forget casual acquaintances — make connections you're truly invested in. Over the next few weeks, you'll also be reviewing the group projects and social causes you're involved in, and you might have a sudden change of heart. Challenge yourself to address the issue directly, without giving in to old fears or limiting beliefs about belonging. This may not be easy, but it'll bring you much closer to your community.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
