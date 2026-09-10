@@ -531,20 +531,30 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Trash Day - Office", type: "allday", detail: "Recurring reminder" },
-  { time: "10:45 AM", name: "Touchbase- Workloads", type: "call", detail: "Google Meet with Ashlee" },
-  { time: "11:00 AM", name: "Touchbase-Workloads", type: "call", detail: "Google Meet with Stephanie, Ashlee" },
-  { time: "2:30 PM", name: "Equativ x Kazoo | Bi-Weekly Sync", type: "call", detail: "Google Meet - you declined" }
+  { time: "All Day", name: "Stay at Comfort Inn Bentonville - Crystal Bridges", type: "allday", detail: "Bentonville, AR" },
+  { time: "8:00 AM", name: "Book Hotel Room- STL", type: "meeting", detail: "Personal reminder" },
+  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "With Ashlee" },
+  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom - full Kazoo team" },
+  { time: "9:30 AM", name: "Pest Control- Hemingway", type: "call", detail: "Google Meet with Paul Strickland" },
+  { time: "11:15 AM", name: "Meet Isabella's Class for Lunch", type: "meeting", detail: "Crown Center City Square" },
+  { time: "12:00 PM", name: "Kazoo/LocaliQ - The Maids - Monthly Marketing Discussion", type: "call", detail: "Microsoft Teams with Dawn White" },
+  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "Weekly team reminder" }
 ];
 
 const TASKS_TODAY = [
+  { name: "Starlight" },
+  { name: "Ballet" },
   { name: "Vendor Invoices" },
   { name: "Kazoo AMEX/ Recon Sheets" },
+  { name: "Deposit Checks / Profit Tracking" },
+  { name: "Checkbooks- August" },
+  { name: "Status/ NB" },
   { name: "Pick Up Book" },
   { name: "Donations/ Return" },
-  { name: "Post Starlight" },
-  { name: "Pills" },
-  { name: "Enter All Receipts" }
+  { name: "Pay Lowes" },
+  { name: "SKC Radio" },
+  { name: "Projections" },
+  { name: "Ashlee Status" }
 ];
 
 const TASKS_OVERDUE = [
@@ -576,20 +586,19 @@ const TASKS_OVERDUE = [
   { name: "Volunteering", date: "Sep 4" },
   { name: "Client communication", date: "Sep 6" },
   { name: "Cr trip", date: "Sep 6" },
-  { name: "Checkbooks", date: "Sep 7" },
-  { name: "Payroll Census", date: "Sep 7" },
   { name: "Head for the Cure Recap", date: "Sep 7" },
   { name: "Rent", date: "Sep 7" },
-  { name: "Starlight", date: "Sep 8" },
-  { name: "Sporting Trip", date: "Sep 8" }
+  { name: "Sporting Trip", date: "Sep 8" },
+  { name: "Reconciliations", date: "Sep 9" },
+  { name: "Post Starlight", date: "Sep 9" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-09T06:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-10T05:12:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 9, 2026";
-const HOROSCOPE_DATA = "Dare to be vulnerable with your friends. Venus is entering Scorpio soon, and it'll nudge you to go deeper with your people. Forget casual acquaintances — make connections you're truly invested in. Over the next few weeks, you'll also be reviewing the group projects and social causes you're involved in, and you might have a sudden change of heart. Challenge yourself to address the issue directly, without giving in to old fears or limiting beliefs about belonging. This may not be easy, but it'll bring you much closer to your community.";
+const HOROSCOPE_DATE = "September 10, 2026";
+const HOROSCOPE_DATA = "It's planning time. Today's New Moon in Virgo is nudging you to get serious about your next big adventure. That could be a trip, a research project, or anything else that broadens your horizons. Follow your curiosity. Then focus on one exciting idea and get moving. Even sending a quick email or signing up for flight alerts will help make your dreams a reality. What are you waiting for?";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
