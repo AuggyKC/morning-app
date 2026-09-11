@@ -531,30 +531,24 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Stay at Comfort Inn Bentonville - Crystal Bridges", type: "allday", detail: "Bentonville, AR" },
-  { time: "8:00 AM", name: "Book Hotel Room- STL", type: "meeting", detail: "Personal reminder" },
-  { time: "8:30 AM", name: "touchbase", type: "meeting", detail: "With Ashlee" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom - full Kazoo team" },
-  { time: "9:30 AM", name: "Pest Control- Hemingway", type: "call", detail: "Google Meet with Paul Strickland" },
-  { time: "11:15 AM", name: "Meet Isabella's Class for Lunch", type: "meeting", detail: "Crown Center City Square" },
-  { time: "12:00 PM", name: "Kazoo/LocaliQ - The Maids - Monthly Marketing Discussion", type: "call", detail: "Microsoft Teams with Dawn White" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "Weekly team reminder" }
+  { time: "7:45 AM", name: "New Parent Coffee", type: "meeting", detail: "St. Paul's Church Garden Room" },
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom - Urban Summit KC" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse, 1400 W Ninth St" },
+  { time: "2:00 PM", name: "Nails", type: "meeting", detail: "Personal appointment" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Starlight" },
-  { name: "Ballet" },
   { name: "Vendor Invoices" },
-  { name: "Kazoo AMEX/ Recon Sheets" },
-  { name: "Deposit Checks / Profit Tracking" },
-  { name: "Checkbooks- August" },
-  { name: "Status/ NB" },
-  { name: "Pick Up Book" },
+  { name: "Riega Meeting" },
+  { name: "Lefthanded Supplies" },
+  { name: "Hotels for soccer" },
   { name: "Donations/ Return" },
-  { name: "Pay Lowes" },
-  { name: "SKC Radio" },
-  { name: "Projections" },
-  { name: "Ashlee Status" }
+  { name: "Building insurance" },
+  { name: "Post social" },
+  { name: "Quarterly Tax Payments" },
+  { name: "Meds" },
+  { name: "Check Ring" },
+  { name: "RS Water Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -587,18 +581,22 @@ const TASKS_OVERDUE = [
   { name: "Client communication", date: "Sep 6" },
   { name: "Cr trip", date: "Sep 6" },
   { name: "Head for the Cure Recap", date: "Sep 7" },
-  { name: "Rent", date: "Sep 7" },
   { name: "Sporting Trip", date: "Sep 8" },
   { name: "Reconciliations", date: "Sep 9" },
-  { name: "Post Starlight", date: "Sep 9" }
+  { name: "Post Starlight", date: "Sep 9" },
+  { name: "Rent - july", date: "Sep 9" },
+  { name: "Kazoo AMEX/ Recon Sheets", date: "Sep 10" },
+  { name: "Checkbooks- August", date: "Sep 10" },
+  { name: "Pick Up Book", date: "Sep 10" },
+  { name: "Projections", date: "Sep 10" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-10T05:12:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-11T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 10, 2026";
-const HOROSCOPE_DATA = "It's planning time. Today's New Moon in Virgo is nudging you to get serious about your next big adventure. That could be a trip, a research project, or anything else that broadens your horizons. Follow your curiosity. Then focus on one exciting idea and get moving. Even sending a quick email or signing up for flight alerts will help make your dreams a reality. What are you waiting for?";
+const HOROSCOPE_DATE = "September 11, 2026";
+const HOROSCOPE_DATA = "Quit biting your tongue. Maybe you’re overdue for a promotion, or maybe you need extra support in a leadership role. Make that known today. It’s not always easy to stand up for yourself, especially when your career or big ambitions are involved. But if you don’t, who will?";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -830,21 +828,26 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
     "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
     "https://i.pinimg.com/736x/73/9e/b0/739eb0e54f04dd3e7567a0dda4a768a5.jpg",
+    "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
+    "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
     "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
     "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
     "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
     "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
+    "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
+    "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
     "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
-    "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
-    "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-    "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
-    "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-    "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
-    "https://i.pinimg.com/736x/12/eb/f5/12ebf5f218e7fd8dd539c2b2444c7b80.jpg",
-    "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
-    "https://i.pinimg.com/736x/c8/37/e5/c837e5f48d55736623d597c182360165.jpg",
+    "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
+    "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
+    "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
+    "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
+    "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
+    "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
+    "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
+    "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+    "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
   ]
 };
 
@@ -1058,21 +1061,26 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/d6/c3/e4/d6c3e4cac7cf4fdb3c4115c3ae4f4d12.jpg",
   "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
   "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
+  "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
+  "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
   "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
   "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
   "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
   "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
+  "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
+  "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
   "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
-  "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
-  "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
-  "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-  "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
-  "https://i.pinimg.com/736x/12/eb/f5/12ebf5f218e7fd8dd539c2b2444c7b80.jpg",
-  "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
-  "https://i.pinimg.com/736x/c8/37/e5/c837e5f48d55736623d597c182360165.jpg",
+  "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
+  "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
+  "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
+  "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
+  "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
+  "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
+  "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
+  "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+  "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
 ];
 
 // Daily-seeded shuffle: picks a different set of 8 outfits each day
