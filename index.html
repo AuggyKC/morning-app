@@ -531,14 +531,16 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "8:00 AM", name: "Gunner — U11 Pre-MLS NEXT Game", type: "meeting", detail: "vs Sporting Wichita — Central Bank Sporting Complex 2N, 9101 N Line Creek Pkwy · Arrive 7:30 AM · Navy, bring both" },
-  { time: "9:00 AM", name: "Isabella — Tornadoes vs Visitation Shamrock Sparkles", type: "meeting", detail: "Swope Park, Field 5A — Lewis Road, Kansas City, MO" },
-  { time: "12:40 PM", name: "Gunner — U11 Pre-MLS NEXT Game", type: "meeting", detail: "at Sporting Columbia — Compass Minerals Sporting Fields 1S, 1500 N 90 St, KCK · Arrive 12:10 PM · Navy, bring both" }
+  { time: "All Day", name: "Mom and Dad's Anniversary", type: "allday", detail: "Personal calendar" },
+  { time: "9:10 AM", name: "Gunner — U11 Pre-MLS NEXT Game", type: "meeting", detail: "at Tulsa SC Pre ECNL (Sporting Classic) — Compass Minerals Sporting Fields 1S, 1500 N 90 St, KCK · Arrive 8:40 AM · Navy, bring both" },
+  { time: "6:30 PM", name: "Sunday Scrimmage", type: "meeting", detail: "Evening scrimmage" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Lefthanded Supplies" },
-  { name: "Hotels for soccer" }
+  { name: "Bella Book" },
+  { name: "Book Fair" },
+  { name: "Post social" },
+  { name: "Water House Plants" }
 ];
 
 const TASKS_OVERDUE = [
@@ -581,17 +583,18 @@ const TASKS_OVERDUE = [
   { name: "Move Bella’s dentist", date: "Sep 11" },
   { name: "Donations/ Return", date: "Sep 11" },
   { name: "Building insurance", date: "Sep 11" },
-  { name: "Meds", date: "Sep 11" },
   { name: "Check Ring", date: "Sep 11" },
-  { name: "RS Water Plants", date: "Sep 11" }
+  { name: "RS Water Plants", date: "Sep 11" },
+  { name: "Lefthanded Supplies", date: "Sep 12" },
+  { name: "Hotels for soccer", date: "Sep 12" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-12T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-13T06:55:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 12, 2026";
-const HOROSCOPE_DATA = "You can’t be on top of your game 24/7. And today might feel like a flop. Maybe you’re trying to make sense of a confusing conversation with your supervisor. Or maybe a mix-up on a big project is stressing you out. It’s okay to feel down. But it’s also important to get clarity where you can. So ask questions, and don’t be too hard on yourself. One little hiccup won’t mess with your success.";
+const HOROSCOPE_DATE = "September 13, 2026";
+const HOROSCOPE_DATA = "Toss out the rule book today. You might feel stuck — in your career, in your retirement, in your big projects. That’s a sign to switch things up. So take a fresh look at your ambitions. Pitch your most unconventional ideas. And don’t be afraid to break the mold. Your path to success might not look like anyone else’s. That’s what makes it so exciting.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -832,18 +835,20 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
     "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
-    "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
     "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
+    "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
+    "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
+    "https://i.pinimg.com/736x/2b/55/30/2b5530a97ded9bd6701354dd348c9075.jpg",
+    "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
+    "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
+    "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
     "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
     "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
     "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
     "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
-    "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
-    "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
-    "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
   ]
 };
 
@@ -1066,18 +1071,20 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
   "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
   "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
-  "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
   "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
+  "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
+  "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
+  "https://i.pinimg.com/736x/2b/55/30/2b5530a97ded9bd6701354dd348c9075.jpg",
+  "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
+  "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
+  "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
   "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
   "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
   "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
   "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
-  "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
-  "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
-  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
 ];
 
 // Daily-seeded shuffle: picks a different set of 8 outfits each day
