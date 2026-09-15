@@ -531,19 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Glass Pickup", type: "allday", detail: "Recycling pickup" },
-  { time: "7:45 AM", name: "Maids-Cleaning Red Star", type: "meeting", detail: "Red Star cleaning" },
-  { time: "10:00 AM", name: "MOVPC Weekly Meeting", type: "call", detail: "Zoom \u00b7 wustl.zoom.us" },
-  { time: "1:30 PM", name: "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", type: "call", detail: "Zoom with Stephanie & Alyah" }
+  { time: "11:30 AM", name: "Shelby", type: "meeting", detail: "Personal training session" },
+  { time: "3:30 PM", name: "Starlight + Kazoo Status", type: "call", detail: "Microsoft Teams · with Starlight team" },
+  { time: "6:30 PM", name: "Equativ x Kazoo | Dinner!", type: "meeting", detail: "Stock Hill · team dinner" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Ballet" },
+  { name: "Starlight" },
+  { name: "Vendor Invoices" },
   { name: "Maids" },
-  { name: "Payroll- Whiskey/ Kazoo" },
+  { name: "Take Ring to Shannon" },
   { name: "Pick Up Book" },
-  { name: "DART" },
-  { name: "SKC Tickets" }
+  { name: "Raises" },
+  { name: "Quarterly Tax Payments" },
+  { name: "Enter All Receipts" },
+  { name: "Put Out Dumpster" }
 ];
 
 const TASKS_OVERDUE = [
@@ -579,18 +581,22 @@ const TASKS_OVERDUE = [
   { name: "Post Starlight", date: "Sep 9" },
   { name: "Projections", date: "Sep 10" },
   { name: "Check Ring", date: "Sep 11" },
-  { name: "Checkbooks- August", date: "Sep 13" },
+  { name: "ALCON CARD", date: "Sep 13" },
   { name: "Oil Treatment", date: "Sep 13" },
   { name: "Post social", date: "Sep 13" },
-  { name: "Rent - july", date: "Sep 13" }
+  { name: "Rent - july", date: "Sep 13" },
+  { name: "Checkbooks- August", date: "Sep 14" },
+  { name: "Dr. Laura emails", date: "Sep 14" },
+  { name: "Have Claude enter all AMEX receipts", date: "Sep 14" },
+  { name: "Spanish App/ Math", date: "Sep 14" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-14T06:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-15T06:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 14, 2026";
-const HOROSCOPE_DATA = "Talk is cheap. If you really want to travel abroad or go back to school, you have to do something about it. So get started. Research the classes or airlines that can take you where you want to go. And don’t stress about feeling “ready” — no one ever truly does. Just accept the discomfort of going outside your comfort zone. It’s time to grow.";
+const HOROSCOPE_DATE = "September 15, 2026";
+const HOROSCOPE_DATA = "Feeling tense? Whatever’s been simmering beneath the surface might bubble up today. Maybe you’ve been suppressing your emotions about a strained friendship or a complicated group dynamic. Let them out. This isn’t an excuse to crash out in the group chat, but it is an invitation to share what’s been bothering you. So speak up. Naming a problem is the first step to solving it.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -600,7 +606,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section, scraped 2026-09-10 (225 pins / 239 on the board).
+// Pins organized by Pinterest section. hot re-scraped 2026-09-15 (59 of 62 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -799,7 +805,16 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/71/4d/e0/714de0c9e2ae41acd7a460c20dd03391.jpg",
     "https://i.pinimg.com/736x/c1/25/3b/c1253b9a2eeaef123603f54c4217034b.jpg",
     "https://i.pinimg.com/736x/b2/d9/19/b2d9197496774e80590ec3315644d398.jpg",
-    "https://i.pinimg.com/736x/48/02/8d/48028dda52bdf708229eb083a6363c3c.jpg"
+    "https://i.pinimg.com/736x/48/02/8d/48028dda52bdf708229eb083a6363c3c.jpg",
+    "https://i.pinimg.com/736x/0e/7c/b7/0e7cb7cf07e45a4c5ea264931bba047a.jpg",
+    "https://i.pinimg.com/736x/f5/0a/e1/f50ae114452cf5f2f90d16e7b8ba83a4.jpg",
+    "https://i.pinimg.com/736x/af/3e/52/af3e52f95d30657a44ba42bcf1ece615.jpg",
+    "https://i.pinimg.com/736x/01/00/9d/01009d81a2b79963c871b9dc61e6573e.jpg",
+    "https://i.pinimg.com/736x/38/4c/75/384c75a28b7417e6a0f0cf996b422446.jpg",
+    "https://i.pinimg.com/736x/c4/1c/4f/c41c4fb5f153627a6080b5cb9335eb5d.jpg",
+    "https://i.pinimg.com/736x/7d/ac/7c/7dac7c842d47cacd9894a388b23452df.jpg",
+    "https://i.pinimg.com/736x/0b/6f/57/0b6f572c8b65ceade848f16d1990766b.jpg",
+    "https://i.pinimg.com/736x/fd/5b/69/fd5b699525eb8a98299b07da9a8c897b.jpg"
   ],
   casual: [
     "https://i.pinimg.com/736x/90/61/32/906132e405265d9f84af207457475c8a.jpg",
@@ -1028,6 +1043,14 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/c1/25/3b/c1253b9a2eeaef123603f54c4217034b.jpg",
   "https://i.pinimg.com/736x/b2/d9/19/b2d9197496774e80590ec3315644d398.jpg",
   "https://i.pinimg.com/736x/48/02/8d/48028dda52bdf708229eb083a6363c3c.jpg",
+  "https://i.pinimg.com/736x/0e/7c/b7/0e7cb7cf07e45a4c5ea264931bba047a.jpg",
+  "https://i.pinimg.com/736x/f5/0a/e1/f50ae114452cf5f2f90d16e7b8ba83a4.jpg",
+  "https://i.pinimg.com/736x/af/3e/52/af3e52f95d30657a44ba42bcf1ece615.jpg",
+  "https://i.pinimg.com/736x/01/00/9d/01009d81a2b79963c871b9dc61e6573e.jpg",
+  "https://i.pinimg.com/736x/38/4c/75/384c75a28b7417e6a0f0cf996b422446.jpg",
+  "https://i.pinimg.com/736x/c4/1c/4f/c41c4fb5f153627a6080b5cb9335eb5d.jpg",
+  "https://i.pinimg.com/736x/7d/ac/7c/7dac7c842d47cacd9894a388b23452df.jpg",
+  "https://i.pinimg.com/736x/0b/6f/57/0b6f572c8b65ceade848f16d1990766b.jpg",
   "https://i.pinimg.com/736x/90/61/32/906132e405265d9f84af207457475c8a.jpg",
   "https://i.pinimg.com/736x/f5/97/16/f597169ec00d6cd7cb6e73372cd97031.jpg",
   "https://i.pinimg.com/736x/53/9f/89/539f89d6355fec0f848eeff4e10d3694.jpg",
