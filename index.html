@@ -531,27 +531,24 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  { time: "All Day", name: "Gunter- House", type: "allday", detail: "All day" },
-  { time: "9:00 AM", name: "Internal Status", type: "call", detail: "Zoom · 9:00–9:30 AM" },
-  { time: "9:30 AM", name: "Maids of KC Touch Base", type: "call", detail: "Zoom · 9:30–10:00 AM" },
-  { time: "10:00 AM", name: "NKC Health Quality Care Campaign Recap", type: "call", detail: "Google Meet · 10:00–10:30 AM" },
-  { time: "1:30 PM", name: "SKC/Kazoo - Bi-Weekly Touchbase", type: "call", detail: "Zoom · 1:30–1:45 PM" },
-  { time: "2:00 PM", name: "Legacy Letter with Blake Brewer", type: "meeting", detail: "Cascade Hotel, Kansas City · 2:00–5:00 PM" },
-  { time: "3:45 PM", name: "REMINDER: Timesheets", type: "meeting", detail: "3:45–4:00 PM" }
+  { time: "8:00 AM", name: "HVAC Maintenance - Seasonal Check", type: "meeting", detail: "Town and Country · 8:00 AM–12:00 PM" },
+  { time: "8:30 AM", name: "Friday Morning Meeting", type: "call", detail: "Zoom · 8:30–10:00 AM" },
+  { time: "11:00 AM", name: "Shelby", type: "meeting", detail: "Wellness Warehouse, 1400 W Ninth St · 11:00 AM–12:00 PM" }
 ];
 
 const TASKS_TODAY = [
-  { name: "Ballet" },
+  { name: "Vendor Invoices" },
   { name: "Deposit Checks / Profit Tracking" },
-  { name: "Status/ NB" },
-  { name: "Fire Inspection" },
-  { name: "Matt insurance catch up" },
-  { name: "Post social" },
-  { name: "SKC Radio" },
-  { name: "Pay Evergy Bill" },
-  { name: "Pay Discover" },
-  { name: "Spire Payment" },
-  { name: "Rent - August" }
+  { name: "Donations/ Return" },
+  { name: "Pay CR Taxes" },
+  { name: "Airbnb Money" },
+  { name: "Meds" },
+  { name: "RS AMEX" },
+  { name: "Target bill" },
+  { name: "BS AMEX (007)" },
+  { name: "Ant Treatment" },
+  { name: "RS Water Plants" },
+  { name: "Solar Performance" }
 ];
 
 const TASKS_OVERDUE = [
@@ -589,15 +586,17 @@ const TASKS_OVERDUE = [
   { name: "Oil Treatment", date: "Sep 13" },
   { name: "Tulips", date: "Sep 15" },
   { name: "Spanish App", date: "Sep 16" },
-  { name: "Sporting Trip", date: "Sep 16" }
+  { name: "Sporting Trip", date: "Sep 16" },
+  { name: "Pay Discover", date: "Sep 17" },
+  { name: "Rent - August", date: "Sep 17" }
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-17T05:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-18T05:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 17, 2026";
-const HOROSCOPE_DATA = "Home isn’t always an easy topic. And as Chiron does one last lap in Aries, lots of hard feelings could be surfacing around your ancestry or childhood. You can heal them, but only if you face them head-on. So keep digging. Unpack how your upbringing shaped — and continues to shape — you. And remember: You can break cycles. Now is the time to try.";
+const HOROSCOPE_DATE = "September 18, 2026";
+const HOROSCOPE_DATA = "Your ambitions might be living rent-free in your mind. Maybe you feel stuck in your career or on a big project. But you aren’t in this alone. Your people want to see you succeed. So seek support from your coworkers, collaborators, or loved ones. And don’t let this bump in the road discourage you. If achieving your goals were a breeze, it wouldn’t feel so rewarding.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -607,7 +606,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. hot re-scraped 2026-09-17 (62 of 62 pins).
+// Pins organized by Pinterest section. casual re-scraped 2026-09-18 (32 of 32 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -842,9 +841,9 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
     "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
     "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-    "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
-    "https://i.pinimg.com/736x/2b/55/30/2b5530a97ded9bd6701354dd348c9075.jpg",
-    "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
+    "https://i.pinimg.com/736x/72/01/45/7201458e742fb84903ec3ac1a659bd04.jpg",
+    "https://i.pinimg.com/736x/1e/b5/71/1eb571e7435b3a0a29b1a48e4b7a962e.jpg",
+    "https://i.pinimg.com/736x/01/33/1b/01331b3535e7b682dd99dd9c164af42e.jpg",
     "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
     "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
@@ -1079,9 +1078,9 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
   "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
   "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-  "https://i.pinimg.com/736x/03/74/42/0374424371b97dc960b7b06c049679ce.jpg",
-  "https://i.pinimg.com/736x/2b/55/30/2b5530a97ded9bd6701354dd348c9075.jpg",
-  "https://i.pinimg.com/736x/a2/a9/e6/a2a9e6a36325028541bd756474e777da.jpg",
+  "https://i.pinimg.com/736x/72/01/45/7201458e742fb84903ec3ac1a659bd04.jpg",
+  "https://i.pinimg.com/736x/1e/b5/71/1eb571e7435b3a0a29b1a48e4b7a962e.jpg",
+  "https://i.pinimg.com/736x/01/33/1b/01331b3535e7b682dd99dd9c164af42e.jpg",
   "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
   "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
