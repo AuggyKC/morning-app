@@ -531,18 +531,22 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "10:00 AM", "name": "Maids remaining 2026 spend chat", "type": "meeting", "detail": "10:00–10:30 AM"},
-  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": "11:30 AM–12:30 PM"},
-  {"time": "12:30 PM", "name": "LWVKC Board Meeting", "type": "call", "detail": "Zoom · 12:30–2:30 PM"},
-  {"time": "2:30 PM", "name": "J&J Retail Partnership Call", "type": "call", "detail": "Microsoft Teams · 2:30–3:15 PM"},
-  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams · 3:30–4:00 PM"}
+  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": "All day"},
+  {"time": "8:00 AM", "name": "Kazoo : Grundfos yearly collaboration and contract meeting", "type": "call", "detail": "Microsoft Teams · 8:00–9:00 AM"},
+  {"time": "12:45 PM", "name": "Fire Alarm/Sprinklers Inspection", "type": "meeting", "detail": "12:45–2:45 PM"},
+  {"time": "2:15 PM", "name": "Nova Vet", "type": "meeting", "detail": "2:15–4:00 PM"},
+  {"time": "6:00 PM", "name": "DEI", "type": "meeting", "detail": "6:00–7:00 PM"}
 ];
 
 const TASKS_TODAY = [
+  {"name": "Isabella bday"},
+  {"name": "Pull down Shutterfly pics?"},
+  {"name": "Isabella hair 10/12"},
   {"name": "Donations/ Return"},
-  {"name": "Enter All Receipts"},
-  {"name": "Put Out Dumpster"},
-  {"name": "Process Maids Invoices"}
+  {"name": "Building insurance"},
+  {"name": "Pills"},
+  {"name": "Apple Arcade games"},
+  {"name": "Costa Rica"}
 ];
 
 const TASKS_OVERDUE = [
@@ -564,24 +568,21 @@ const TASKS_OVERDUE = [
   {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
-  {"name": "Head for the Cure Recap", "date": "Sep 7"},
-  {"name": "Reconciliations", "date": "Sep 9"},
   {"name": "Post Starlight", "date": "Sep 9"},
-  {"name": "Projections", "date": "Sep 10"},
   {"name": "Check Ring", "date": "Sep 11"},
   {"name": "ALCON CARD", "date": "Sep 13"},
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
-  {"name": "Post social", "date": "Sep 19"},
-  {"name": "Sporting Trip", "date": "Sep 21"}
+  {"name": "Reconciliations", "date": "Sep 21"},
+  {"name": "Post social", "date": "Sep 22"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-22T05:35:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-23T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 22, 2026";
-const HOROSCOPE_DATA = "Happy Equinox, and welcome to Libra season. The Sun is lighting up your public life, so put yourself out there. Maybe you’ll say yes to an exciting career opportunity or take on an ambitious project. Whatever you do, aim high. And don’t go it alone — find a supporter who can hype you up, or at least let your loved ones know what you’re up to. There’s power in numbers. When you collaborate with other people, you can accomplish much more together than you can on your own.";
+const HOROSCOPE_DATE = "September 23, 2026";
+const HOROSCOPE_DATA = "Feeling tender? The past few weeks have pressed on your relationship pain points. Maybe you’ve been working through unspoken tension with your bestie or trust issues with your partner. This process hasn’t necessarily been fun, but it’s taught you a lot about yourself and your people. Pause to process everything you’ve learned. And approach your connections with compassion and humility. This is a chance to review, repair, and rebuild.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -591,7 +592,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. warm re-scraped 2026-09-22 (46 of 46 pins).
+// Pins organized by Pinterest section. warm re-scraped 2026-09-23 (45 of 45 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -695,9 +696,9 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
   ],
   warm: [
+    "https://i.pinimg.com/736x/ea/80/38/ea8038085b5e3d4d9bcf1fc47dc1de61.jpg",
     "https://i.pinimg.com/736x/7f/cd/f5/7fcdf54ae17c03a1ef382874c9ddeda6.jpg",
     "https://i.pinimg.com/736x/a1/55/72/a15572bfdf49d9f6a2aa7f8ae9cebf1b.jpg",
-    "https://i.pinimg.com/736x/d0/77/81/d07781fa399e2e2896a8b693fbe47fdd.jpg",
     "https://i.pinimg.com/736x/fd/69/9f/fd699f67f5b1a87ace48e57bb67acf4e.jpg",
     "https://i.pinimg.com/736x/29/31/e1/2931e171040ff2b25af8971421a06388.jpg",
     "https://i.pinimg.com/736x/5e/a5/a8/5ea5a8d769dd1eb4f737824545f3a93f.jpg",
@@ -713,34 +714,33 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/32/16/56/3216560517a338c546ff9fa6397e6f10.jpg",
     "https://i.pinimg.com/736x/50/3d/44/503d44d6faae62ccacf946afd11d036d.jpg",
     "https://i.pinimg.com/736x/fb/dd/e8/fbdde81d224f3288a156f0a57fc87050.jpg",
-    "https://i.pinimg.com/736x/1d/3b/dd/1d3bdddbf507ebdc6b3ee09e81a84568.jpg",
-    "https://i.pinimg.com/736x/d3/98/30/d398309fb52fd56c295896006bb7a466.jpg",
+    "https://i.pinimg.com/736x/ee/f7/a5/eef7a59ab3562bead9e2a28851a4df12.jpg",
+    "https://i.pinimg.com/736x/8a/a6/ba/8aa6baa58dbb45252e7e0b2676e043d6.jpg",
     "https://i.pinimg.com/736x/df/d2/e8/dfd2e85c056e4d4b0172e5cf12c50fc6.jpg",
     "https://i.pinimg.com/736x/82/f8/b5/82f8b538ddaca06df3b179f8d5f5b542.jpg",
     "https://i.pinimg.com/736x/0e/23/93/0e23931e709bdc91fa4a2163ae73ea56.jpg",
     "https://i.pinimg.com/736x/ff/3c/e5/ff3ce54443b43582b3a82ebf8c9f0ce8.jpg",
     "https://i.pinimg.com/736x/bd/5f/88/bd5f880c555970db224b0d5b8fbe6bf9.jpg",
+    "https://i.pinimg.com/736x/e5/40/6f/e5406f2aef24aabca3c8ca475774cf25.jpg",
+    "https://i.pinimg.com/736x/09/f9/7f/09f97f928d9d11b7e38a3fe2a1c9501b.jpg",
     "https://i.pinimg.com/736x/64/e6/1b/64e61be6bdc194bf6db31f09db410637.jpg",
     "https://i.pinimg.com/736x/a4/3b/a1/a43ba166dcbe6c750762ef776723de3c.jpg",
     "https://i.pinimg.com/736x/95/4f/b6/954fb6a9fc0cca13546dfc5a226025ce.jpg",
-    "https://i.pinimg.com/736x/90/71/de/9071de9ab5aaf40c916ad3664c5a705d.jpg",
-    "https://i.pinimg.com/736x/e5/40/6f/e5406f2aef24aabca3c8ca475774cf25.jpg",
-    "https://i.pinimg.com/736x/00/02/ee/0002ee766b72fb4332840dff99496f28.jpg",
-    "https://i.pinimg.com/736x/54/14/f3/5414f3767eec5abcc606e36fcd927a01.jpg",
-    "https://i.pinimg.com/736x/d9/25/6f/d9256fbb295ead4a135a891fd87920d3.jpg",
-    "https://i.pinimg.com/736x/bd/bf/cc/bdbfcc047b1830b5e49389a0ade77e24.jpg",
-    "https://i.pinimg.com/736x/14/7b/54/147b547d0a8fbb7ada1b018914e0487d.jpg",
-    "https://i.pinimg.com/736x/ee/f7/a5/eef7a59ab3562bead9e2a28851a4df12.jpg",
-    "https://i.pinimg.com/736x/8a/a6/ba/8aa6baa58dbb45252e7e0b2676e043d6.jpg",
+    "https://i.pinimg.com/736x/1d/3b/dd/1d3bdddbf507ebdc6b3ee09e81a84568.jpg",
+    "https://i.pinimg.com/736x/81/0a/ff/810aff12cc20240a0da7bba4f8aa729d.jpg",
+    "https://i.pinimg.com/736x/30/36/9e/30369edcc073c685a1a71be1ba869b9d.jpg",
+    "https://i.pinimg.com/736x/d3/98/30/d398309fb52fd56c295896006bb7a466.jpg",
     "https://i.pinimg.com/736x/c3/b8/04/c3b80408959dbc595bc3bfbd5d4c2b74.jpg",
     "https://i.pinimg.com/736x/0e/73/c3/0e73c386ec5dffb126a1d28602a98168.jpg",
-    "https://i.pinimg.com/736x/30/4c/83/304c83b019d7d3ee2d44c871a02d1180.jpg",
-    "https://i.pinimg.com/736x/30/36/9e/30369edcc073c685a1a71be1ba869b9d.jpg",
-    "https://i.pinimg.com/736x/70/17/10/70171021e2ae2f76ca1cec6f89775817.jpg",
     "https://i.pinimg.com/736x/8c/a6/f2/8ca6f294cf7f0029323cb4cbe1635597.jpg",
     "https://i.pinimg.com/736x/91/24/86/912486b23c47f2deca2a720942ec9ac9.jpg",
     "https://i.pinimg.com/736x/b3/05/37/b3053795e673e246ab0e6eb45f38a349.jpg",
-    "https://i.pinimg.com/736x/3e/d4/9f/3ed49f48bd1a29e60007ef0d0ec1dc7b.jpg"
+    "https://i.pinimg.com/736x/3e/d4/9f/3ed49f48bd1a29e60007ef0d0ec1dc7b.jpg",
+    "https://i.pinimg.com/736x/90/71/de/9071de9ab5aaf40c916ad3664c5a705d.jpg",
+    "https://i.pinimg.com/736x/3b/cf/44/3bcf44ceff6b8aa678834f9cbc9f080d.jpg",
+    "https://i.pinimg.com/736x/8f/9d/4d/8f9d4d48efce8c05ba46c3ee4f9774c0.jpg",
+    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
+    "https://i.pinimg.com/736x/a3/e5/e5/a3e5e5d77b683c8210b41d3da4bf0345.jpg"
   ],
   hot: [
     "https://i.pinimg.com/736x/0b/c5/ff/0bc5fff0af551e3952fdb3f5dda0ac94.jpg",
@@ -939,9 +939,9 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/dd/0f/00/dd0f005d7b58e8d9bbfd5031a9a4f96d.jpg",
   "https://i.pinimg.com/736x/35/23/cd/3523cd75f2479edf57107857da1eabe7.jpg",
   "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
+  "https://i.pinimg.com/736x/ea/80/38/ea8038085b5e3d4d9bcf1fc47dc1de61.jpg",
   "https://i.pinimg.com/736x/7f/cd/f5/7fcdf54ae17c03a1ef382874c9ddeda6.jpg",
   "https://i.pinimg.com/736x/a1/55/72/a15572bfdf49d9f6a2aa7f8ae9cebf1b.jpg",
-  "https://i.pinimg.com/736x/d0/77/81/d07781fa399e2e2896a8b693fbe47fdd.jpg",
   "https://i.pinimg.com/736x/fd/69/9f/fd699f67f5b1a87ace48e57bb67acf4e.jpg",
   "https://i.pinimg.com/736x/29/31/e1/2931e171040ff2b25af8971421a06388.jpg",
   "https://i.pinimg.com/736x/5e/a5/a8/5ea5a8d769dd1eb4f737824545f3a93f.jpg",
@@ -957,34 +957,33 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/32/16/56/3216560517a338c546ff9fa6397e6f10.jpg",
   "https://i.pinimg.com/736x/50/3d/44/503d44d6faae62ccacf946afd11d036d.jpg",
   "https://i.pinimg.com/736x/fb/dd/e8/fbdde81d224f3288a156f0a57fc87050.jpg",
-  "https://i.pinimg.com/736x/1d/3b/dd/1d3bdddbf507ebdc6b3ee09e81a84568.jpg",
-  "https://i.pinimg.com/736x/d3/98/30/d398309fb52fd56c295896006bb7a466.jpg",
+  "https://i.pinimg.com/736x/ee/f7/a5/eef7a59ab3562bead9e2a28851a4df12.jpg",
+  "https://i.pinimg.com/736x/8a/a6/ba/8aa6baa58dbb45252e7e0b2676e043d6.jpg",
   "https://i.pinimg.com/736x/df/d2/e8/dfd2e85c056e4d4b0172e5cf12c50fc6.jpg",
   "https://i.pinimg.com/736x/82/f8/b5/82f8b538ddaca06df3b179f8d5f5b542.jpg",
   "https://i.pinimg.com/736x/0e/23/93/0e23931e709bdc91fa4a2163ae73ea56.jpg",
   "https://i.pinimg.com/736x/ff/3c/e5/ff3ce54443b43582b3a82ebf8c9f0ce8.jpg",
   "https://i.pinimg.com/736x/bd/5f/88/bd5f880c555970db224b0d5b8fbe6bf9.jpg",
+  "https://i.pinimg.com/736x/e5/40/6f/e5406f2aef24aabca3c8ca475774cf25.jpg",
+  "https://i.pinimg.com/736x/09/f9/7f/09f97f928d9d11b7e38a3fe2a1c9501b.jpg",
   "https://i.pinimg.com/736x/64/e6/1b/64e61be6bdc194bf6db31f09db410637.jpg",
   "https://i.pinimg.com/736x/a4/3b/a1/a43ba166dcbe6c750762ef776723de3c.jpg",
   "https://i.pinimg.com/736x/95/4f/b6/954fb6a9fc0cca13546dfc5a226025ce.jpg",
-  "https://i.pinimg.com/736x/90/71/de/9071de9ab5aaf40c916ad3664c5a705d.jpg",
-  "https://i.pinimg.com/736x/e5/40/6f/e5406f2aef24aabca3c8ca475774cf25.jpg",
-  "https://i.pinimg.com/736x/00/02/ee/0002ee766b72fb4332840dff99496f28.jpg",
-  "https://i.pinimg.com/736x/54/14/f3/5414f3767eec5abcc606e36fcd927a01.jpg",
-  "https://i.pinimg.com/736x/d9/25/6f/d9256fbb295ead4a135a891fd87920d3.jpg",
-  "https://i.pinimg.com/736x/bd/bf/cc/bdbfcc047b1830b5e49389a0ade77e24.jpg",
-  "https://i.pinimg.com/736x/14/7b/54/147b547d0a8fbb7ada1b018914e0487d.jpg",
-  "https://i.pinimg.com/736x/ee/f7/a5/eef7a59ab3562bead9e2a28851a4df12.jpg",
-  "https://i.pinimg.com/736x/8a/a6/ba/8aa6baa58dbb45252e7e0b2676e043d6.jpg",
+  "https://i.pinimg.com/736x/1d/3b/dd/1d3bdddbf507ebdc6b3ee09e81a84568.jpg",
+  "https://i.pinimg.com/736x/81/0a/ff/810aff12cc20240a0da7bba4f8aa729d.jpg",
+  "https://i.pinimg.com/736x/30/36/9e/30369edcc073c685a1a71be1ba869b9d.jpg",
+  "https://i.pinimg.com/736x/d3/98/30/d398309fb52fd56c295896006bb7a466.jpg",
   "https://i.pinimg.com/736x/c3/b8/04/c3b80408959dbc595bc3bfbd5d4c2b74.jpg",
   "https://i.pinimg.com/736x/0e/73/c3/0e73c386ec5dffb126a1d28602a98168.jpg",
-  "https://i.pinimg.com/736x/30/4c/83/304c83b019d7d3ee2d44c871a02d1180.jpg",
-  "https://i.pinimg.com/736x/30/36/9e/30369edcc073c685a1a71be1ba869b9d.jpg",
-  "https://i.pinimg.com/736x/70/17/10/70171021e2ae2f76ca1cec6f89775817.jpg",
   "https://i.pinimg.com/736x/8c/a6/f2/8ca6f294cf7f0029323cb4cbe1635597.jpg",
   "https://i.pinimg.com/736x/91/24/86/912486b23c47f2deca2a720942ec9ac9.jpg",
   "https://i.pinimg.com/736x/b3/05/37/b3053795e673e246ab0e6eb45f38a349.jpg",
   "https://i.pinimg.com/736x/3e/d4/9f/3ed49f48bd1a29e60007ef0d0ec1dc7b.jpg",
+  "https://i.pinimg.com/736x/90/71/de/9071de9ab5aaf40c916ad3664c5a705d.jpg",
+  "https://i.pinimg.com/736x/3b/cf/44/3bcf44ceff6b8aa678834f9cbc9f080d.jpg",
+  "https://i.pinimg.com/736x/8f/9d/4d/8f9d4d48efce8c05ba46c3ee4f9774c0.jpg",
+  "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
+  "https://i.pinimg.com/736x/a3/e5/e5/a3e5e5d77b683c8210b41d3da4bf0345.jpg",
   "https://i.pinimg.com/736x/0b/c5/ff/0bc5fff0af551e3952fdb3f5dda0ac94.jpg",
   "https://i.pinimg.com/736x/7d/6b/a9/7d6ba9cbf09e3a1a3d638e6f26d6422c.jpg",
   "https://i.pinimg.com/736x/a4/f1/e8/a4f1e8a2c14bb84d264b569a3a27d2be.jpg",
@@ -1067,7 +1066,6 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/60/df/cd/60dfcd4c0c683b1f063fef7fa16f78cd.jpg",
   "https://i.pinimg.com/736x/ea/73/92/ea7392adabb687d960b602262f41d5da.jpg",
   "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
-  "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
   "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
   "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
