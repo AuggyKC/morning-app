@@ -531,46 +531,45 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "8:30 AM", "name": "touchbase", "type": "meeting", "detail": "8:30–9:00 AM"},
-  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom · 9:00–9:30 AM"},
-  {"time": "10:00 AM", "name": "Sassafrass / Kazoo Collab Meeting", "type": "meeting", "detail": "10:00–11:00 AM"},
-  {"time": "10:00 AM", "name": "Kazoo and Sassafras partnership", "type": "call", "detail": "McLain's Market Shawnee (5833 Nieman Rd) · Teams link · 10:00–11:00 AM"},
-  {"time": "2:00 PM", "name": "Grundfos Pricing", "type": "meeting", "detail": "2:00–2:30 PM"},
-  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": "3:45–4:00 PM"}
+  {"time": "All Day", "name": "Stay at Comfort Inn Bentonville - Crystal Bridges", "type": "allday", "detail": "3001 NE 11th St, Bentonville, AR · through Sat"},
+  {"time": "8:00 AM", "name": "Fire Extinguisher Inspection", "type": "call", "detail": "Google Meet · 8:00–10:30 AM"},
+  {"time": "8:30 AM", "name": "Friday Morning Meeting", "type": "call", "detail": "Zoom · 8:30–10:00 AM"},
+  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St · 11:00 AM–12:00 PM"},
+  {"time": "1:45 PM", "name": "Hair", "type": "meeting", "detail": "1:45–4:45 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Status/ NB"},
-  {"name": "Google Invoice"},
-  {"name": "Send pricing for mailers- formers/ 500 3x  in the next 6 months"},
-  {"name": "Anniversary"},
-  {"name": "Heirloom"},
-  {"name": "Raises"},
-  {"name": "Ashlee Status"},
-  {"name": "Ballet"},
-  {"name": "New business"},
   {"name": "Vendor Invoices"},
-  {"name": "Deposit Checks / Profit Tracking"}
+  {"name": "Reiga"},
+  {"name": "DEI oct"},
+  {"name": "Costco Run"},
+  {"name": "Tuesday??"},
+  {"name": "Donations/ Return"},
+  {"name": "Anniversary"},
+  {"name": "Oil Treatment"},
+  {"name": "Post social"},
+  {"name": "Meds"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Art book", "date": "Jan 18"},
-  {"name": "Wbe", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Clean up Computer", "date": "Jan 18"},
   {"name": "Building To Dos", "date": "Jan 22"},
-  {"name": "50th", "date": "Feb 7"},
+  {"name": "Wbe", "date": "Jan 22"},
   {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "50th", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "Heart appt", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "QB costs/ Alternative", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "Heart appt", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "Volunteering", "date": "Sep 4"},
   {"name": "AI", "date": "Sep 4"},
+  {"name": "Volunteering", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
@@ -578,17 +577,17 @@ const TASKS_OVERDUE = [
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
   {"name": "Reconciliations", "date": "Sep 21"},
-  {"name": "Costa Rica", "date": "Sep 23"},
+  {"name": "Pull down Shutterfly pics?", "date": "Sep 23"},
   {"name": "Isabella hair 10/12", "date": "Sep 23"},
-  {"name": "Pull down Shutterfly pics?", "date": "Sep 23"}
+  {"name": "Costa Rica", "date": "Sep 23"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-24T06:50:00-05:00";
+const DATA_REFRESH_TIME = "2026-09-25T06:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 24, 2026";
-const HOROSCOPE_DATA = "Fame and fortune aren’t necessarily bad things. But it’s important to have greater, more meaningful ambitions. So identify what you’re really after. Does success mean earning enough money to provide for your family? Does it mean being emotionally fulfilled in your retirement? Figure out the “why” behind what you want. And don’t be scared to change course if you need to. It’s time to build toward something bigger.";
+const HOROSCOPE_DATE = "September 25, 2026";
+const HOROSCOPE_DATA = "Confused? You might not feel totally sure of your career goals or big ambitions right now. That’s okay — you don’t have to have all the answers. You just have to trust yourself and keep moving. When the fog clears, your next steps will come into focus, and you’ll feel a lot more confident. Easy does it.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -822,6 +821,8 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
     "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
     "https://i.pinimg.com/736x/73/9e/b0/739eb0e54f04dd3e7567a0dda4a768a5.jpg",
+    "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
+    "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
     "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
     "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
@@ -829,22 +830,18 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
     "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
     "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
-    "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-    "https://i.pinimg.com/736x/25/99/03/259903646b377a5f3291b79cffb75650.jpg",
-    "https://i.pinimg.com/736x/60/df/cd/60dfcd4c0c683b1f063fef7fa16f78cd.jpg",
-    "https://i.pinimg.com/736x/ea/73/92/ea7392adabb687d960b602262f41d5da.jpg",
-    "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
     "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
     "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-    "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
-    "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
     "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
     "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
     "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
-    "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg"
+    "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
+    "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+    "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
+    "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg"
   ]
 };
 
@@ -1060,6 +1057,8 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/d6/c3/e4/d6c3e4cac7cf4fdb3c4115c3ae4f4d12.jpg",
   "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
   "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
+  "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
+  "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
   "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
   "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
@@ -1067,21 +1066,17 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
   "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
   "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
-  "https://i.pinimg.com/736x/00/13/06/00130688a4821a9b741ef8b3be4e611f.jpg",
-  "https://i.pinimg.com/736x/25/99/03/259903646b377a5f3291b79cffb75650.jpg",
-  "https://i.pinimg.com/736x/60/df/cd/60dfcd4c0c683b1f063fef7fa16f78cd.jpg",
-  "https://i.pinimg.com/736x/ea/73/92/ea7392adabb687d960b602262f41d5da.jpg",
-  "https://i.pinimg.com/736x/7a/b2/b4/7ab2b4f29664294581202a861aece6a4.jpg",
   "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
   "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-  "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
-  "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
   "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
   "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
   "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
-  "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg"
+  "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
+  "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
+  "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
+  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg"
 ];
 
 // Daily-seeded shuffle: picks a different set of 8 outfits each day
