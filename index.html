@@ -531,19 +531,28 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": ""},
-  {"time": "All Day", "name": "Cindy WFH", "type": "allday", "detail": ""},
-  {"time": "9:00 AM", "name": "Coffee with Carrie/Cindy", "type": "meeting", "detail": "Café Corazón"}
+  {"time": "8:00 AM", "name": "REMINDER: AMEX receipts / screenshots to Cindy", "type": "call", "detail": "Google Meet"},
+  {"time": "9:30 AM", "name": "Maids of KC Touch Base", "type": "call", "detail": "Zoom"},
+  {"time": "11:00 AM", "name": "Riega Foods KC Paid Media", "type": "meeting", "detail": "821 W. 17th St. Kansas City MO 64108"},
+  {"time": "1:30 PM", "name": "SKC/Kazoo - Bi-Weekly Touchbase", "type": "call", "detail": "Zoom"},
+  {"time": "2:00 PM", "name": "Oz Media Touch Base", "type": "call", "detail": "Zoom"},
+  {"time": "3:00 PM", "name": "Hold: Shenandoah Valley Foods Touchbase", "type": "call", "detail": "Google Meet"},
+  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": ""},
+  {"time": "6:00 PM", "name": "NEW MEMBER DINNER", "type": "meeting", "detail": "The Rockhill Grille"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Alterations"},
-  {"name": "Jewelry appraisaly"},
-  {"name": "Returns"},
-  {"name": "Dirt bucket"},
-  {"name": "Post social"},
-  {"name": "Pills"},
-  {"name": "Hemingway Monthly Invoice"}
+  {"name": "Kazoo AMEX/ Recon Sheets"},
+  {"name": "Ballet"},
+  {"name": "Maids"},
+  {"name": "Deposit Checks / Profit Tracking"},
+  {"name": "Checkbooks- August"},
+  {"name": "Current"},
+  {"name": "Grundfos List"},
+  {"name": "Isabella bday"},
+  {"name": "Sporting Equativ credit"},
+  {"name": "Have Claude enter all AMEX receipts"},
+  {"name": "Rent - August done"}
 ];
 
 const TASKS_OVERDUE = [
@@ -580,15 +589,23 @@ const TASKS_OVERDUE = [
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Reconciliations", "date": "Sep 29"},
   {"name": "Flowers", "date": "Sep 29"},
-  {"name": "New business", "date": "Sep 29"}
+  {"name": "New business", "date": "Sep 29"},
+  {"name": "Venmo party", "date": "Sep 30"},
+  {"name": "Alterations", "date": "Sep 30"},
+  {"name": "Jewelry appraisaly", "date": "Sep 30"},
+  {"name": "Returns", "date": "Sep 30"},
+  {"name": "Dirt bucket", "date": "Sep 30"},
+  {"name": "Post social", "date": "Sep 30"},
+  {"name": "Pills", "date": "Sep 30"},
+  {"name": "Hemingway Monthly Invoice", "date": "Sep 30"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-09-30T05:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-01T08:10:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "September 30, 2026";
-const HOROSCOPE_DATA = "Who’s in your corner? Mercury in Scorpio is here to help you understand your friendships and groups, highlighting the people who uplift you and the ones who hinder your growth. The coming weeks are a good moment to put yourself out there and spread the word about your hopes and dreams. Pay attention to the conversations you have within your social circles. Do they leave you feeling drained or energized? The answer may reveal a lot about what you need from your communities — and what you can offer in return.";
+const HOROSCOPE_DATE = "October 1, 2026";
+const HOROSCOPE_DATA = "True strength lies in vulnerability, not defensiveness. So open up today. Share any fears you’ve been working through around trust, control, or intimacy. Fill some pages in your journal, or talk things out with a therapist or trusted friend. It’s not fun or easy to address the heavy stuff. But it’s how you move forward. What do you need to get off your chest?";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
