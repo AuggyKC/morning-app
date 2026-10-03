@@ -531,39 +531,32 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "8:30 AM", "name": "Friday Morning Meeting", "type": "call", "detail": "Zoom"},
-  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St, Kansas City MO 64101"},
-  {"time": "3:00 PM", "name": "Tina", "type": "meeting", "detail": ""}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Isabella Bday Party Gift"},
-  {"name": "Hemingway Tenants"},
-  {"name": "CR Home insurance"},
-  {"name": "Pay House Insurance- Costa Rica"},
-  {"name": "Meds"},
-  {"name": "RS Water Plants"},
-  {"name": "Google Invoice"}
+  {"name": "Tulips"},
+  {"name": "Gunner and Izzy Activities"},
+  {"name": "Ant Treatment"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
@@ -571,42 +564,47 @@ const TASKS_OVERDUE = [
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
   {"name": "Costa Rica", "date": "Sep 23"},
-  {"name": "Anniversary", "date": "Sep 26"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
-  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
-  {"name": "Water House Plants", "date": "Sep 27"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
+  {"name": "Anniversary", "date": "Sep 26"},
   {"name": "Menu", "date": "Sep 27"},
+  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Reconciliations", "date": "Sep 29"},
-  {"name": "Flowers", "date": "Sep 29"},
   {"name": "New business", "date": "Sep 29"},
-  {"name": "Venmo party", "date": "Sep 30"},
-  {"name": "Alterations", "date": "Sep 30"},
-  {"name": "Jewelry appraisaly", "date": "Sep 30"},
-  {"name": "Returns", "date": "Sep 30"},
-  {"name": "Dirt bucket", "date": "Sep 30"},
-  {"name": "Post social", "date": "Sep 30"},
-  {"name": "Pills", "date": "Sep 30"},
+  {"name": "Flowers", "date": "Sep 29"},
   {"name": "Hemingway Monthly Invoice", "date": "Sep 30"},
-  {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
-  {"name": "Ballet", "date": "Oct 1"},
-  {"name": "Maids", "date": "Oct 1"},
-  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
+  {"name": "Pills", "date": "Sep 30"},
+  {"name": "Post social", "date": "Sep 30"},
+  {"name": "Dirt bucket", "date": "Sep 30"},
+  {"name": "Returns", "date": "Sep 30"},
+  {"name": "Jewelry appraisaly", "date": "Sep 30"},
+  {"name": "Alterations", "date": "Sep 30"},
+  {"name": "Venmo party", "date": "Sep 30"},
+  {"name": "Rent - August done", "date": "Oct 1"},
   {"name": "Checkbooks- August", "date": "Oct 1"},
-  {"name": "Grundfos List", "date": "Oct 1"},
-  {"name": "Isabella bday", "date": "Oct 1"},
-  {"name": "Sporting Equativ credit", "date": "Oct 1"},
+  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
+  {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
+  {"name": "Maids", "date": "Oct 1"},
+  {"name": "Ballet", "date": "Oct 1"},
   {"name": "Have Claude enter all AMEX receipts", "date": "Oct 1"},
-  {"name": "Rent - August done", "date": "Oct 1"}
+  {"name": "Sporting Equativ credit", "date": "Oct 1"},
+  {"name": "Isabella bday", "date": "Oct 1"},
+  {"name": "Grundfos List", "date": "Oct 1"},
+  {"name": "Meds", "date": "Oct 2"},
+  {"name": "Pay House Insurance- Costa Rica", "date": "Oct 2"},
+  {"name": "Hemingway Tenants", "date": "Oct 2"},
+  {"name": "Isabella Bday Party Gift", "date": "Oct 2"},
+  {"name": "RS Water Plants", "date": "Oct 2"},
+  {"name": "Google Invoice", "date": "Oct 2"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-02T08:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-03T06:25:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 2, 2026";
-const HOROSCOPE_DATA = "Ready for a reality check? You’re seeing your friends clearly today — the good, the bad, and the ugly. And any tensions or imbalances in your social circles are coming to light. Don’t sweep them under the rug. Instead, start healthy dialogues. Try to figure out where people are coming from, and ask yourself what you need from them. Your next steps will become clearer once you have all the facts in front of you.";
+const HOROSCOPE_DATE = "October 3, 2026";
+const HOROSCOPE_DATA = "What do you want and need from your community? Venus is retrograde, and it’s time to find out. When you hang out or chat with your friends, notice who opens up and who holds back. And pay attention to how you feel in certain people’s presence. This is a chance to strengthen your friendships. So trust the process. The planet of connection is rooting for you.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
