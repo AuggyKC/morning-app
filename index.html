@@ -531,12 +531,18 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "6:30 PM", "name": "Sunday Scrimmage", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Fire extinguisher replacement", "type": "allday", "detail": ""},
+  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": ""},
+  {"time": "9:00 AM", "name": "Maids- Home", "type": "meeting", "detail": ""},
+  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
+  {"time": "3:00 PM", "name": "Cindy / Cailey Monthly Touchbase", "type": "call", "detail": "Google Meet"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Water House Plants"},
-  {"name": "Kids Activities"}
+  {"name": "Starlight"},
+  {"name": "SKC Tickets"},
+  {"name": "DART"},
+  {"name": "Family mtg"}
 ];
 
 const TASKS_OVERDUE = [
@@ -574,7 +580,6 @@ const TASKS_OVERDUE = [
   {"name": "New business", "date": "Sep 29"},
   {"name": "Flowers", "date": "Sep 29"},
   {"name": "Hemingway Monthly Invoice", "date": "Sep 30"},
-  {"name": "Pills", "date": "Sep 30"},
   {"name": "Post social", "date": "Sep 30"},
   {"name": "Dirt bucket", "date": "Sep 30"},
   {"name": "Returns", "date": "Sep 30"},
@@ -592,23 +597,22 @@ const TASKS_OVERDUE = [
   {"name": "Isabella bday", "date": "Oct 1"},
   {"name": "Grundfos List", "date": "Oct 1"},
   {"name": "Meds", "date": "Oct 2"},
-  {"name": "Pay House Insurance- Costa Rica", "date": "Oct 2"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
-  {"name": "Isabella Bday Party Gift", "date": "Oct 2"},
-  {"name": "Tip Tina", "date": "Oct 2"},
   {"name": "RS Water Plants", "date": "Oct 2"},
   {"name": "Google Invoice", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Gunner and Izzy Activities", "date": "Oct 3"},
-  {"name": "Ant Treatment", "date": "Oct 3"}
+  {"name": "Ant Treatment", "date": "Oct 3"},
+  {"name": "Water House Plants", "date": "Oct 4"},
+  {"name": "Pay Roberto", "date": "Oct 4"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-04T05:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-05T05:20:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 4, 2026";
-const HOROSCOPE_DATA = "When you take big swings, you’re bound to miss sometimes. So don’t stress if your progress stalls today in your career or big projects. Instead, get to the bottom of what’s blocking you. Confront any internal or external obstacles in your path. You can put them behind you if you’re willing to do the work.";
+const HOROSCOPE_DATE = "October 5, 2026";
+const HOROSCOPE_DATA = "You’ve been working through some heavy stuff lately. Especially when it comes to trust, intimacy, and power imbalances. So if your collaborations feel murky or one-sided today, try not to lash out. Instead, check in with yourself. Figure out why this dynamic is striking a nerve. And find a healthy outlet for your frustration. Running, writing, or just talking things out can help.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
