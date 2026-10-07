@@ -531,21 +531,25 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"},
-  {"time": "9:30 AM", "name": "touchbase", "type": "meeting", "detail": "with Ashlee"},
-  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": ""},
-  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams"}
+  {"time": "All Day", "name": "Cindy WFH", "type": "allday", "detail": ""},
+  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": ""},
+  {"time": "8:30 AM", "name": "Emily / Leah", "type": "meeting", "detail": ""},
+  {"time": "11:30 AM", "name": "Lunch and Learn", "type": "meeting", "detail": "St. Paul's"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Status/ NB"},
+  {"name": "Tighten glasses"},
+  {"name": "Call Kat Norton"},
+  {"name": "Starlight Cable Invoices"},
+  {"name": "Ecovadis-"},
+  {"name": "Ballet invoice revision"},
   {"name": "Academy school"},
   {"name": "Pay Roberto"},
-  {"name": "Flowers"},
-  {"name": "New business"},
-  {"name": "Grundfos List"},
-  {"name": "Vendor Invoices"},
-  {"name": "Maids"}
+  {"name": "Alterations"},
+  {"name": "Returns"},
+  {"name": "Dirt bucket"},
+  {"name": "Pills"},
+  {"name": "Ant Treatment"}
 ];
 
 const TASKS_OVERDUE = [
@@ -593,15 +597,18 @@ const TASKS_OVERDUE = [
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Gunner and Izzy Activities", "date": "Oct 3"},
   {"name": "Water House Plants", "date": "Oct 4"},
-  {"name": "Reconciliations", "date": "Oct 5"}
+  {"name": "Reconciliations", "date": "Oct 5"},
+  {"name": "Grundfos List", "date": "Oct 6"},
+  {"name": "New business", "date": "Oct 6"},
+  {"name": "Flowers", "date": "Oct 6"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-06T05:30:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-07T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 6, 2026";
-const HOROSCOPE_DATA = "It’s a great day to communicate. So gather your people and name anything that’s been simmering beneath the surface. Maybe you’ve sensed unspoken resentment or tension in certain dynamics. Now’s the time to bring it up. And if that feels scary, remember: Real friends will want to work through this.";
+const HOROSCOPE_DATE = "October 7, 2026";
+const HOROSCOPE_DATA = "Building trust and intimacy looks different for everyone. So do a quick progress check. How’s it going splitting expenses with your partner? Do you feel supported in your collaborations? Pinpoint anywhere you’re running into trouble. Then make a list of potential solutions — the more creative, the better. Even just checking in with yourself or the other person can help you feel lighter.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
