@@ -531,33 +531,38 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "6:30 PM", "name": "Sunday Scrimmage", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Glass Pickup", "type": "allday", "detail": ""},
+  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": ""},
+  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
+  {"time": "1:30 PM", "name": "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", "type": "call", "detail": "Zoom"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Academy school"},
-  {"name": "Post social"},
-  {"name": "Gunner and Izzy Activities"}
+  {"name": "Payroll- Whiskey/ Kazoo"},
+  {"name": "SKC Tickets"},
+  {"name": "Gunner hair"},
+  {"name": "Isabella bday"},
+  {"name": "401k paperwork"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
@@ -565,40 +570,43 @@ const TASKS_OVERDUE = [
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
   {"name": "Costa Rica", "date": "Sep 23"},
-  {"name": "Anniversary", "date": "Sep 26"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
-  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
+  {"name": "Anniversary", "date": "Sep 26"},
   {"name": "Menu", "date": "Sep 27"},
+  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Jewelry appraisaly", "date": "Sep 30"},
+  {"name": "Rent - August done", "date": "Oct 1"},
+  {"name": "Checkbooks- August", "date": "Oct 1"},
+  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
   {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
   {"name": "Ballet", "date": "Oct 1"},
-  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
-  {"name": "Checkbooks- August", "date": "Oct 1"},
-  {"name": "Sporting Equativ credit", "date": "Oct 1"},
   {"name": "Have Claude enter all AMEX receipts", "date": "Oct 1"},
-  {"name": "Rent - August done", "date": "Oct 1"},
+  {"name": "Sporting Equativ credit", "date": "Oct 1"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Water House Plants", "date": "Oct 4"},
   {"name": "Reconciliations", "date": "Oct 5"},
   {"name": "Flowers", "date": "Oct 6"},
   {"name": "Maids", "date": "Oct 7"},
-  {"name": "Starlight Cable Invoices", "date": "Oct 7"},
   {"name": "Dirt bucket", "date": "Oct 7"},
+  {"name": "Starlight Cable Invoices", "date": "Oct 7"},
   {"name": "Ant Treatment", "date": "Oct 7"},
+  {"name": "Heirloom", "date": "Oct 10"},
   {"name": "Pay Roberto", "date": "Oct 10"},
-  {"name": "Isabella bday", "date": "Oct 10"},
-  {"name": "Heirloom", "date": "Oct 10"}
+  {"name": "Gunner and Izzy Activities", "date": "Oct 11"},
+  {"name": "Post social", "date": "Oct 11"},
+  {"name": "Academy school", "date": "Oct 11"},
+  {"name": "Springfield plan", "date": "Oct 11"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-11T10:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-12T08:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 11, 2026";
-const HOROSCOPE_DATA = "Who says you have to do things like everybody else? Maybe you’ve been enjoying an unconventional workout. Or maybe you prefer to eat breakfast foods at dinnertime. Whatever works for you works for you. All that matters is that you’re staying on top of your responsibilities. If your work and chores are getting done, who cares? Go ahead and let your freak flag fly.";
+const HOROSCOPE_DATE = "October 12, 2026";
+const HOROSCOPE_DATA = "Your goals need your attention today. Spend some time fine-tuning them, and ask yourself who can help you get what you want. There’s no shame in reaching out for support — that’s actually a sign of strength. So meet up with a friend, or share your ideas in the group chat. Your community is here to lift you up.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
