@@ -531,18 +531,21 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Glass Pickup", "type": "allday", "detail": ""},
-  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": ""},
-  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
-  {"time": "1:30 PM", "name": "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", "type": "call", "detail": "Zoom"}
+  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"},
+  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": ""},
+  {"time": "2:00 PM", "name": "Kazoo/FBB follow up discussion", "type": "call", "detail": "Microsoft Teams"},
+  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Payroll- Whiskey/ Kazoo"},
-  {"name": "SKC Tickets"},
-  {"name": "Gunner hair"},
-  {"name": "Isabella bday"},
-  {"name": "401k paperwork"}
+  {"name": "Put Out Dumpster"},
+  {"name": "Vendor Invoices"},
+  {"name": "Ballet"},
+  {"name": "Sporting Equativ credit"},
+  {"name": "Tighten glasses"},
+  {"name": "AI Credits"},
+  {"name": "Pumpkin Patch?"},
+  {"name": "Status/ NB"}
 ];
 
 const TASKS_OVERDUE = [
@@ -581,32 +584,28 @@ const TASKS_OVERDUE = [
   {"name": "Checkbooks- August", "date": "Oct 1"},
   {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
   {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
-  {"name": "Ballet", "date": "Oct 1"},
   {"name": "Have Claude enter all AMEX receipts", "date": "Oct 1"},
-  {"name": "Sporting Equativ credit", "date": "Oct 1"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Water House Plants", "date": "Oct 4"},
   {"name": "Reconciliations", "date": "Oct 5"},
-  {"name": "Flowers", "date": "Oct 6"},
-  {"name": "Maids", "date": "Oct 7"},
-  {"name": "Dirt bucket", "date": "Oct 7"},
   {"name": "Starlight Cable Invoices", "date": "Oct 7"},
   {"name": "Ant Treatment", "date": "Oct 7"},
-  {"name": "Heirloom", "date": "Oct 10"},
-  {"name": "Pay Roberto", "date": "Oct 10"},
   {"name": "Gunner and Izzy Activities", "date": "Oct 11"},
+  {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Post social", "date": "Oct 11"},
+  {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 11"},
+  {"name": "Isabella bday", "date": "Oct 11"},
   {"name": "Academy school", "date": "Oct 11"},
-  {"name": "Springfield plan", "date": "Oct 11"}
+  {"name": "Pay dog inv", "date": "Oct 12"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-12T08:45:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-13T05:49:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 12, 2026";
-const HOROSCOPE_DATA = "Your goals need your attention today. Spend some time fine-tuning them, and ask yourself who can help you get what you want. There’s no shame in reaching out for support — that’s actually a sign of strength. So meet up with a friend, or share your ideas in the group chat. Your community is here to lift you up.";
+const HOROSCOPE_DATE = "October 13, 2026";
+const HOROSCOPE_DATA = "You’re valuable exactly as you are. You might be tempted to fixate on your flaws or humble yourself, but being messy is a part of being human. So own it. And instead of fishing for validation, do the hard work of boosting your own self-esteem. External praise feels nice, but true love and acceptance have to come from within.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
