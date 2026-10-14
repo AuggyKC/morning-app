@@ -531,21 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"},
-  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": ""},
-  {"time": "2:00 PM", "name": "Kazoo/FBB follow up discussion", "type": "call", "detail": "Microsoft Teams"},
-  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams"}
+  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": ""},
+  {"time": "9:00 AM", "name": "Hold-Field Trip Bella", "type": "meeting", "detail": "KC Pumpkin Patch"},
+  {"time": "3:00 PM", "name": "Inclusive Leadership + Participation through Equitable Decision-Making and Operationalizing DEI", "type": "call", "detail": "Zoom"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Put Out Dumpster"},
-  {"name": "Vendor Invoices"},
-  {"name": "Ballet"},
-  {"name": "Sporting Equativ credit"},
+  {"name": "Checkbooks- Sept"},
+  {"name": "Reconciliations"},
+  {"name": "Pills"},
+  {"name": "Isabella bday"},
+  {"name": "Pay Roberto"},
   {"name": "Tighten glasses"},
-  {"name": "AI Credits"},
-  {"name": "Pumpkin Patch?"},
-  {"name": "Status/ NB"}
+  {"name": "Tires"}
 ];
 
 const TASKS_OVERDUE = [
@@ -580,32 +578,27 @@ const TASKS_OVERDUE = [
   {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Jewelry appraisaly", "date": "Sep 30"},
-  {"name": "Rent - August done", "date": "Oct 1"},
-  {"name": "Checkbooks- August", "date": "Oct 1"},
   {"name": "Deposit Checks / Profit Tracking", "date": "Oct 1"},
   {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
   {"name": "Have Claude enter all AMEX receipts", "date": "Oct 1"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Water House Plants", "date": "Oct 4"},
-  {"name": "Reconciliations", "date": "Oct 5"},
   {"name": "Starlight Cable Invoices", "date": "Oct 7"},
   {"name": "Ant Treatment", "date": "Oct 7"},
   {"name": "Gunner and Izzy Activities", "date": "Oct 11"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Post social", "date": "Oct 11"},
   {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 11"},
-  {"name": "Isabella bday", "date": "Oct 11"},
-  {"name": "Academy school", "date": "Oct 11"},
-  {"name": "Pay dog inv", "date": "Oct 12"}
+  {"name": "Academy school", "date": "Oct 11"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-13T05:49:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-14T05:45:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 13, 2026";
-const HOROSCOPE_DATA = "You’re valuable exactly as you are. You might be tempted to fixate on your flaws or humble yourself, but being messy is a part of being human. So own it. And instead of fishing for validation, do the hard work of boosting your own self-esteem. External praise feels nice, but true love and acceptance have to come from within.";
+const HOROSCOPE_DATE = "October 14, 2026";
+const HOROSCOPE_DATA = "The past five months have been all about your resources. You’ve reflected on your skills, the ways you spend your time and energy, and the financial fears keeping you stuck. Now that you’ve learned so much about yourself, get ready to act. Overhaul your budget, or invest more heavily in one of your talents. It’s time to support yourself in every sense of the word.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -615,7 +608,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. warm re-scraped 2026-09-24 (45 of 45 pins).
+// Pins organized by Pinterest section. warm re-scraped 2026-10-14 (48 of 48 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -719,6 +712,9 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
   ],
   warm: [
+    "https://i.pinimg.com/736x/8b/26/f0/8b26f041a0d49576d1ae6fdf29c42b35.jpg",
+    "https://i.pinimg.com/736x/6f/eb/be/6febbeec52c5cc5030f9a1c17b7d2bb5.jpg",
+    "https://i.pinimg.com/736x/b2/39/9a/b2399a33b25ca825b3bf0775523e69a6.jpg",
     "https://i.pinimg.com/736x/ea/80/38/ea8038085b5e3d4d9bcf1fc47dc1de61.jpg",
     "https://i.pinimg.com/736x/7f/cd/f5/7fcdf54ae17c03a1ef382874c9ddeda6.jpg",
     "https://i.pinimg.com/736x/a1/55/72/a15572bfdf49d9f6a2aa7f8ae9cebf1b.jpg",
@@ -961,6 +957,9 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/dd/0f/00/dd0f005d7b58e8d9bbfd5031a9a4f96d.jpg",
   "https://i.pinimg.com/736x/35/23/cd/3523cd75f2479edf57107857da1eabe7.jpg",
   "https://i.pinimg.com/736x/da/2f/e3/da2fe329a5d3ca58f38693b6dad0e75d.jpg",
+  "https://i.pinimg.com/736x/8b/26/f0/8b26f041a0d49576d1ae6fdf29c42b35.jpg",
+  "https://i.pinimg.com/736x/6f/eb/be/6febbeec52c5cc5030f9a1c17b7d2bb5.jpg",
+  "https://i.pinimg.com/736x/b2/39/9a/b2399a33b25ca825b3bf0775523e69a6.jpg",
   "https://i.pinimg.com/736x/ea/80/38/ea8038085b5e3d4d9bcf1fc47dc1de61.jpg",
   "https://i.pinimg.com/736x/7f/cd/f5/7fcdf54ae17c03a1ef382874c9ddeda6.jpg",
   "https://i.pinimg.com/736x/a1/55/72/a15572bfdf49d9f6a2aa7f8ae9cebf1b.jpg",
@@ -1096,7 +1095,7 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
   "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
   "https://i.pinimg.com/736x/90/b9/14/90b9149604f485fb1a31788e78818e91.jpg",
-  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg"
+  "https://i.pinimg.com/736x/f0/47/a6/f047a6c1c272afb818f28e5d2202ec7b.jpg",
 ];
 
 // Daily-seeded shuffle: picks a different set of 8 outfits each day
