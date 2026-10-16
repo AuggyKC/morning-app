@@ -531,46 +531,45 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Cindy WFH", "type": "allday", "detail": ""},
-  {"time": "9:00 AM", "name": "SVF Marketing Materials Chat", "type": "call", "detail": "Zoom"},
-  {"time": "9:00 AM", "name": "Cary Work", "type": "meeting", "detail": "9:00–11:00 AM"},
-  {"time": "9:00 AM", "name": "Hold- Couch Cleaning", "type": "meeting", "detail": "9:00–11:00 AM"},
-  {"time": "9:30 AM", "name": "Maids of KC Touch Base", "type": "call", "detail": "Zoom"},
-  {"time": "1:30 PM", "name": "SKC/Kazoo - Bi-Weekly Touchbase", "type": "call", "detail": "Zoom"},
-  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Stay at ECHO Suites Extended Stay by Wyndham Springfield Airport PLZ", "type": "allday", "detail": "3471 West Kearney Street, Springfield, MO"},
+  {"time": "8:30 AM", "name": "Friday Morning Meeting", "type": "call", "detail": "Zoom"},
+  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St"},
+  {"time": "1:00 PM", "name": "SVF Marketing Materials Regroup", "type": "call", "detail": "Zoom"},
+  {"time": "2:00 PM", "name": "election training", "type": "meeting", "detail": "2:00–3:30 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Ballet"},
-  {"name": "Maids"},
-  {"name": "Deposit Checks / Profit Tracking"},
-  {"name": "Call Exline"},
+  {"name": "SVF"},
   {"name": "Tires"},
-  {"name": "Academy school"},
-  {"name": "Pay Roberto"},
+  {"name": "PreOrder Phone"},
+  {"name": "Tighten glasses"},
   {"name": "Isabella bday"},
-  {"name": "Pay Discover"},
-  {"name": "Enter All Receipts"}
+  {"name": "Post social"},
+  {"name": "Meds"},
+  {"name": "Ballet"},
+  {"name": "Deposit Checks / Profit Tracking"},
+  {"name": "Rent - Sept"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
@@ -578,32 +577,28 @@ const TASKS_OVERDUE = [
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
   {"name": "Costa Rica", "date": "Sep 23"},
-  {"name": "Anniversary", "date": "Sep 26"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
-  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Menu", "date": "Sep 27"},
+  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Jewelry appraisaly", "date": "Sep 30"},
   {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 1"},
   {"name": "Have Claude enter all AMEX receipts", "date": "Oct 1"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
-  {"name": "Water House Plants", "date": "Oct 4"},
-  {"name": "Starlight Cable Invoices", "date": "Oct 7"},
   {"name": "Ant Treatment", "date": "Oct 7"},
-  {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 11"},
-  {"name": "Post social", "date": "Oct 11"},
+  {"name": "Gunner and Izzy Activities", "date": "Oct 11"},
   {"name": "Heirloom", "date": "Oct 11"},
-  {"name": "Gunner and Izzy Activities", "date": "Oct 11"}
+  {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 11"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-15T05:55:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-16T06:05:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 15, 2026";
-const HOROSCOPE_DATA = "You can charm pretty much anyone today. Go for it. Pitch yourself to your dream company, or share that big project on social media. And don’t second-guess yourself. You’re not being self-centered or inconveniencing anyone. You’re just boosting your profile so the right opportunities can find you.";
+const HOROSCOPE_DATE = "October 16, 2026";
+const HOROSCOPE_DATA = "It takes a lot of effort to share your resources or responsibilities with someone. So put in the work today. Give your collaborators your full attention. Discuss the ways you split your time, money, or energy. Then map out your next steps together — and actually follow through. It might not always be easy to show up for one another, but it will only strengthen your partnership. Keep going.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
