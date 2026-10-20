@@ -531,44 +531,50 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "School Pictures (Gunner)", "type": "allday", "detail": ""},
-  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": ""},
-  {"time": "9:00 AM", "name": "Maids- Home", "type": "meeting", "detail": ""},
-  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
-  {"time": "11:00 AM", "name": "Project GATSBY- weekly catch-up", "type": "call", "detail": "Zoom"},
-  {"time": "12:30 PM", "name": "Volunteering", "type": "meeting", "detail": ""},
+  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"},
+  {"time": "10:00 AM", "name": "Ach & Check Positive Pay Training", "type": "call", "detail": "Microsoft Teams"},
+  {"time": "10:30 AM", "name": "SVF Discussion - timeline and action items", "type": "meeting", "detail": ""},
+  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": ""},
+  {"time": "2:30 PM", "name": "Riega Foods Paid Media Review", "type": "call", "detail": "Zoom"},
+  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams"},
   {"time": "4:00 PM", "name": "Wegs Pick-Up Kids", "type": "meeting", "detail": ""},
-  {"time": "7:00 PM", "name": "U11 Pre-MLS NEXT - East - Practice", "type": "meeting", "detail": "6310 Lewis Rd, Kansas City, MO 64132"}
+  {"time": "5:30 PM", "name": "Gymnastics (Isabella)", "type": "meeting", "detail": "Kansas City Gymnastics School"},
+  {"time": "5:45 PM", "name": "Training- Shelby (Gunner)", "type": "meeting", "detail": "Wellness Warehouse KC"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Starlight"},
-  {"name": "Maids"},
+  {"name": "Put Out Dumpster"},
   {"name": "Reconciliations"},
-  {"name": "Riega"},
-  {"name": "SVF"},
-  {"name": "Pay Evergy Bill"},
-  {"name": "Spire Payment"}
+  {"name": "Vendor Invoices"},
+  {"name": "Kazoo AMEX/ Recon Sheets"},
+  {"name": "SKC Tickets"},
+  {"name": "Have Claude enter all AMEX receipts"},
+  {"name": "Sporting Equativ credit"},
+  {"name": "Gunner hair/ 10/23 Camp"},
+  {"name": "Isabella bday"},
+  {"name": "Call Exline"},
+  {"name": "GUNNER CAMP/ TOURS"},
+  {"name": "Status/ NB"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
@@ -576,33 +582,29 @@ const TASKS_OVERDUE = [
   {"name": "Spanish App", "date": "Sep 18"},
   {"name": "Cr trip", "date": "Sep 19"},
   {"name": "Costa Rica", "date": "Sep 23"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
-  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Menu", "date": "Sep 27"},
+  {"name": "Pull down Shutterfly pics?", "date": "Sep 27"},
   {"name": "AI Marketing", "date": "Sep 28"},
   {"name": "Jewelry appraisaly", "date": "Sep 30"},
   {"name": "Hemingway Tenants", "date": "Oct 2"},
   {"name": "Tulips", "date": "Oct 3"},
   {"name": "Ant Treatment", "date": "Oct 7"},
   {"name": "Heirloom", "date": "Oct 11"},
-  {"name": "Ballet", "date": "Oct 16"},
-  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 16"},
-  {"name": "Tighten glasses", "date": "Oct 16"},
-  {"name": "Post social", "date": "Oct 16"},
   {"name": "Rent - Sept", "date": "Oct 16"},
-  {"name": "Gunner and Izzy Activities", "date": "Oct 17"},
-  {"name": "Kazoo AMEX/ Recon Sheets", "date": "Oct 18"},
-  {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 18"},
-  {"name": "Have Claude enter all AMEX receipts", "date": "Oct 18"}
+  {"name": "Deposit Checks / Profit Tracking", "date": "Oct 16"},
+  {"name": "Post social", "date": "Oct 16"},
+  {"name": "Tighten glasses", "date": "Oct 16"},
+  {"name": "Gunner and Izzy Activities", "date": "Oct 17"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-19T05:40:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-20T05:15:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 19, 2026";
-const HOROSCOPE_DATA = "Tensions have been simmering in your social life. And today, they might hit a boiling point. Maybe you’re annoyed with a friend over something minor. Or maybe someone has seriously broken your trust. Whatever’s bothering you, get to the root of it. Then address it kindly but directly. You can worry about solutions later, but for right now, just focus on making yourself heard.";
+const HOROSCOPE_DATE = "October 20, 2026";
+const HOROSCOPE_DATA = "Intimacy isn’t reserved for romantic relationships. You’ve spent the past month digging deep into your friendships. Reflect on any intense conversations or realizations you’ve had. And celebrate yourself for diving beneath the surface. That’s how you take your connections to the next level.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
