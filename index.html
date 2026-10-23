@@ -531,25 +531,29 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "10:30 AM", "name": "Gunner- Ballet", "type": "meeting", "detail": ""},
-  {"time": "3:00 PM", "name": "Touchbase", "type": "call", "detail": "Google Meet with Ashlee"},
-  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Gunner - No School (Parent/Teacher Conferences)", "type": "allday", "detail": ""},
+  {"time": "8:30 AM", "name": "Friday Morning Meeting", "type": "call", "detail": "Zoom"},
+  {"time": "9:15 AM", "name": "Isabella - Halloween Program", "type": "meeting", "detail": ""},
+  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St"},
+  {"time": "12:20 PM", "name": "Gunner Parent-Teacher Conference", "type": "meeting", "detail": "CCS - Ms. Hawkins"},
+  {"time": "3:00 PM", "name": "Nails", "type": "meeting", "detail": ""},
+  {"time": "5:00 PM", "name": "Gunner - Westside Halloween", "type": "meeting", "detail": ""}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Ballet"},
-  {"name": "Reconciliations"},
-  {"name": "PA SVF"},
-  {"name": "Isabella bday"},
-  {"name": "Have Claude enter all AMEX receipts"},
-  {"name": "Post social"},
-  {"name": "SKC Tickets"},
-  {"name": "Ashlee Status"},
-  {"name": "Pay Water Bill"},
-  {"name": "Enter All Receipts"},
-  {"name": "Process Maids Invoices"},
   {"name": "Rent - Sept"},
-  {"name": "Pay Mortgage"}
+  {"name": "Enter All Receipts"},
+  {"name": "Reconciliations"},
+  {"name": "Meds"},
+  {"name": "SKC Tickets"},
+  {"name": "Tulips"},
+  {"name": "Isabella bday"},
+  {"name": "AI Marketing"},
+  {"name": "Tighten glasses"},
+  {"name": "passwords GMAIL- Taryn"},
+  {"name": "Grundfos"},
+  {"name": "Hemingway email to Patsy"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
@@ -579,17 +583,15 @@ const TASKS_OVERDUE = [
   {"name": "Costa Rica", "date": "Sep 23"},
   {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
-  {"name": "Heirloom", "date": "Oct 11"},
-  {"name": "Tighten glasses", "date": "Oct 21"},
-  {"name": "Gunner hair/ 10/23 Camp", "date": "Oct 21"}
+  {"name": "Heirloom", "date": "Oct 11"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-22T03:15:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-23T05:30:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 22, 2026";
-const HOROSCOPE_DATA = "Get your schmooze on. Tomorrow’s Venus cazimi will help you connect with important people and organizations. So get clear on your vision for your community. Reflect on the causes you care about, and figure out what resources you’ll need to fight for them. Then start mingling. The more you reach out, the more support you’ll receive.";
+const HOROSCOPE_DATE = "October 23, 2026";
+const HOROSCOPE_DATA = "Your inner wallflower is getting a wake-up call. The Sun in Scorpio is here to nudge you out of your comfort zone and into a more active role in your community. Over the coming month, you’ve got more of the energy and confidence you need to bring people together. What ideas do you have for the social causes and group projects you care about? Offer your honest opinions, but stay open to other perspectives. You need patience and flexibility to be a good leader — and a good friend.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
