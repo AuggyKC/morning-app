@@ -531,17 +531,19 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "8:00 AM", "name": "Isabella - Tornadoes vs AL Brioche Brigade", "type": "meeting", "detail": "Swope Park, Field 5A"},
-  {"time": "10:00 AM", "name": "Izzy Birthday Party", "type": "meeting", "detail": ""}
+  {"time": "9:35 AM", "name": "CVS MinuteClinic visit- Cindy and Izzy", "type": "meeting", "detail": "1914 Swift St., North Kansas City, MO 64116"},
+  {"time": "6:30 PM", "name": "Sunday Scrimmage", "type": "meeting", "detail": ""}
 ];
 
 const TASKS_TODAY = [
+  {"name": "Gunner Hair"},
+  {"name": "Izzy Camp"},
   {"name": "Isabella bday"},
-  {"name": "Tulips"},
-  {"name": "Post social"},
-  {"name": "SKC Tickets"},
-  {"name": "Change moth traps"},
-  {"name": "Gunner and Izzy Activities"},
+  {"name": "Pull down Shutterfly pics?"},
+  {"name": "Dirt bucket"},
+  {"name": "Kids Activities-"},
+  {"name": "Water House Plants"},
+  {"name": "Menu"},
   {"name": "Ant Treatment"}
 ];
 
@@ -580,15 +582,19 @@ const TASKS_OVERDUE = [
   {"name": "AI Marketing", "date": "Oct 23"},
   {"name": "Meds", "date": "Oct 23"},
   {"name": "Enter All Receipts", "date": "Oct 23"},
-  {"name": "Rent - Sept", "date": "Oct 23"}
+  {"name": "Rent - Sept", "date": "Oct 23"},
+  {"name": "Tulips", "date": "Oct 24"},
+  {"name": "Post social", "date": "Oct 24"},
+  {"name": "Change moth traps", "date": "Oct 24"},
+  {"name": "Gunner and Izzy Activities", "date": "Oct 24"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-10-24T05:20:00-05:00";
+const DATA_REFRESH_TIME = "2026-10-25T05:20:00-05:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "October 24, 2026";
-const HOROSCOPE_DATA = "Mercury retrograde is here, and it wants you to reassess your social life. Don’t be surprised if old friends or comrades start coming out of the woodwork. Maybe there’s a good reason you moved on, or maybe things just weren’t aligned back then. They might be now. So if that community or organizing work still calls to you, reconnect. And if not, take it as confirmation that you made the right decision.";
+const HOROSCOPE_DATE = "October 25, 2026";
+const HOROSCOPE_DATA = "What are you passionate about? The Full Moon in Taurus is highlighting the hobbies, creative projects, or romantic connections that excite you most. But something is blocking you from going all in. Maybe you’re being too critical of your art, or maybe you’re putting up walls in your dating life. It’s time to take them down. Address whatever’s making you anxious, and then push yourself to keep going. A little discomfort now could mean a lot of joy down the road.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -827,16 +833,16 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
     "https://i.pinimg.com/736x/73/9e/b0/739eb0e54f04dd3e7567a0dda4a768a5.jpg",
     "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+    "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
+    "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
     "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
     "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
     "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
+    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
+    "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
     "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
     "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
-    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
-    "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
-    "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
-    "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
     "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
@@ -1067,15 +1073,15 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
   "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
   "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+  "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
+  "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
   "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
   "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
   "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
+  "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
   "https://i.pinimg.com/736x/ff/72/e5/ff72e57798cfbb8b1ef6949d9aa88e72.jpg",
   "https://i.pinimg.com/736x/68/b8/c0/68b8c00eefb58f378cb41ff61ac19c96.jpg",
-  "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
-  "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
-  "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
   "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
