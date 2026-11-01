@@ -1551,15 +1551,16 @@ function goToOutfit(i) {
   const n = selectedCategory.length;
   i = Math.max(0, Math.min(n - 1, i));
   strip.scrollTo({ left: i * strip.clientWidth, behavior: 'smooth' });
+  updateOutfitPosition(i);
 }
 
 function scrollOutfit(dir) {
   goToOutfit(currentOutfitIndex() + dir);
 }
 
-function updateOutfitPosition() {
+function updateOutfitPosition(target) {
   const n = selectedCategory.length;
-  const i = Math.max(0, Math.min(n - 1, currentOutfitIndex()));
+  const i = Math.max(0, Math.min(n - 1, typeof target === 'number' ? target : currentOutfitIndex()));
   document.querySelectorAll('.outfit-dot').forEach((d, k) => d.classList.toggle('active', k === i));
   const prev = document.getElementById('outfitPrev');
   const next = document.getElementById('outfitNext');
