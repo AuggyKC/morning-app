@@ -265,6 +265,17 @@
     margin-bottom: 16px;
     min-height: 24px;
   }
+  /* Swipe carousel for Today's Look */
+  .outfit-strip.swipe { position: static; width: 100%; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; transition: none; }
+  .outfit-strip.swipe::-webkit-scrollbar { display: none; }
+  .outfit-strip.swipe .outfit-slide { flex: 0 0 100%; scroll-snap-align: center; scroll-snap-stop: always; }
+  .outfit-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.92); color: var(--deep-brown); font-size: 1.6rem; line-height: 1; cursor: pointer; box-shadow: var(--card-shadow); display: flex; align-items: center; justify-content: center; transition: opacity 0.2s ease; }
+  .outfit-nav.prev { left: 10px; }
+  .outfit-nav.next { right: 10px; }
+  .outfit-nav:disabled { opacity: 0; pointer-events: none; }
+  .outfit-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; }
+  .outfit-dot { width: 8px; height: 8px; padding: 0; border: none; border-radius: 4px; background: var(--border); cursor: pointer; transition: all 0.2s ease; }
+  .outfit-dot.active { width: 22px; background: var(--burgundy); }
   .spin-btn {
     background: linear-gradient(135deg, var(--burgundy), var(--deep-brown));
     color: white;
@@ -497,12 +508,12 @@
     <div class="roulette-container">
       <div class="outfit-reason" id="outfitReason">Analyzing your weather and calendar to pick the perfect look...</div>
       <div class="outfit-display" id="outfitDisplay">
-        <div class="outfit-strip" id="outfitStrip"></div>
+        <button class="outfit-nav prev" id="outfitPrev" aria-label="Previous look" onclick="scrollOutfit(-1)">&#8249;</button>
+        <div class="outfit-strip swipe" id="outfitStrip"></div>
+        <button class="outfit-nav next" id="outfitNext" aria-label="Next look" onclick="scrollOutfit(1)">&#8250;</button>
       </div>
+      <div class="outfit-dots" id="outfitDots"></div>
       <div class="outfit-label" id="outfitLabel"></div>
-      <button class="spin-btn" id="spinBtn" onclick="spinRoulette()">
-        <span class="spinner-icon">&#127922;</span> Spin the Style Wheel
-      </button>
     </div>
   </div>
 
@@ -1515,56 +1526,48 @@ function getWeatherTag() {
 function initOutfitDisplay() {
   selectedCategory = determineOutfitCategory();
   const strip = document.getElementById('outfitStrip');
-  const display = document.getElementById('outfitDisplay');
-  const displayWidth = display.offsetWidth;
-
-  // Build strip with all outfits repeated for roulette effect
-  let slidesHtml = '';
-  const repeats = 4;
-  for (let r = 0; r < repeats; r++) {
-    selectedCategory.forEach(outfit => {
-      slidesHtml += `<div class="outfit-slide" style="width:${displayWidth}px;min-width:${displayWidth}px;">
-        <img src="${outfit.src}" alt="${outfit.label}" loading="lazy">
-      </div>`;
-    });
+  strip.innerHTML = selectedCategory.map((outfit, i) =>
+    `<div class="outfit-slide"><img src="${outfit.src}" alt="${outfit.label}" loading="${i < 2 ? 'eager' : 'lazy'}"></div>`
+  ).join('');
+  strip.scrollLeft = 0;
+  document.getElementById('outfitDots').innerHTML = selectedCategory.map((_, i) =>
+    `<button class="outfit-dot${i === 0 ? ' active' : ''}" aria-label="Look ${i + 1}" onclick="goToOutfit(${i})"></button>`
+  ).join('');
+  if (!strip.dataset.bound) {
+    strip.addEventListener('scroll', updateOutfitPosition, { passive: true });
+    strip.dataset.bound = '1';
   }
-  strip.innerHTML = slidesHtml;
-  strip.style.transform = 'translateX(0px)';
-
   document.getElementById('outfitReason').textContent = getOutfitReasonText();
-  document.getElementById('outfitLabel').innerHTML = `${selectedCategory.length} fresh looks from your board today!` + '<br>' + getWeatherTag();
+  updateOutfitPosition();
 }
 
-function spinRoulette() {
-  if (spinning) return;
-  spinning = true;
-  const btn = document.getElementById('spinBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner-icon">&#127922;</span> Spinning...';
-
+function currentOutfitIndex() {
   const strip = document.getElementById('outfitStrip');
-  const display = document.getElementById('outfitDisplay');
-  const displayWidth = display.offsetWidth;
-  const totalSlides = selectedCategory.length;
+  return strip.clientWidth ? Math.round(strip.scrollLeft / strip.clientWidth) : 0;
+}
 
-  // Pick a random winner
-  const winnerIdx = Math.floor(Math.random() * totalSlides);
+function goToOutfit(i) {
+  const strip = document.getElementById('outfitStrip');
+  const n = selectedCategory.length;
+  i = Math.max(0, Math.min(n - 1, i));
+  strip.scrollTo({ left: i * strip.clientWidth, behavior: 'smooth' });
+}
 
-  // Spin through 2-3 full cycles + land on winner
-  const fullCycles = 2 + Math.floor(Math.random() * 2);
-  const targetSlide = (fullCycles * totalSlides) + winnerIdx;
-  const offset = targetSlide * displayWidth;
+function scrollOutfit(dir) {
+  goToOutfit(currentOutfitIndex() + dir);
+}
 
-  strip.style.transition = 'transform 3.5s cubic-bezier(0.15, 0.6, 0.25, 1)';
-  strip.style.transform = `translateX(-${offset}px)`;
-
-  setTimeout(() => {
-    spinning = false;
-    btn.disabled = false;
-    btn.innerHTML = '<span class="spinner-icon">&#127922;</span> Spin Again';
-    const winner = selectedCategory[winnerIdx];
-    document.getElementById('outfitLabel').innerHTML = `Pinterest inspo #${winnerIdx + 1}` + '<br>' + getWeatherTag();
-  }, 3800);
+function updateOutfitPosition() {
+  const n = selectedCategory.length;
+  const i = Math.max(0, Math.min(n - 1, currentOutfitIndex()));
+  document.querySelectorAll('.outfit-dot').forEach((d, k) => d.classList.toggle('active', k === i));
+  const prev = document.getElementById('outfitPrev');
+  const next = document.getElementById('outfitNext');
+  if (prev) prev.disabled = i === 0;
+  if (next) next.disabled = i >= n - 1;
+  document.getElementById('outfitLabel').innerHTML = n
+    ? `Look ${i + 1} of ${n} &bull; swipe for more<br>${getWeatherTag()}`
+    : '';
 }
 
 // ============================================================
