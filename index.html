@@ -542,68 +542,77 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": ""},
-  {"time": "8:00 AM", "name": "Sprinklers", "type": "meeting", "detail": "8:00 AM – 12:00 PM"},
-  {"time": "8:00 AM", "name": "House - Town & Country Heating and Cooling Company", "type": "meeting", "detail": "Provider: Town & Country Heating and Cooling Company"},
-  {"time": "10:00 AM", "name": "Appointment: Meeting with Town & Country Heating and Cooling Company", "type": "meeting", "detail": "821 West 17 Street, Kansas City, MO 64108"},
-  {"time": "10:30 AM", "name": "Toby @ Kazoo - National Beef Recruitment Planning", "type": "meeting", "detail": "821 W 17 St, Kansas City, MO 64108"},
-  {"time": "11:30 AM", "name": "Lunch and Learn", "type": "meeting", "detail": "St. Paul's Episcopal Day School"},
-  {"time": "2:00 PM", "name": "Mingos", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Spartan Fund Giving Week (Isabella)", "type": "allday", "detail": "Nov 2 – 6"},
+  {"time": "8:30 AM", "name": "touchbase", "type": "meeting", "detail": "with Ashlee"},
+  {"time": "11:30 AM", "name": "MC 482 Guest Speaker Cindy Augustine, KAZOO Media", "type": "meeting", "detail": "Nichols Hall Room 126 · 11:30 AM – 12:45 PM"},
+  {"time": "1:00 PM", "name": "EOKC Rapscallions Forum", "type": "meeting", "detail": "Blue Valley Tractor & Supply (8530 W 199th St, Overland Park, KS) · 1 – 5 PM"},
+  {"time": "1:05 PM", "name": "MC 612 Guest Speaker Cindy Augustine, KAZOO Media", "type": "meeting", "detail": "Calvin Hall (802 Mid-Campus Dr, Manhattan, KS) · 1:05 – 2:20 PM"},
+  {"time": "3:00 PM", "name": "Cindy / Cailey Monthly Touchbase", "type": "call", "detail": "Google Meet"},
+  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": ""},
+  {"time": "4:00 PM", "name": "Wegs Pick-Up Kids", "type": "meeting", "detail": "Matt"},
+  {"time": "5:30 PM", "name": "Gunner – U11 Pre-MLS NEXT Practice", "type": "meeting", "detail": "6310 Lewis Rd, Kansas City, MO 64132"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Kazoo AMEX/ Recon Sheets"},
-  {"name": "Maids"},
-  {"name": "Deposit Checks / Profit Tracking"},
-  {"name": "Kstate Presos"},
-  {"name": "extra $10k for AirBnB"},
-  {"name": "Pills"}
+  {"name": "Scotia"},
+  {"name": "Have Claude enter all AMEX receipts"},
+  {"name": "Tours For Gunner"},
+  {"name": "Cr trip"},
+  {"name": "Ashlee Status"},
+  {"name": "Vendor Invoices"},
+  {"name": "Enter All Receipts"},
+  {"name": "Rent - Oct"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
   {"name": "ALCON CARD", "date": "Sep 13"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Pull down Shutterfly pics?", "date": "Oct 25"},
   {"name": "Ant Treatment", "date": "Oct 25"},
-  {"name": "Tighten glasses", "date": "Oct 30"},
-  {"name": "AI Marketing", "date": "Oct 30"},
   {"name": "Jewelry appraisaly", "date": "Oct 30"},
+  {"name": "AI Marketing", "date": "Oct 30"},
+  {"name": "Tighten glasses", "date": "Oct 30"},
   {"name": "Tulips", "date": "Oct 31"},
-  {"name": "Braids", "date": "Nov 1"},
   {"name": "Isabella Pictures", "date": "Nov 1"},
-  {"name": "Post social", "date": "Nov 3"},
+  {"name": "Braids", "date": "Nov 1"},
+  {"name": "Gunner and Izzy Activities", "date": "Nov 3"},
   {"name": "Raises", "date": "Nov 3"},
-  {"name": "Gunner and Izzy Activities", "date": "Nov 3"}
+  {"name": "Post social", "date": "Nov 3"},
+  {"name": "Deposit Checks / Profit Tracking", "date": "Nov 4"},
+  {"name": "Kazoo AMEX/ Recon Sheets", "date": "Nov 4"},
+  {"name": "Maids", "date": "Nov 4"},
+  {"name": "Pills", "date": "Nov 4"},
+  {"name": "extra $10k for AirBnB", "date": "Nov 4"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-04T06:20:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-05T05:10:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 4, 2026";
-const HOROSCOPE_DATA = "What kind of future do you want for yourself and your community? The Mercury cazimi is clearing up any fog around your friendships. And it’s helping you identify the people and groups best aligned with your dreams. Don’t let this clarity go to waste. Workshop your plans with your friends, and reach out to anyone you want in your circles. It’s time to start building together.";
+const HOROSCOPE_DATE = "November 5, 2026";
+const HOROSCOPE_DATA = "You can’t transform your home life overnight. So quit putting so much pressure on yourself or the people close to you. Instead, focus on making gradual progress, and acknowledge how far you’ve come already. Maybe you’re saving up for a big move or setting boundaries with your relatives. Every little bit of effort counts. Keep going, slowly and steadily.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
