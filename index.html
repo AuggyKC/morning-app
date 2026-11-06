@@ -542,26 +542,24 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
+  {"time": "All Day", "name": "Dress Down Day (Gunner)", "type": "allday", "detail": "Crossroads"},
   {"time": "All Day", "name": "Spartan Fund Giving Week (Isabella)", "type": "allday", "detail": "Nov 2 – 6"},
-  {"time": "8:30 AM", "name": "touchbase", "type": "meeting", "detail": "with Ashlee"},
-  {"time": "11:30 AM", "name": "MC 482 Guest Speaker Cindy Augustine, KAZOO Media", "type": "meeting", "detail": "Nichols Hall Room 126 · 11:30 AM – 12:45 PM"},
-  {"time": "1:00 PM", "name": "EOKC Rapscallions Forum", "type": "meeting", "detail": "Blue Valley Tractor & Supply (8530 W 199th St, Overland Park, KS) · 1 – 5 PM"},
-  {"time": "1:05 PM", "name": "MC 612 Guest Speaker Cindy Augustine, KAZOO Media", "type": "meeting", "detail": "Calvin Hall (802 Mid-Campus Dr, Manhattan, KS) · 1:05 – 2:20 PM"},
-  {"time": "3:00 PM", "name": "Cindy / Cailey Monthly Touchbase", "type": "call", "detail": "Google Meet"},
-  {"time": "3:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": ""},
-  {"time": "4:00 PM", "name": "Wegs Pick-Up Kids", "type": "meeting", "detail": "Matt"},
-  {"time": "5:30 PM", "name": "Gunner – U11 Pre-MLS NEXT Practice", "type": "meeting", "detail": "6310 Lewis Rd, Kansas City, MO 64132"}
+  {"time": "8:30 AM", "name": "Friday Morning Meeting", "type": "call", "detail": "Zoom · 8:30 – 10:00 AM"},
+  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St · 11 AM – 12 PM"},
+  {"time": "2:00 PM", "name": "Dentist", "type": "meeting", "detail": "2 – 3 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Scotia"},
-  {"name": "Have Claude enter all AMEX receipts"},
-  {"name": "Tours For Gunner"},
-  {"name": "Cr trip"},
-  {"name": "Ashlee Status"},
-  {"name": "Vendor Invoices"},
-  {"name": "Enter All Receipts"},
-  {"name": "Rent - Oct"}
+  {"name": "Christmas activities"},
+  {"name": "Meds"},
+  {"name": "Pay CR Taxes"},
+  {"name": "Nova Meds"},
+  {"name": "Ash bday"},
+  {"name": "Giorgio"},
+  {"name": "KMBC MG"},
+  {"name": "restart computer"},
+  {"name": "Laurie wetted"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
@@ -603,16 +601,22 @@ const TASKS_OVERDUE = [
   {"name": "Deposit Checks / Profit Tracking", "date": "Nov 4"},
   {"name": "Kazoo AMEX/ Recon Sheets", "date": "Nov 4"},
   {"name": "Maids", "date": "Nov 4"},
-  {"name": "Pills", "date": "Nov 4"},
-  {"name": "extra $10k for AirBnB", "date": "Nov 4"}
+  {"name": "extra $10k for AirBnB", "date": "Nov 4"},
+  {"name": "Rent - Oct", "date": "Nov 5"},
+  {"name": "Enter All Receipts", "date": "Nov 5"},
+  {"name": "Vendor Invoices", "date": "Nov 5"},
+  {"name": "Cr trip", "date": "Nov 5"},
+  {"name": "Tours For Gunner", "date": "Nov 5"},
+  {"name": "Have Claude enter all AMEX receipts", "date": "Nov 5"},
+  {"name": "Scotia", "date": "Nov 5"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-05T05:10:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-06T06:05:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 5, 2026";
-const HOROSCOPE_DATA = "You can’t transform your home life overnight. So quit putting so much pressure on yourself or the people close to you. Instead, focus on making gradual progress, and acknowledge how far you’ve come already. Maybe you’re saving up for a big move or setting boundaries with your relatives. Every little bit of effort counts. Keep going, slowly and steadily.";
+const HOROSCOPE_DATE = "November 6, 2026";
+const HOROSCOPE_DATA = "What’s weighing on you right now? Maybe you’re stuck on an old grudge, a one-sided collaboration, or a weird power dynamic. It’s okay to feel fed up or resentful. Just try not to let your mood ruin your day. And resist the urge to cause a scene. You and the other person can work this out without blowing up at one another.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -859,20 +863,20 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
     "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
     "https://i.pinimg.com/736x/73/9e/b0/739eb0e54f04dd3e7567a0dda4a768a5.jpg",
-    "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
-    "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
-    "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
-    "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
-    "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
-    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
     "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
+    "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
     "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
     "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
     "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
+    "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+    "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
+    "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
+    "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
+    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
     "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
     "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
@@ -1108,19 +1112,19 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/d6/c3/e4/d6c3e4cac7cf4fdb3c4115c3ae4f4d12.jpg",
   "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
   "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
-  "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
-  "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
-  "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
-  "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
-  "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
   "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
   "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
+  "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
   "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
   "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
   "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
+  "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+  "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
+  "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
+  "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
   "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
   "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
   "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
