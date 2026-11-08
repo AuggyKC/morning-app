@@ -542,65 +542,67 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "10:15 AM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "1500 N 90 St, Kansas City, KS · 10:15 – 11:15 AM"},
-  {"time": "12:45 PM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "1500 N 90 St, Kansas City, KS · 12:45 – 1:45 PM"}
+  {"time": "12:15 PM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "Sporting City West · 9101 N Line Creek Pkwy, KC MO · Arrive by 11:35 AM · Navy (bring both)"},
+  {"time": "2:45 PM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "Sporting City North · 9101 N Line Creek Pkwy, KC MO · Arrive by 2:10 PM · Navy (bring both)"},
+  {"time": "6:30 PM", "name": "Sunday Scrimmage", "type": "meeting", "detail": "6:30 – 7:30 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Christmas activities"},
-  {"name": "Menu"},
-  {"name": "Cr trip"},
-  {"name": "Tours For Gunner"},
-  {"name": "Christmas To Dos"},
-  {"name": "Meds"}
+  {"name": "Ash bday"},
+  {"name": "Tulips"},
+  {"name": "Water House Plants"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Art book", "date": "Jan 18"},
-  {"name": "Wbe", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Clean up Computer", "date": "Jan 18"},
   {"name": "Building To Dos", "date": "Jan 22"},
-  {"name": "50th", "date": "Feb 7"},
+  {"name": "Wbe", "date": "Jan 22"},
   {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "50th", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "Heart appt", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "QB costs/ Alternative", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "Heart appt", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "Volunteering", "date": "Sep 4"},
   {"name": "AI", "date": "Sep 4"},
+  {"name": "Volunteering", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
   {"name": "ALCON CARD", "date": "Sep 13"},
-  {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Oil Treatment", "date": "Sep 26"},
+  {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Pull down Shutterfly pics?", "date": "Oct 25"},
   {"name": "Ant Treatment", "date": "Oct 25"},
   {"name": "AI Marketing", "date": "Oct 30"},
-  {"name": "Isabella Pictures", "date": "Nov 1"},
   {"name": "Braids", "date": "Nov 1"},
-  {"name": "Gunner and Izzy Activities", "date": "Nov 3"},
-  {"name": "Raises", "date": "Nov 3"},
+  {"name": "Isabella Pictures", "date": "Nov 1"},
   {"name": "Post social", "date": "Nov 3"},
+  {"name": "Raises", "date": "Nov 3"},
+  {"name": "Gunner and Izzy Activities", "date": "Nov 3"},
   {"name": "extra $10k for AirBnB", "date": "Nov 4"},
   {"name": "Enter All Receipts", "date": "Nov 5"},
+  {"name": "Eo email", "date": "Nov 6"},
   {"name": "Sassafrassas", "date": "Nov 6"},
-  {"name": "restart computer", "date": "Nov 6"},
-  {"name": "Eo email", "date": "Nov 6"}
+  {"name": "Pay production inv for ballet", "date": "Nov 7"},
+  {"name": "Christmas To Dos", "date": "Nov 7"},
+  {"name": "Tours For Gunner", "date": "Nov 7"},
+  {"name": "Cr trip", "date": "Nov 7"},
+  {"name": "Menu", "date": "Nov 7"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-07T06:10:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-08T05:30:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 7, 2026";
-const HOROSCOPE_DATA = "Catch your breath. You’ve been doubling down on your goals lately. And while it’s great to be ambitious, it’s also important to check in with yourself. So reflect on any issues you’re facing in your career or big projects. Maybe you’re dealing with impostor syndrome or struggling to strike the right work–life balance. Sit with that. Journal about your feelings, or talk them out with someone you trust. Pausing to address these problems will help you course-correct and level up.";
+const HOROSCOPE_DATE = "November 8, 2026";
+const HOROSCOPE_DATA = "Go deeper with your friends. Today’s New Moon in Scorpio packs the passion and makes it easy to build a community. So make a move. Drop in on an organizing meeting, or have a heart-to-heart with your bestie. Trust your gut, and don’t be scared to delve into the topics most people shy away from. It’ll only bring you closer with your crew.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -847,20 +849,20 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
     "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
     "https://i.pinimg.com/736x/73/9e/b0/739eb0e54f04dd3e7567a0dda4a768a5.jpg",
+    "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+    "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
+    "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
+    "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
+    "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
+    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
     "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
     "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-    "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
     "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
     "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
     "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
     "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
     "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
-    "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
-    "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
-    "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
-    "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
-    "https://i.pinimg.com/736x/78/f7/46/78f74689d5f2d62ec2ed01b64e212d6e.jpg",
     "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
     "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
     "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
@@ -1096,19 +1098,19 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/d6/c3/e4/d6c3e4cac7cf4fdb3c4115c3ae4f4d12.jpg",
   "https://i.pinimg.com/736x/aa/f8/ff/aaf8ff383a3c034b64a5a97c62acf261.jpg",
   "https://i.pinimg.com/736x/b0/fe/15/b0fe150fca106564435b4a91dd98b734.jpg",
+  "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
+  "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
+  "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
+  "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
+  "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
   "https://i.pinimg.com/736x/b5/71/5d/b5715d236d8575c8d6f7cd3bba4fad1b.jpg",
   "https://i.pinimg.com/736x/72/71/a5/7271a52d7e0c1395e519fe3243a51957.jpg",
   "https://i.pinimg.com/736x/96/a6/71/96a671c93b86894d0314ccd7a7d00167.jpg",
-  "https://i.pinimg.com/736x/0c/da/81/0cda8103591f9acee01559af7f4b51fe.jpg",
   "https://i.pinimg.com/736x/c8/0b/12/c80b12717ec934695857530b18610430.jpg",
   "https://i.pinimg.com/736x/c5/07/48/c507485e993ba16759cc5438707771a5.jpg",
   "https://i.pinimg.com/736x/92/8e/75/928e75604a33665ef37d017fa13861e2.jpg",
   "https://i.pinimg.com/736x/52/e7/cb/52e7cb3cb9a64028ae8e381d33e03a9f.jpg",
   "https://i.pinimg.com/736x/97/60/aa/9760aaac755e8ac2c1a724c068d8fff0.jpg",
-  "https://i.pinimg.com/736x/81/11/1a/81111a5fb955df2c95aaf1fa3fa3e1b1.jpg",
-  "https://i.pinimg.com/736x/e3/e4/b3/e3e4b3c8ee1110fb8ba4ebb4aa274ce5.jpg",
-  "https://i.pinimg.com/736x/3d/9e/b3/3d9eb3d50119b430d5ce981d519e101d.jpg",
-  "https://i.pinimg.com/736x/c1/47/33/c14733ea3fa09690faa291def89f5193.jpg",
   "https://i.pinimg.com/736x/bc/3a/9c/bc3a9c0069c0f4b74158509ff188c13f.jpg",
   "https://i.pinimg.com/736x/bc/24/b4/bc24b4242476771aca59be1a36cbe54a.jpg",
   "https://i.pinimg.com/736x/5f/18/88/5f1888f2276bc6e26726368e022df194.jpg",
