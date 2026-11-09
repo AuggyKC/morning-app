@@ -542,15 +542,27 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "12:15 PM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "Sporting City West · 9101 N Line Creek Pkwy, KC MO · Arrive by 11:35 AM · Navy (bring both)"},
-  {"time": "2:45 PM", "name": "U11 Pre-MLS NEXT - East - Game (Gunner)", "type": "meeting", "detail": "Sporting City North · 9101 N Line Creek Pkwy, KC MO · Arrive by 2:10 PM · Navy (bring both)"},
-  {"time": "6:30 PM", "name": "Sunday Scrimmage", "type": "meeting", "detail": "6:30 – 7:30 PM"}
+  {"time": "All Day", "name": "Close Pool", "type": "allday", "detail": "Nov 9 – 13"},
+  {"time": "All Day", "name": "Fynn's Birthday", "type": "allday", "detail": ""},
+  {"time": "All Day", "name": "Glass Pickup", "type": "allday", "detail": ""},
+  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": "7:45 – 9:45 AM"},
+  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom · 10 – 11 AM"},
+  {"time": "1:30 PM", "name": "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", "type": "call", "detail": "Zoom · 1:30 – 2 PM"},
+  {"time": "2:00 PM", "name": "Gunner- St Pauls Call", "type": "meeting", "detail": "2 – 3 PM"},
+  {"time": "4:00 PM", "name": "Wegs Pick-Up Kids", "type": "meeting", "detail": "Matt · 4 – 5 PM"},
+  {"time": "5:15 PM", "name": "Training- Shelby", "type": "meeting", "detail": "Wellness Warehouse KC · 5:15 – 6:15 PM"},
+  {"time": "6:00 PM", "name": "Virtual Claude Workshop", "type": "call", "detail": "Anthropic webinar (Goldcast) · 6 – 7:30 PM"},
+  {"time": "7:00 PM", "name": "U11 Pre-MLS NEXT - East - Practice (Gunner)", "type": "meeting", "detail": "6310 Lewis Rd, Kansas City, MO · 7 – 8:30 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Ash bday"},
-  {"name": "Tulips"},
-  {"name": "Water House Plants"}
+  {"name": "Rent - Oct"},
+  {"name": "Reconciliations"},
+  {"name": "Kazoo AMEX/ Recon Sheets"},
+  {"name": "Payroll- Whiskey/ Kazoo"},
+  {"name": "Maids"},
+  {"name": "Ballet"},
+  {"name": "Cailey I sirancw"}
 ];
 
 const TASKS_OVERDUE = [
@@ -594,15 +606,22 @@ const TASKS_OVERDUE = [
   {"name": "Christmas To Dos", "date": "Nov 7"},
   {"name": "Tours For Gunner", "date": "Nov 7"},
   {"name": "Cr trip", "date": "Nov 7"},
-  {"name": "Menu", "date": "Nov 7"}
+  {"name": "Menu", "date": "Nov 7"},
+  {"name": "Ash bday", "date": "Nov 8"},
+  {"name": "Cancel Thanksgiving maids", "date": "Nov 8"},
+  {"name": "Mr Finley", "date": "Nov 8"},
+  {"name": "Schedule Tommy", "date": "Nov 8"},
+  {"name": "Text Tommy", "date": "Nov 8"},
+  {"name": "Tulips", "date": "Nov 8"},
+  {"name": "Water House Plants", "date": "Nov 8"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-08T05:30:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-09T05:10:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 8, 2026";
-const HOROSCOPE_DATA = "Go deeper with your friends. Today’s New Moon in Scorpio packs the passion and makes it easy to build a community. So make a move. Drop in on an organizing meeting, or have a heart-to-heart with your bestie. Trust your gut, and don’t be scared to delve into the topics most people shy away from. It’ll only bring you closer with your crew.";
+const HOROSCOPE_DATE = "November 9, 2026";
+const HOROSCOPE_DATA = "It’s go time. Right now, you’re extra motivated to chase your ambitions. But there’s no need to cut corners or compromise your values. The surest way to get what you want is to stick to your convictions and chase meaningful, aligned opportunities. So forget what looks impressive to the outside world and focus on yourself. This is your path, after all.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
