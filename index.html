@@ -543,85 +543,75 @@
 // ============================================================
 const CALENDAR_DATA = [
   {"time": "All Day", "name": "Close Pool", "type": "allday", "detail": "Nov 9 – 13"},
-  {"time": "All Day", "name": "Fynn's Birthday", "type": "allday", "detail": ""},
-  {"time": "All Day", "name": "Glass Pickup", "type": "allday", "detail": ""},
-  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": "7:45 – 9:45 AM"},
-  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom · 10 – 11 AM"},
-  {"time": "1:30 PM", "name": "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", "type": "call", "detail": "Zoom · 1:30 – 2 PM"},
-  {"time": "2:00 PM", "name": "Gunner- St Pauls Call", "type": "meeting", "detail": "2 – 3 PM"},
-  {"time": "4:00 PM", "name": "Wegs Pick-Up Kids", "type": "meeting", "detail": "Matt · 4 – 5 PM"},
-  {"time": "5:15 PM", "name": "Training- Shelby", "type": "meeting", "detail": "Wellness Warehouse KC · 5:15 – 6:15 PM"},
-  {"time": "6:00 PM", "name": "Virtual Claude Workshop", "type": "call", "detail": "Anthropic webinar (Goldcast) · 6 – 7:30 PM"},
-  {"time": "7:00 PM", "name": "U11 Pre-MLS NEXT - East - Practice (Gunner)", "type": "meeting", "detail": "6310 Lewis Rd, Kansas City, MO · 7 – 8:30 PM"}
+  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom · 9 – 9:30 AM"},
+  {"time": "9:30 AM", "name": "Bi-Weekly Sync (Maids of KC, Ballet, Folly, Rocky's)", "type": "call", "detail": "Zoom · 9:30 – 10 AM"},
+  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": "11:30 AM – 12:30 PM"},
+  {"time": "1:30 PM", "name": "Meeting with Melanie - LWVKC", "type": "call", "detail": "Google Meet · 1:30 – 2:30 PM"},
+  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams · 3:30 – 4 PM"}
 ];
 
 const TASKS_TODAY = [
   {"name": "Rent - Oct"},
+  {"name": "Put Out Dumpster"},
   {"name": "Reconciliations"},
-  {"name": "Kazoo AMEX/ Recon Sheets"},
   {"name": "Payroll- Whiskey/ Kazoo"},
-  {"name": "Maids"},
-  {"name": "Ballet"},
-  {"name": "Cailey I sirancw"}
+  {"name": "Costa Rica"},
+  {"name": "Cr trip"},
+  {"name": "Scotia"},
+  {"name": "Pay production inv for ballet"},
+  {"name": "Call Jackson County- hemingway"},
+  {"name": "Crossroads-Refine City"},
+  {"name": "Change cr reservation"},
+  {"name": "Status/ NB"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Art book", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Building To Dos", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Art book", "date": "Jan 18"},
   {"name": "Wbe", "date": "Jan 22"},
-  {"name": "Video Tapes", "date": "Feb 7"},
+  {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
+  {"name": "Video Tapes", "date": "Feb 7"},
   {"name": "Research New Phones", "date": "Jun 24"},
-  {"name": "QB costs/ Alternative", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "Heart appt", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "AI", "date": "Sep 4"},
   {"name": "Volunteering", "date": "Sep 4"},
+  {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "Check Ring", "date": "Sep 11"},
   {"name": "ALCON CARD", "date": "Sep 13"},
-  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
+  {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Pull down Shutterfly pics?", "date": "Oct 25"},
   {"name": "Ant Treatment", "date": "Oct 25"},
   {"name": "AI Marketing", "date": "Oct 30"},
-  {"name": "Braids", "date": "Nov 1"},
   {"name": "Isabella Pictures", "date": "Nov 1"},
-  {"name": "Post social", "date": "Nov 3"},
-  {"name": "Raises", "date": "Nov 3"},
+  {"name": "Braids", "date": "Nov 1"},
   {"name": "Gunner and Izzy Activities", "date": "Nov 3"},
+  {"name": "Raises", "date": "Nov 3"},
+  {"name": "Post social", "date": "Nov 3"},
   {"name": "extra $10k for AirBnB", "date": "Nov 4"},
   {"name": "Enter All Receipts", "date": "Nov 5"},
-  {"name": "Eo email", "date": "Nov 6"},
-  {"name": "Sassafrassas", "date": "Nov 6"},
-  {"name": "Pay production inv for ballet", "date": "Nov 7"},
-  {"name": "Christmas To Dos", "date": "Nov 7"},
-  {"name": "Tours For Gunner", "date": "Nov 7"},
-  {"name": "Cr trip", "date": "Nov 7"},
   {"name": "Menu", "date": "Nov 7"},
-  {"name": "Ash bday", "date": "Nov 8"},
-  {"name": "Cancel Thanksgiving maids", "date": "Nov 8"},
-  {"name": "Mr Finley", "date": "Nov 8"},
-  {"name": "Schedule Tommy", "date": "Nov 8"},
-  {"name": "Text Tommy", "date": "Nov 8"},
-  {"name": "Tulips", "date": "Nov 8"},
+  {"name": "Tours For Gunner", "date": "Nov 7"},
+  {"name": "Christmas To Dos", "date": "Nov 7"},
   {"name": "Water House Plants", "date": "Nov 8"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-09T05:10:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-10T06:20:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 9, 2026";
-const HOROSCOPE_DATA = "It’s go time. Right now, you’re extra motivated to chase your ambitions. But there’s no need to cut corners or compromise your values. The surest way to get what you want is to stick to your convictions and chase meaningful, aligned opportunities. So forget what looks impressive to the outside world and focus on yourself. This is your path, after all.";
+const HOROSCOPE_DATE = "November 10, 2026";
+const HOROSCOPE_DATA = "There’s no one right way to get things done. And since late April, you might have found unconventional ways to tackle your to-dos. Maybe you’ve been gamifying your chores or going to the gym when everyone else is asleep. As long as it works for you, keep at it. And stay open to new ideas. The weirder and more interesting you can make your routines, the better.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
