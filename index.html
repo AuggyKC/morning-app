@@ -543,27 +543,26 @@
 // ============================================================
 const CALENDAR_DATA = [
   {"time": "All Day", "name": "Close Pool", "type": "allday", "detail": "Nov 9 – 13"},
-  {"time": "09:30 AM", "name": "Maids of KC Touch Base", "type": "call", "detail": "Zoom · 9:30 – 10:00 AM"},
-  {"time": "09:30 AM", "name": "Hemingway Pest Control", "type": "call", "detail": "Google Meet · 9:30 AM – 12:00 PM"},
-  {"time": "12:00 PM", "name": "Ashlee Bday Celebration Lunch!", "type": "call", "detail": "Google Meet · 12:00 – 1:30 PM"},
-  {"time": "01:30 PM", "name": "SKC/Kazoo - Bi-Weekly Touchbase", "type": "call", "detail": "Zoom · 1:30 – 1:45 PM"},
-  {"time": "03:45 PM", "name": "REMINDER: Timesheets", "type": "meeting", "detail": "3:45 – 4:00 PM (tentative)"},
-  {"time": "06:00 PM", "name": "Gunner – BB Practice", "type": "meeting", "detail": "Kirk Family YMCA · 6:00 – 7:30 PM"},
-  {"time": "07:00 PM", "name": "Gunner – U11 Pre-MLS NEXT Practice", "type": "meeting", "detail": "4201 E 63rd St, KC · 7:00 – 8:00 PM"}
+  {"time": "All Day", "name": "Stay at Homewood Suites by Hilton @ The Waterfront", "type": "allday", "detail": "1550 N Waterfront, Wichita, KS · Nov 13 – 14"},
+  {"time": "All Day", "name": "Gunner – No School (Teacher PD)", "type": "allday", "detail": "TACC"},
+  {"time": "08:30 AM", "name": "Friday Morning Meeting", "type": "meeting", "detail": "8:30 – 10:00 AM"},
+  {"time": "09:30 AM", "name": "Meeting with Whiskey Design // Repeal Day", "type": "meeting", "detail": "Matt's calendar · 9:30 – 10:30 AM"},
+  {"time": "11:00 AM", "name": "Shelby", "type": "meeting", "detail": "Wellness Warehouse, 1400 W Ninth St · 11:00 AM – 12:00 PM"},
+  {"time": "01:30 PM", "name": "Hair Appt", "type": "meeting", "detail": "1:30 – 3:30 PM"},
+  {"time": "01:30 PM", "name": "Appointment @ Lumine Salon Crossroads", "type": "meeting", "detail": "1901 Main St, KC · 1:30 – 4:00 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Rent - Oct"},
-  {"name": "Deposit Checks / Profit Tracking"},
-  {"name": "Reconciliations"},
-  {"name": "Vendor Invoices"},
-  {"name": "Isabella Pictures"},
-  {"name": "Kazoo AMEX/ Recon Sheets"},
-  {"name": "Costa Rica"},
-  {"name": "Pay Discover"},
-  {"name": "Scotia"},
-  {"name": "Call Jackson County- hemingway"},
-  {"name": "Crossroads-Refine City"}
+  {"name": "extra $10k for AirBnB"},
+  {"name": "Braids"},
+  {"name": "Tighten glasses"},
+  {"name": "AI Marketing"},
+  {"name": "Cr trip"},
+  {"name": "Research New Phones"},
+  {"name": "Raises"},
+  {"name": "Airbnb Money"},
+  {"name": "Meds"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
@@ -577,35 +576,31 @@ const TASKS_OVERDUE = [
   {"name": "Building To Dos", "date": "Jan 22"},
   {"name": "50th", "date": "Feb 7"},
   {"name": "Video Tapes", "date": "Feb 7"},
-  {"name": "Research New Phones", "date": "Jun 24"},
   {"name": "Heart appt", "date": "Aug 30"},
   {"name": "Owl- unhook screen", "date": "Aug 30"},
   {"name": "QB costs/ Alternative", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
-  {"name": "Volunteering", "date": "Sep 4"},
   {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
-  {"name": "Check Ring", "date": "Sep 11"},
   {"name": "ALCON CARD", "date": "Sep 13"},
   {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Oil Treatment", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
-  {"name": "Pull down Shutterfly pics?", "date": "Oct 25"},
-  {"name": "Ant Treatment", "date": "Oct 25"},
-  {"name": "AI Marketing", "date": "Oct 30"},
-  {"name": "Post social", "date": "Nov 3"},
-  {"name": "Enter All Receipts", "date": "Nov 11"},
-  {"name": "Schedule Tommy", "date": "Nov 11"},
-  {"name": "Dog Sitter", "date": "Nov 11"}
+  {"name": "Isabella Pictures", "date": "Nov 11"},
+  {"name": "Karen Photos", "date": "Nov 11"},
+  {"name": "Reconciliations", "date": "Nov 12"},
+  {"name": "Scotia", "date": "Nov 12"},
+  {"name": "Call Jackson County- hemingway", "date": "Nov 12"},
+  {"name": "Crossroads-Refine City", "date": "Nov 12"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-12T05:15:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-13T05:45:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 12, 2026";
-const HOROSCOPE_DATA = "You don’t have to carry the heavy stuff forever. So set something down today. Maybe you’re ready to pay off an old debt. Or maybe you need to work through something in therapy. Go for it. Initiate that transaction or conversation. And ask for support if you need it. Letting go can be scary, but it’ll help you feel so much lighter.";
+const HOROSCOPE_DATE = "November 13, 2026";
+const HOROSCOPE_DATA = "Your dreams won’t chase themselves. And now that Venus retrograde is over, it’s time to get back to business. So build as much momentum as you can around your career or big ambitions. Apply for that exciting job, or network with people who can get you where you want to be. And don’t get in your head if things still feel a little off. That’ll change once the retrograde dust settles.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
