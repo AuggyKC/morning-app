@@ -541,13 +541,23 @@
 // ============================================================
 // DATA — Updated by scheduled task each morning
 // ============================================================
-const CALENDAR_DATA = [];
+const CALENDAR_DATA = [
+  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": "7:45 – 9:45 AM"},
+  {"time": "9:00 AM", "name": "Maids- Home", "type": "meeting", "detail": "9:00 – 11:00 AM"},
+  {"time": "9:30 AM", "name": "J&J Retail Partnership Call", "type": "call", "detail": "Microsoft Teams Meeting"},
+  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
+  {"time": "5:15 PM", "name": "Training- Shelby", "type": "meeting", "detail": "Wellness Warehouse KC"}
+];
 
 const TASKS_TODAY = [
-  {"name": "extra $10k for AirBnB"},
-  {"name": "Cr trip"},
-  {"name": "Water House Plants"},
-  {"name": "Ant Treatment"}
+  {"name": "Vendor Invoices"},
+  {"name": "Maids"},
+  {"name": "Pay CR Taxes"},
+  {"name": "DART"},
+  {"name": "Have Claude enter all AMEX receipts"},
+  {"name": "Pay production inv for ballet"},
+  {"name": "FB Token"},
+  {"name": "Friday out"}
 ];
 
 const TASKS_OVERDUE = [
@@ -587,15 +597,19 @@ const TASKS_OVERDUE = [
   {"name": "Tours For Gunner", "date": "Nov 14"},
   {"name": "Post social", "date": "Nov 14"},
   {"name": "Menu", "date": "Nov 14"},
-  {"name": "Isabella Pictures", "date": "Nov 14"}
+  {"name": "Isabella Pictures", "date": "Nov 14"},
+  {"name": "Water House Plants", "date": "Nov 15"},
+  {"name": "Cr trip", "date": "Nov 15"},
+  {"name": "extra $10k for AirBnB", "date": "Nov 15"},
+  {"name": "Ant Treatment", "date": "Nov 15"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-15T05:20:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-16T05:15:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 15, 2026";
-const HOROSCOPE_DATA = "Today’s focus: your shared projects. You can make serious progress on any contracts, collaborations, or delicate conversations. But you can just as easily take on more than your fair share. So stop to think things through before making any commitments. And remember: Partnership is about more than just productivity. Let yourself be human.";
+const HOROSCOPE_DATE = "November 16, 2026";
+const HOROSCOPE_DATA = "Hey, social butterfly. You’ve been thinking a lot about your friendships these past few weeks. And with Mercury retrograde finally behind us, you’re ready to reflect. Think back on anyone you’ve befriended, lost contact with, or had a change of heart about lately. Take stock of any lessons you’ve learned in the process. And if your dynamics still feel funky, let them. It takes a while for things to fully settle post-retrograde.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
