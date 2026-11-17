@@ -542,22 +542,25 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": "7:45 – 9:45 AM"},
-  {"time": "9:00 AM", "name": "Maids- Home", "type": "meeting", "detail": "9:00 – 11:00 AM"},
-  {"time": "9:30 AM", "name": "J&J Retail Partnership Call", "type": "call", "detail": "Microsoft Teams Meeting"},
-  {"time": "10:00 AM", "name": "MOVPC Weekly Meeting", "type": "call", "detail": "Zoom"},
-  {"time": "5:15 PM", "name": "Training- Shelby", "type": "meeting", "detail": "Wellness Warehouse KC"}
+  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"},
+  {"time": "10:00 AM", "name": "Cindy Augustine Trustee Review & Check-In", "type": "call", "detail": "Zoom"},
+  {"time": "11:30 AM", "name": "Shelby", "type": "meeting", "detail": "11:30 AM – 12:30 PM"},
+  {"time": "2:45 PM", "name": "ICL Academy Meeting with Abigail McConnell", "type": "call", "detail": "Phone Call"},
+  {"time": "3:30 PM", "name": "Starlight + Kazoo Status", "type": "call", "detail": "Microsoft Teams Meeting"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Vendor Invoices"},
-  {"name": "Maids"},
-  {"name": "Pay CR Taxes"},
+  {"name": "Status/ NB"},
+  {"name": "Coach Tommy Text"},
+  {"name": "Returns"},
+  {"name": "Crossroads-Refine City"},
+  {"name": "Call Jackson County- hemingway"},
   {"name": "DART"},
-  {"name": "Have Claude enter all AMEX receipts"},
-  {"name": "Pay production inv for ballet"},
-  {"name": "FB Token"},
-  {"name": "Friday out"}
+  {"name": "Cr trip"},
+  {"name": "Raises"},
+  {"name": "Costa Rica"},
+  {"name": "Rent - Oct"},
+  {"name": "Target bill"}
 ];
 
 const TASKS_OVERDUE = [
@@ -583,11 +586,7 @@ const TASKS_OVERDUE = [
   {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Reconciliations", "date": "Nov 12"},
-  {"name": "Crossroads-Refine City", "date": "Nov 12"},
-  {"name": "Call Jackson County- hemingway", "date": "Nov 12"},
   {"name": "Mouse poison", "date": "Nov 13"},
-  {"name": "Karen Photos", "date": "Nov 13"},
-  {"name": "Scotia", "date": "Nov 13"},
   {"name": "Tighten glasses", "date": "Nov 13"},
   {"name": "AI Marketing", "date": "Nov 13"},
   {"name": "Research New Phones", "date": "Nov 13"},
@@ -599,17 +598,15 @@ const TASKS_OVERDUE = [
   {"name": "Menu", "date": "Nov 14"},
   {"name": "Isabella Pictures", "date": "Nov 14"},
   {"name": "Water House Plants", "date": "Nov 15"},
-  {"name": "Cr trip", "date": "Nov 15"},
-  {"name": "extra $10k for AirBnB", "date": "Nov 15"},
   {"name": "Ant Treatment", "date": "Nov 15"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-16T05:15:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-17T05:40:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 16, 2026";
-const HOROSCOPE_DATA = "Hey, social butterfly. You’ve been thinking a lot about your friendships these past few weeks. And with Mercury retrograde finally behind us, you’re ready to reflect. Think back on anyone you’ve befriended, lost contact with, or had a change of heart about lately. Take stock of any lessons you’ve learned in the process. And if your dynamics still feel funky, let them. It takes a while for things to fully settle post-retrograde.";
+const HOROSCOPE_DATE = "November 17, 2026";
+const HOROSCOPE_DATA = "It can be hard to face friction in your friendships. But that’s the only way to work through it. So today, spend some time reflecting on your social dynamics. How have they changed lately? Why might they feel so charged? Try to get to the root of the problem. Then brainstorm a few strategies to address it. You can figure this out if you’re willing to get real and put in the effort.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -619,7 +616,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. cold re-scraped 2026-11-12 (29 of 29 pins).
+// Pins organized by Pinterest section. cold re-scraped 2026-11-12 (29 of 29 pins). cool re-scraped 2026-11-17 (84 of 85 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -654,6 +651,10 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg",
   ],
   cool: [
+    "https://i.pinimg.com/736x/c9/a7/e9/c9a7e9ea684db4bfa1272e189d251b8b.jpg",
+    "https://i.pinimg.com/736x/d7/ba/01/d7ba0170398454fbfc05289ef9cf34b3.jpg",
+    "https://i.pinimg.com/736x/74/c5/76/74c57688424b8d65b20358a418598d89.jpg",
+    "https://i.pinimg.com/736x/cc/9a/f2/cc9af2e8584e94a97c9be866bf3819f5.jpg",
     "https://i.pinimg.com/736x/c7/69/af/c769af041c632131c7b2889ee9e77f6a.jpg",
     "https://i.pinimg.com/736x/87/9e/48/879e4801479e3fcf2e592ab1fbdc4047.jpg",
     "https://i.pinimg.com/736x/d0/b5/29/d0b529bbf17331ba7a67c117b05a07b2.jpg",
@@ -917,6 +918,10 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/82/4f/2d/824f2dee5108c50340db5f19038d94df.jpg",
   "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg",
   "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg",
+  "https://i.pinimg.com/736x/c9/a7/e9/c9a7e9ea684db4bfa1272e189d251b8b.jpg",
+  "https://i.pinimg.com/736x/d7/ba/01/d7ba0170398454fbfc05289ef9cf34b3.jpg",
+  "https://i.pinimg.com/736x/74/c5/76/74c57688424b8d65b20358a418598d89.jpg",
+  "https://i.pinimg.com/736x/cc/9a/f2/cc9af2e8584e94a97c9be866bf3819f5.jpg",
   "https://i.pinimg.com/736x/c7/69/af/c769af041c632131c7b2889ee9e77f6a.jpg",
   "https://i.pinimg.com/736x/87/9e/48/879e4801479e3fcf2e592ab1fbdc4047.jpg",
   "https://i.pinimg.com/736x/d0/b5/29/d0b529bbf17331ba7a67c117b05a07b2.jpg",
