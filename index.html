@@ -542,64 +542,67 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "7:45 AM", "name": "Maids-Cleaning Red Star", "type": "meeting", "detail": ""}
+  {"time": "All Day", "name": "Nova's Birthday!", "type": "allday", "detail": ""},
+  {"time": "9:00 AM", "name": "Internal Status", "type": "call", "detail": "Zoom"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Payroll- Whiskey/ Kazoo"},
-  {"name": "Scotia Bank"}
+  {"name": "Put Out Dumpster"},
+  {"name": "Pay Mortgage"}
 ];
 
 const TASKS_OVERDUE = [
   {"name": "Vespa", "date": "Apr 25, 2025"},
   {"name": "Personal To Dos", "date": "May 21, 2025"},
   {"name": "Life Insurance", "date": "Aug 5, 2025"},
-  {"name": "Clean up Computer", "date": "Jan 18"},
-  {"name": "Hair videos", "date": "Jan 18"},
   {"name": "Art book", "date": "Jan 18"},
-  {"name": "Wbe", "date": "Jan 22"},
+  {"name": "Hair videos", "date": "Jan 18"},
+  {"name": "Clean up Computer", "date": "Jan 18"},
   {"name": "Building To Dos", "date": "Jan 22"},
-  {"name": "50th", "date": "Feb 7"},
+  {"name": "Wbe", "date": "Jan 22"},
   {"name": "Video Tapes", "date": "Feb 7"},
-  {"name": "Heart appt", "date": "Aug 30"},
-  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "50th", "date": "Feb 7"},
   {"name": "QB costs/ Alternative", "date": "Aug 30"},
+  {"name": "Owl- unhook screen", "date": "Aug 30"},
+  {"name": "Heart appt", "date": "Aug 30"},
   {"name": "Build Auditing Product", "date": "Aug 31"},
   {"name": "AI", "date": "Sep 4"},
   {"name": "Client communication", "date": "Sep 6"},
   {"name": "Post Starlight", "date": "Sep 9"},
   {"name": "ALCON CARD", "date": "Sep 13"},
-  {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Oil Treatment", "date": "Sep 26"},
+  {"name": "Apple Arcade games", "date": "Sep 26"},
   {"name": "Heirloom", "date": "Oct 11"},
   {"name": "Reconciliations", "date": "Nov 12"},
-  {"name": "Research New Phones", "date": "Nov 13"},
-  {"name": "AI Marketing", "date": "Nov 13"},
   {"name": "Mouse poison", "date": "Nov 13"},
-  {"name": "Isabella Pictures", "date": "Nov 14"},
-  {"name": "Menu", "date": "Nov 14"},
-  {"name": "Post social", "date": "Nov 14"},
-  {"name": "Tours For Gunner", "date": "Nov 14"},
-  {"name": "Tulips", "date": "Nov 14"},
-  {"name": "Pull down Shutterfly pics?", "date": "Nov 14"},
+  {"name": "AI Marketing", "date": "Nov 13"},
+  {"name": "Research New Phones", "date": "Nov 13"},
   {"name": "Christmas To Dos", "date": "Nov 14"},
+  {"name": "Pull down Shutterfly pics?", "date": "Nov 14"},
+  {"name": "Tulips", "date": "Nov 14"},
+  {"name": "Tours For Gunner", "date": "Nov 14"},
+  {"name": "Post social", "date": "Nov 14"},
+  {"name": "Menu", "date": "Nov 14"},
+  {"name": "Isabella Pictures", "date": "Nov 14"},
   {"name": "Ant Treatment", "date": "Nov 15"},
-  {"name": "Rent - Oct", "date": "Nov 20"},
   {"name": "ACH Approvals", "date": "Nov 20"},
+  {"name": "Rent - Oct", "date": "Nov 20"},
   {"name": "Crossroads-Refine City", "date": "Nov 21"},
-  {"name": "Process Maids Invoices", "date": "Nov 22"},
-  {"name": "Costa Rica", "date": "Nov 22"},
-  {"name": "Raises", "date": "Nov 22"},
+  {"name": "Zach", "date": "Nov 22"},
   {"name": "DART", "date": "Nov 22"},
-  {"name": "Zach", "date": "Nov 22"}
+  {"name": "Raises", "date": "Nov 22"},
+  {"name": "Costa Rica", "date": "Nov 22"},
+  {"name": "Process Maids Invoices", "date": "Nov 22"},
+  {"name": "Payroll- Whiskey/ Kazoo", "date": "Nov 23"},
+  {"name": "Scotia Bank", "date": "Nov 23"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-23T19:45:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-24T07:35:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 23, 2026";
-const HOROSCOPE_DATA = "Pausing to think, rest, and play is healing. So enjoy some “you” time today. Pour into one of your secret projects, or scribble away in your journal. And try not to let your inner critic get in the way of having fun. When you stop overthinking your creative impulses, it gets easier to follow them.";
+const HOROSCOPE_DATE = "November 24, 2026";
+const HOROSCOPE_DATA = "The Full Moon in Gemini wants you to reflect on your workload. Are you giving too much of yourself to your responsibilities? Probably. Are you setting healthy boundaries at the office or around the house? Probably not. Pause to reflect on what’s not working. Then take something off your plate, or stop responding to emails after work hours (for real this time). A few little tweaks can take you from frantic to focused.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -609,7 +612,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. cold re-scraped 2026-11-12 (29 of 29 pins). cool re-scraped 2026-11-18 (84 of 85 pins).
+// Pins organized by Pinterest section. cold re-scraped 2026-11-24 (29 of 29 pins). cool re-scraped 2026-11-18 (84 of 85 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
