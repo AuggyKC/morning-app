@@ -542,14 +542,18 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Trash Day- Office", "type": "allday", "detail": ""},
-  {"time": "All Day", "name": "Thanksgiving Break - No School", "type": "allday", "detail": "Gunner & Isabella (Nov 23–27)"}
+  {"time": "All Day", "name": "Thanksgiving Day", "type": "allday", "detail": "Public holiday"},
+  {"time": "All Day", "name": "Thanksgiving Break - No School", "type": "allday", "detail": "Gunner & Isabella (Nov 23–27)"},
+  {"time": "9:30 AM", "name": "Maids of KC Touch Base", "type": "call", "detail": "Zoom"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Pills"},
+  {"name": "Application G"},
+  {"name": "Zach"},
   {"name": "Scotia Bank"},
-  {"name": "Repay CPA"}
+  {"name": "Raises"},
+  {"name": "Rent - Oct"},
+  {"name": "Google Invoice"}
 ];
 
 const TASKS_OVERDUE = [
@@ -587,21 +591,19 @@ const TASKS_OVERDUE = [
   {"name": "Isabella Pictures", "date": "Nov 14"},
   {"name": "Ant Treatment", "date": "Nov 15"},
   {"name": "ACH Approvals", "date": "Nov 20"},
-  {"name": "Rent - Oct", "date": "Nov 20"},
-  {"name": "Zach", "date": "Nov 22"},
-  {"name": "Raises", "date": "Nov 22"},
-  {"name": "Costa Rica", "date": "Nov 22"},
-  {"name": "Process Maids Invoices", "date": "Nov 22"},
   {"name": "Crossroads-Refine City", "date": "Nov 24"},
-  {"name": "Pay Mortgage", "date": "Nov 24"}
+  {"name": "Pay Mortgage", "date": "Nov 24"},
+  {"name": "Pills", "date": "Nov 25"},
+  {"name": "Costa Rica", "date": "Nov 25"},
+  {"name": "Process Maids Invoices", "date": "Nov 25"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-25T05:50:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-26T06:25:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 25, 2026";
-const HOROSCOPE_DATA = "Quit overthinking your next adventure and get moving. Mars in Virgo is nudging you to give your all to your studies, travels, and explorations. Sign up for a new class, or set off on that road trip you’ve been dreaming up. Whatever inspires you, go for it. Just try not to get in your head about it. If you start weighing all the pros and cons, you might talk yourself out of a good thing. Breaking out of your comfort zone can be daunting, but that’s how you grow.";
+const HOROSCOPE_DATE = "November 26, 2026";
+const HOROSCOPE_DATA = "Everyone doubts themselves sometimes. But that’s different from consistently tearing yourself down. And today, you’re ready to be kinder to yourself. So get started. Journal about your insecurities, or open up to someone you trust. And tell the critic in your head to can it. You deserve an inner voice that roots for you, not against you.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
@@ -611,7 +613,7 @@ const BIRTHDATE = "1976-01-14";
 // Re-pulled fresh from Pinterest by the morning task. Last full pull: 2026-09-10
 // ============================================================
 
-// Pins organized by Pinterest section. cold re-scraped 2026-11-24 (29 of 29 pins). cool re-scraped 2026-11-18 (84 of 85 pins).
+// Pins organized by Pinterest section. cold re-scraped 2026-11-26 (29 of 29 pins). cool re-scraped 2026-11-18 (84 of 85 pins).
 // The morning scheduled task re-scrapes the day's section and rewrites these arrays.
 const OUTFITS_BY_SECTION = {
   cold: [
@@ -632,8 +634,6 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/3a/20/47/3a20476d004e6083c5e87e44e257c07d.jpg",
     "https://i.pinimg.com/736x/9c/44/52/9c44529abfbade9f85d39f6bc88f3a12.jpg",
     "https://i.pinimg.com/736x/aa/a8/86/aaa88624f5cbda646bbda9fbe94328f6.jpg",
-    "https://i.pinimg.com/736x/9e/ee/f7/9eeef7c42d2853e396b4481195b2a885.jpg",
-    "https://i.pinimg.com/736x/19/5e/04/195e0482b70564fb099aebec8c8f89fc.jpg",
     "https://i.pinimg.com/736x/83/71/e4/8371e4131b944e1b6c5e8e1aac190d0e.jpg",
     "https://i.pinimg.com/736x/6b/eb/ce/6bebce05bf335904b45e46c28d9926f1.jpg",
     "https://i.pinimg.com/736x/a1/e0/a1/a1e0a1ec6f41becfd7819cfa371e883c.jpg",
@@ -644,6 +644,8 @@ const OUTFITS_BY_SECTION = {
     "https://i.pinimg.com/736x/82/4f/2d/824f2dee5108c50340db5f19038d94df.jpg",
     "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg",
     "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg",
+    "https://i.pinimg.com/736x/9e/ee/f7/9eeef7c42d2853e396b4481195b2a885.jpg",
+    "https://i.pinimg.com/736x/19/5e/04/195e0482b70564fb099aebec8c8f89fc.jpg"
   ],
   cool: [
     "https://i.pinimg.com/736x/c9/a7/e9/c9a7e9ea684db4bfa1272e189d251b8b.jpg",
@@ -901,8 +903,6 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/3a/20/47/3a20476d004e6083c5e87e44e257c07d.jpg",
   "https://i.pinimg.com/736x/9c/44/52/9c44529abfbade9f85d39f6bc88f3a12.jpg",
   "https://i.pinimg.com/736x/aa/a8/86/aaa88624f5cbda646bbda9fbe94328f6.jpg",
-  "https://i.pinimg.com/736x/9e/ee/f7/9eeef7c42d2853e396b4481195b2a885.jpg",
-  "https://i.pinimg.com/736x/19/5e/04/195e0482b70564fb099aebec8c8f89fc.jpg",
   "https://i.pinimg.com/736x/83/71/e4/8371e4131b944e1b6c5e8e1aac190d0e.jpg",
   "https://i.pinimg.com/736x/6b/eb/ce/6bebce05bf335904b45e46c28d9926f1.jpg",
   "https://i.pinimg.com/736x/a1/e0/a1/a1e0a1ec6f41becfd7819cfa371e883c.jpg",
@@ -913,6 +913,8 @@ const ALL_OUTFITS = [
   "https://i.pinimg.com/736x/82/4f/2d/824f2dee5108c50340db5f19038d94df.jpg",
   "https://i.pinimg.com/736x/07/31/b6/0731b6ff98f6d04a466e3fcddbc41696.jpg",
   "https://i.pinimg.com/736x/1b/53/8a/1b538a1006a1da9517914d394b6c545f.jpg",
+  "https://i.pinimg.com/736x/9e/ee/f7/9eeef7c42d2853e396b4481195b2a885.jpg",
+  "https://i.pinimg.com/736x/19/5e/04/195e0482b70564fb099aebec8c8f89fc.jpg",
   "https://i.pinimg.com/736x/c9/a7/e9/c9a7e9ea684db4bfa1272e189d251b8b.jpg",
   "https://i.pinimg.com/736x/d7/ba/01/d7ba0170398454fbfc05289ef9cf34b3.jpg",
   "https://i.pinimg.com/736x/74/c5/76/74c57688424b8d65b20358a418598d89.jpg",
