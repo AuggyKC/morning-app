@@ -542,18 +542,15 @@
 // DATA — Updated by scheduled task each morning
 // ============================================================
 const CALENDAR_DATA = [
-  {"time": "All Day", "name": "Thanksgiving Day", "type": "allday", "detail": "Public holiday"},
-  {"time": "All Day", "name": "Thanksgiving Break - No School", "type": "allday", "detail": "Gunner & Isabella (Nov 23–27)"},
-  {"time": "9:30 AM", "name": "Maids of KC Touch Base", "type": "call", "detail": "Zoom"}
+  {"time": "8:30 AM", "name": "Reminder: Get CARs to Jami before billing cycle on the 1st", "type": "meeting", "detail": "Kazoo team reminder"},
+  {"time": "8:45 AM", "name": "Flight to Houston (UA 1447)", "type": "meeting", "detail": "San José SJO → Houston IAH, arr 12:37 PM"},
+  {"time": "2:45 PM", "name": "Flight to Kansas City (UA 1968)", "type": "meeting", "detail": "Houston IAH → Kansas City, arr 4:52 PM"}
 ];
 
 const TASKS_TODAY = [
-  {"name": "Application G"},
-  {"name": "Zach"},
-  {"name": "Scotia Bank"},
-  {"name": "Raises"},
-  {"name": "Rent - Oct"},
-  {"name": "Google Invoice"}
+  {"name": "Brazil Sporting Trip"},
+  {"name": "Meds"},
+  {"name": "RS Water Plants"}
 ];
 
 const TASKS_OVERDUE = [
@@ -595,15 +592,21 @@ const TASKS_OVERDUE = [
   {"name": "Pay Mortgage", "date": "Nov 24"},
   {"name": "Pills", "date": "Nov 25"},
   {"name": "Costa Rica", "date": "Nov 25"},
-  {"name": "Process Maids Invoices", "date": "Nov 25"}
+  {"name": "Process Maids Invoices", "date": "Nov 25"},
+  {"name": "Application G", "date": "Nov 26"},
+  {"name": "Zach", "date": "Nov 26"},
+  {"name": "Scotia Bank", "date": "Nov 26"},
+  {"name": "Raises", "date": "Nov 26"},
+  {"name": "Rent - Oct", "date": "Nov 26"},
+  {"name": "Google Invoice", "date": "Nov 26"}
 ];
 
 
-const DATA_REFRESH_TIME = "2026-11-26T06:25:00-06:00";
+const DATA_REFRESH_TIME = "2026-11-27T09:50:00-06:00";
 
 // HOROSCOPE — Capricorn, pulled daily from CHANI (chani.com/signs/capricorn)
-const HOROSCOPE_DATE = "November 26, 2026";
-const HOROSCOPE_DATA = "Everyone doubts themselves sometimes. But that’s different from consistently tearing yourself down. And today, you’re ready to be kinder to yourself. So get started. Journal about your insecurities, or open up to someone you trust. And tell the critic in your head to can it. You deserve an inner voice that roots for you, not against you.";
+const HOROSCOPE_DATE = "November 27, 2026";
+const HOROSCOPE_DATA = "Hold your horses. You might be tempted to run away from your problems right now. Whether you’re anxious, overwhelmed, or just plain tired, you’re fighting the urge to flee. But there’s no need to self-sabotage. Instead, turn inward. Figure out what’s making you restless. And brainstorm ways to get back on track. You can change your direction without completely jumping ship.";
 
 // BIORHYTHMS — computed client-side from birthdate (auto-updates daily)
 const BIRTHDATE = "1976-01-14";
